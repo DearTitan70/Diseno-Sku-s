@@ -1,0 +1,30 @@
+[16-May-2025 10:27:11 America/Bogota] PHP Warning:  Undefined variable $isLoggedIn in /home/services/public_html/diseno/sections/modificar_carga.php on line 11
+[16-May-2025 15:33:34 UTC] PHP Warning:  Undefined variable $id in /home/services/public_html/diseno/sections/modificar_usuario.php on line 371
+[16-May-2025 15:33:34 UTC] PHP Warning:  Undefined variable $user in /home/services/public_html/diseno/sections/modificar_usuario.php on line 375
+[16-May-2025 15:33:34 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/services/public_html/diseno/sections/modificar_usuario.php on line 375
+[16-May-2025 15:33:34 UTC] PHP Warning:  Undefined variable $user in /home/services/public_html/diseno/sections/modificar_usuario.php on line 382
+[16-May-2025 15:33:34 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/services/public_html/diseno/sections/modificar_usuario.php on line 382
+[16-May-2025 15:33:34 UTC] PHP Warning:  Undefined variable $user in /home/services/public_html/diseno/sections/modificar_usuario.php on line 389
+[16-May-2025 15:33:34 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/services/public_html/diseno/sections/modificar_usuario.php on line 389
+[16-May-2025 15:33:34 UTC] PHP Warning:  Undefined variable $user in /home/services/public_html/diseno/sections/modificar_usuario.php on line 397
+[16-May-2025 15:33:34 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/services/public_html/diseno/sections/modificar_usuario.php on line 397
+[16-May-2025 15:33:34 UTC] PHP Warning:  Undefined variable $user in /home/services/public_html/diseno/sections/modificar_usuario.php on line 398
+[16-May-2025 15:33:34 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/services/public_html/diseno/sections/modificar_usuario.php on line 398
+[16-May-2025 15:33:34 UTC] PHP Warning:  Undefined variable $user in /home/services/public_html/diseno/sections/modificar_usuario.php on line 399
+[16-May-2025 15:33:34 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/services/public_html/diseno/sections/modificar_usuario.php on line 399
+[20-May-2025 15:50:25 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/services/public_html/diseno/backend/auth.php on line 13
+[20-May-2025 14:37:34 America/Bogota] PHP Warning:  Undefined variable $conn in /home/services/public_html/diseno/sections/modificar_carga.php on line 12
+[20-May-2025 14:37:34 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function set_charset() on null in /home/services/public_html/diseno/sections/modificar_carga.php:12
+Stack trace:
+#0 {main}
+  thrown in /home/services/public_html/diseno/sections/modificar_carga.php on line 12
+[05-Jun-2025 20:39:03 UTC] PHP Warning:  require_once(../backend/db_connection.php): Failed to open stream: No such file or directory in /home/services/public_html/diseno/sections/cambiar_contrasena.php on line 3
+[05-Jun-2025 20:39:03 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../backend/db_connection.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/services/public_html/diseno/sections/cambiar_contrasena.php:3
+Stack trace:
+#0 {main}
+  thrown in /home/services/public_html/diseno/sections/cambiar_contrasena.php on line 3
+[05-Jun-2025 20:42:54 UTC] PHP Fatal error:  Uncaught Error: mysqli_stmt object is already closed in /home/services/public_html/diseno/sections/cambiar_contrasena.php:55
+Stack trace:
+#0 /home/services/public_html/diseno/sections/cambiar_contrasena.php(55): mysqli_stmt->close()
+#1 {main}
+  thrown in /home/services/public_html/diseno/sections/cambiar_contrasena.php on line 55

@@ -1,0 +1,1594 @@
+[15-May-2025 20:11:10 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in /home/services/public_html/diseno/backend/login_process.php:12
+Stack trace:
+#0 /home/services/public_html/diseno/backend/login_process.php(12): mysqli_connect()
+#1 {main}
+  thrown in /home/services/public_html/diseno/backend/login_process.php on line 12
+[15-May-2025 20:35:15 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in /home/services/public_html/diseno/backend/login_process.php:12
+Stack trace:
+#0 /home/services/public_html/diseno/backend/login_process.php(12): mysqli_connect()
+#1 {main}
+  thrown in /home/services/public_html/diseno/backend/login_process.php on line 12
+[15-May-2025 21:59:52 UTC] Input recibido: Array
+(
+    [rule_id] => 
+    [nombre_regla] => PRUEBA
+    [campo_destino] => OCASION_DE_USO
+    [es_activa] => 1
+    [condiciones] => Array
+        (
+            [operator] => AND
+            [conditions] => Array
+                (
+                    [0] => Array
+                        (
+                            [operator] => condition
+                            [field] => NOMBRE
+                            [value] => CHAQUETAS
+                        )
+
+                )
+
+        )
+
+    [valores_permitidos] => Array
+        (
+            [0] => ANORAK
+        )
+
+)
+
+[15-May-2025 21:59:52 UTC] Condiciones recibidas: Array
+(
+    [operator] => AND
+    [conditions] => Array
+        (
+            [0] => Array
+                (
+                    [operator] => condition
+                    [field] => NOMBRE
+                    [value] => CHAQUETAS
+                )
+
+        )
+
+)
+
+[15-May-2025 22:00:20 UTC] Input recibido: Array
+(
+    [rule_id] => 
+    [nombre_regla] => PRUEBA
+    [campo_destino] => MES
+    [es_activa] => 1
+    [condiciones] => Array
+        (
+            [operator] => AND
+            [conditions] => Array
+                (
+                    [0] => Array
+                        (
+                            [operator] => condition
+                            [field] => YEAR
+                            [value] => CHAQUETAS
+                        )
+
+                )
+
+        )
+
+    [valores_permitidos] => Array
+        (
+            [0] => ANORAK
+        )
+
+)
+
+[15-May-2025 22:00:20 UTC] Condiciones recibidas: Array
+(
+    [operator] => AND
+    [conditions] => Array
+        (
+            [0] => Array
+                (
+                    [operator] => condition
+                    [field] => YEAR
+                    [value] => CHAQUETAS
+                )
+
+        )
+
+)
+
+[15-May-2025 22:01:17 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in /home/services/public_html/diseno/backend/delete_rule.php:21
+Stack trace:
+#0 /home/services/public_html/diseno/backend/delete_rule.php(21): mysqli->__construct()
+#1 {main}
+  thrown in /home/services/public_html/diseno/backend/delete_rule.php on line 21
+[15-May-2025 22:02:20 UTC] Input recibido: Array
+(
+    [rule_id] => 
+    [nombre_regla] => PRUEBA
+    [campo_destino] => PROVEEDOR
+    [es_activa] => 1
+    [condiciones] => Array
+        (
+            [operator] => AND
+            [conditions] => Array
+                (
+                    [0] => Array
+                        (
+                            [operator] => condition
+                            [field] => MES
+                            [value] => CHAQUETAS
+                        )
+
+                )
+
+        )
+
+    [valores_permitidos] => Array
+        (
+            [0] => PANTALONES
+        )
+
+)
+
+[15-May-2025 22:02:20 UTC] Condiciones recibidas: Array
+(
+    [operator] => AND
+    [conditions] => Array
+        (
+            [0] => Array
+                (
+                    [operator] => condition
+                    [field] => MES
+                    [value] => CHAQUETAS
+                )
+
+        )
+
+)
+
+[15-May-2025 22:04:25 UTC] Input recibido: Array
+(
+    [rule_id] => 
+    [nombre_regla] => PRUEBA
+    [campo_destino] => MES
+    [es_activa] => 1
+    [condiciones] => Array
+        (
+            [operator] => AND
+            [conditions] => Array
+                (
+                    [0] => Array
+                        (
+                            [operator] => condition
+                            [field] => YEAR
+                            [value] => CHAQUETAS
+                        )
+
+                )
+
+        )
+
+    [valores_permitidos] => Array
+        (
+            [0] => PANTALONES
+        )
+
+)
+
+[15-May-2025 22:04:25 UTC] Condiciones recibidas: Array
+(
+    [operator] => AND
+    [conditions] => Array
+        (
+            [0] => Array
+                (
+                    [operator] => condition
+                    [field] => YEAR
+                    [value] => CHAQUETAS
+                )
+
+        )
+
+)
+
+[15-May-2025 22:05:44 UTC] Input recibido: Array
+(
+    [rule_id] => 
+    [nombre_regla] => PRUEBA
+    [campo_destino] => DESCRIPCION
+    [es_activa] => 1
+    [condiciones] => Array
+        (
+            [operator] => AND
+            [conditions] => Array
+                (
+                    [0] => Array
+                        (
+                            [operator] => condition
+                            [field] => YEAR
+                            [value] => CHAQUETAS
+                        )
+
+                )
+
+        )
+
+    [valores_permitidos] => Array
+        (
+            [0] => ANORAK
+        )
+
+)
+
+[15-May-2025 22:05:44 UTC] Condiciones recibidas: Array
+(
+    [operator] => AND
+    [conditions] => Array
+        (
+            [0] => Array
+                (
+                    [operator] => condition
+                    [field] => YEAR
+                    [value] => CHAQUETAS
+                )
+
+        )
+
+)
+
+[15-May-2025 22:06:25 UTC] Input recibido: Array
+(
+    [rule_id] => 
+    [nombre_regla] => PRUEBA
+    [campo_destino] => CATEGORIAS
+    [es_activa] => 1
+    [condiciones] => Array
+        (
+            [type] => branched_conditions
+            [branches] => Array
+                (
+                    [0] => Array
+                        (
+                            [if] => Array
+                                (
+                                    [operator] => AND
+                                    [conditions] => Array
+                                        (
+                                            [0] => Array
+                                                (
+                                                    [operator] => condition
+                                                    [field] => YEAR
+                                                    [value] => BLUSAS
+                                                )
+
+                                            [1] => Array
+                                                (
+                                                    [operator] => condition
+                                                    [field] => MES
+                                                    [value] => BLUSAS
+                                                )
+
+                                        )
+
+                                )
+
+                            [then_allow] => Array
+                                (
+                                    [0] => ANORAK
+                                    [1] => ALTO
+                                )
+
+                        )
+
+                )
+
+            [default_allow] => Array
+                (
+                )
+
+        )
+
+    [valores_permitidos] => Array
+        (
+        )
+
+)
+
+[15-May-2025 22:06:25 UTC] Condiciones recibidas: Array
+(
+    [type] => branched_conditions
+    [branches] => Array
+        (
+            [0] => Array
+                (
+                    [if] => Array
+                        (
+                            [operator] => AND
+                            [conditions] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [operator] => condition
+                                            [field] => YEAR
+                                            [value] => BLUSAS
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [operator] => condition
+                                            [field] => MES
+                                            [value] => BLUSAS
+                                        )
+
+                                )
+
+                        )
+
+                    [then_allow] => Array
+                        (
+                            [0] => ANORAK
+                            [1] => ALTO
+                        )
+
+                )
+
+        )
+
+    [default_allow] => Array
+        (
+        )
+
+)
+
+[15-May-2025 22:07:05 UTC] Input recibido: Array
+(
+    [rule_id] => 
+    [nombre_regla] => PRUEBA
+    [campo_destino] => CLUSTER
+    [es_activa] => 1
+    [condiciones] => Array
+        (
+            [operator] => AND
+            [conditions] => Array
+                (
+                    [0] => Array
+                        (
+                            [operator] => condition
+                            [field] => MES
+                            [value] => CHAQUETAS
+                        )
+
+                )
+
+        )
+
+    [valores_permitidos] => Array
+        (
+            [0] => PANTALONES
+        )
+
+)
+
+[15-May-2025 22:07:05 UTC] Condiciones recibidas: Array
+(
+    [operator] => AND
+    [conditions] => Array
+        (
+            [0] => Array
+                (
+                    [operator] => condition
+                    [field] => MES
+                    [value] => CHAQUETAS
+                )
+
+        )
+
+)
+
+[15-May-2025 22:09:17 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in /home/services/public_html/diseno/backend/delete_user.php:22
+Stack trace:
+#0 /home/services/public_html/diseno/backend/delete_user.php(22): mysqli->__construct()
+#1 {main}
+  thrown in /home/services/public_html/diseno/backend/delete_user.php on line 22
+[16-May-2025 17:10:17 UTC] PHP Warning:  require_once(/home/services/public_html/diseno/backend../conexion.php): Failed to open stream: No such file or directory in /home/services/public_html/diseno/backend/asignar_consecutivos.php on line 25
+[16-May-2025 17:10:17 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/services/public_html/diseno/backend../conexion.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/services/public_html/diseno/backend/asignar_consecutivos.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/services/public_html/diseno/backend/asignar_consecutivos.php on line 25
+[16-May-2025 17:13:16 UTC] PHP Warning:  require_once(/home/services/public_html/diseno/backend../conexion.php): Failed to open stream: No such file or directory in /home/services/public_html/diseno/backend/asignar_consecutivos.php on line 25
+[16-May-2025 17:13:16 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/services/public_html/diseno/backend../conexion.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/services/public_html/diseno/backend/asignar_consecutivos.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/services/public_html/diseno/backend/asignar_consecutivos.php on line 25
+[16-May-2025 17:13:33 UTC] PHP Warning:  require_once(/home/services/public_html/diseno/backend../conexion.php): Failed to open stream: No such file or directory in /home/services/public_html/diseno/backend/asignar_consecutivos.php on line 25
+[16-May-2025 17:13:33 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/services/public_html/diseno/backend../conexion.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/services/public_html/diseno/backend/asignar_consecutivos.php:25
+Stack trace:
+#0 {main}
+  thrown in /home/services/public_html/diseno/backend/asignar_consecutivos.php on line 25
+[16-May-2025 16:57:02 America/Bogota] SERVER -> CLIENT: 220-cpanel6-co.conexcol.net ESMTP Exim 4.98.1 #2 Fri, 16 May 2025 16:57:02 -0500 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+[16-May-2025 16:57:02 America/Bogota] CLIENT -> SERVER: EHLO fds.com.co
+
+[16-May-2025 16:57:02 America/Bogota] SERVER -> CLIENT: 250-cpanel6-co.conexcol.net Hello fds.com.co [190.90.160.172]
+250-SIZE 209715200
+250-LIMITS MAILMAX=1000 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+[16-May-2025 16:57:02 America/Bogota] CLIENT -> SERVER: AUTH LOGIN
+
+[16-May-2025 16:57:02 America/Bogota] SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[16-May-2025 16:57:02 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[16-May-2025 16:57:02 America/Bogota] SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[16-May-2025 16:57:02 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[16-May-2025 16:57:02 America/Bogota] SERVER -> CLIENT: 235 Authentication succeeded
+
+[16-May-2025 16:57:02 America/Bogota] CLIENT -> SERVER: MAIL FROM:<notificaciones@fds.com.co>
+
+[16-May-2025 16:57:02 America/Bogota] SERVER -> CLIENT: 250 OK
+
+[16-May-2025 16:57:02 America/Bogota] CLIENT -> SERVER: RCPT TO:<fdstecnologia@fueradeserie.com.co>
+
+[16-May-2025 16:57:02 America/Bogota] SERVER -> CLIENT: 250 Accepted
+
+[16-May-2025 16:57:02 America/Bogota] CLIENT -> SERVER: DATA
+
+[16-May-2025 16:57:02 America/Bogota] SERVER -> CLIENT: 354 Enter message, ending with "." on a line by itself
+
+[16-May-2025 16:57:02 America/Bogota] CLIENT -> SERVER: Date: Fri, 16 May 2025 16:57:02 -0500
+
+[16-May-2025 16:57:02 America/Bogota] CLIENT -> SERVER: To: fdstecnologia@fueradeserie.com.co
+
+[16-May-2025 16:57:02 America/Bogota] CLIENT -> SERVER: From: Sistema de Cargas <notificaciones@fds.com.co>
+
+[16-May-2025 16:57:02 America/Bogota] CLIENT -> SERVER: Subject: =?iso-8859-1?Q?Modificaci=C3=B3n_de_carga_N=C2=B0_82?=
+
+[16-May-2025 16:57:02 America/Bogota] CLIENT -> SERVER: Message-ID: <8FJQit3Otm84AU8dql4diDv8DIFxBJW0bs1z6Do@fds.com.co>
+
+[16-May-2025 16:57:02 America/Bogota] CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+[16-May-2025 16:57:02 America/Bogota] CLIENT -> SERVER: MIME-Version: 1.0
+
+[16-May-2025 16:57:02 America/Bogota] CLIENT -> SERVER: Content-Type: text/html; charset=iso-8859-1
+
+[16-May-2025 16:57:02 America/Bogota] CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+[16-May-2025 16:57:02 America/Bogota] CLIENT -> SERVER: 
+
+[16-May-2025 16:57:02 America/Bogota] CLIENT -> SERVER: 
+
+[16-May-2025 16:57:02 America/Bogota] CLIENT -> SERVER:         <p>Se ha realizado una modificación en la carga <b>N° 82</b>.</p>
+
+[16-May-2025 16:57:02 America/Bogota] CLIENT -> SERVER:         <ul>
+
+[16-May-2025 16:57:02 America/Bogota] CLIENT -> SERVER:             <li><b>Usuario:</b> Camilo Vera</li>
+
+[16-May-2025 16:57:02 America/Bogota] CLIENT -> SERVER:             <li><b>Fecha:</b> 2025-05-16 16:57:02</li>
+
+[16-May-2025 16:57:02 America/Bogota] CLIENT -> SERVER:         </ul>
+
+[16-May-2025 16:57:02 America/Bogota] CLIENT -> SERVER:         <p><b>Resumen de cambios:</b></p>
+
+[16-May-2025 16:57:02 America/Bogota] CLIENT -> SERVER:         <table border='1' cellpadding='4' cellspacing='0'><tr><th>Campo</th><th>Antes</th><th>Después</th></tr><tr><td>YEAR</td><td>2021</td><td>2025</td></tr></table>
+
+[16-May-2025 16:57:02 America/Bogota] CLIENT -> SERVER:         <p>Este es un mensaje automático.</p>
+
+[16-May-2025 16:57:02 America/Bogota] CLIENT -> SERVER:     
+
+[16-May-2025 16:57:02 America/Bogota] CLIENT -> SERVER: 
+
+[16-May-2025 16:57:02 America/Bogota] CLIENT -> SERVER: .
+
+[16-May-2025 16:57:05 America/Bogota] SERVER -> CLIENT: 250 OK id=1uG339-0000000D3rE-0B76
+
+[16-May-2025 16:57:05 America/Bogota] CLIENT -> SERVER: QUIT
+
+[16-May-2025 16:57:05 America/Bogota] SERVER -> CLIENT: 221 cpanel6-co.conexcol.net closing connection
+
+[16-May-2025 16:58:48 America/Bogota] SERVER -> CLIENT: 220-cpanel6-co.conexcol.net ESMTP Exim 4.98.1 #2 Fri, 16 May 2025 16:58:48 -0500 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+[16-May-2025 16:58:48 America/Bogota] CLIENT -> SERVER: EHLO fds.com.co
+
+[16-May-2025 16:58:48 America/Bogota] SERVER -> CLIENT: 250-cpanel6-co.conexcol.net Hello fds.com.co [190.90.160.172]
+250-SIZE 209715200
+250-LIMITS MAILMAX=1000 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+[16-May-2025 16:58:48 America/Bogota] CLIENT -> SERVER: AUTH LOGIN
+
+[16-May-2025 16:58:48 America/Bogota] SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[16-May-2025 16:58:48 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[16-May-2025 16:58:48 America/Bogota] SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[16-May-2025 16:58:48 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[16-May-2025 16:58:48 America/Bogota] SERVER -> CLIENT: 235 Authentication succeeded
+
+[16-May-2025 16:58:48 America/Bogota] CLIENT -> SERVER: MAIL FROM:<notificaciones@fds.com.co>
+
+[16-May-2025 16:58:48 America/Bogota] SERVER -> CLIENT: 250 OK
+
+[16-May-2025 16:58:48 America/Bogota] CLIENT -> SERVER: RCPT TO:<fdstecnologia@fueradeserie.com.co>
+
+[16-May-2025 16:58:48 America/Bogota] SERVER -> CLIENT: 250 Accepted
+
+[16-May-2025 16:58:48 America/Bogota] CLIENT -> SERVER: DATA
+
+[16-May-2025 16:58:48 America/Bogota] SERVER -> CLIENT: 354 Enter message, ending with "." on a line by itself
+
+[16-May-2025 16:58:48 America/Bogota] CLIENT -> SERVER: Date: Fri, 16 May 2025 16:58:48 -0500
+
+[16-May-2025 16:58:48 America/Bogota] CLIENT -> SERVER: To: fdstecnologia@fueradeserie.com.co
+
+[16-May-2025 16:58:48 America/Bogota] CLIENT -> SERVER: From: Sistema de Cargas <notificaciones@fds.com.co>
+
+[16-May-2025 16:58:48 America/Bogota] CLIENT -> SERVER: Subject: =?iso-8859-1?Q?Modificaci=C3=B3n_de_carga_N=C2=B0_78?=
+
+[16-May-2025 16:58:48 America/Bogota] CLIENT -> SERVER: Message-ID: <AxRIbLJINEMZXQ13gM6a7Wd5WrrcKFyUAKsUgBLarA@fds.com.co>
+
+[16-May-2025 16:58:48 America/Bogota] CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+[16-May-2025 16:58:48 America/Bogota] CLIENT -> SERVER: MIME-Version: 1.0
+
+[16-May-2025 16:58:48 America/Bogota] CLIENT -> SERVER: Content-Type: text/html; charset=iso-8859-1
+
+[16-May-2025 16:58:48 America/Bogota] CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+[16-May-2025 16:58:48 America/Bogota] CLIENT -> SERVER: 
+
+[16-May-2025 16:58:48 America/Bogota] CLIENT -> SERVER: 
+
+[16-May-2025 16:58:48 America/Bogota] CLIENT -> SERVER:         <p>Se ha realizado una modificación en la carga <b>N° 78</b>.</p>
+
+[16-May-2025 16:58:48 America/Bogota] CLIENT -> SERVER:         <ul>
+
+[16-May-2025 16:58:48 America/Bogota] CLIENT -> SERVER:             <li><b>Usuario:</b> Camilo Vera</li>
+
+[16-May-2025 16:58:48 America/Bogota] CLIENT -> SERVER:             <li><b>Fecha:</b> 2025-05-16 16:58:48</li>
+
+[16-May-2025 16:58:48 America/Bogota] CLIENT -> SERVER:         </ul>
+
+[16-May-2025 16:58:48 America/Bogota] CLIENT -> SERVER:         <p><b>Resumen de cambios:</b></p>
+
+[16-May-2025 16:58:48 America/Bogota] CLIENT -> SERVER:         <table border='1' cellpadding='4' cellspacing='0'><tr><th>Campo</th><th>Antes</th><th>Después</th></tr><tr><td>SAP</td><td>Hola</td><td>150035</td></tr><tr><td>TEMPORADA</td><td>OTOÑO/INVIERNO</td><td>OTO�O/INVIERNO</td></tr><tr><td>COMPOSICION_4</td><td>ALGODON TANGÜIS</td><td></td></tr></table>
+
+[16-May-2025 16:58:48 America/Bogota] CLIENT -> SERVER:         <p>Este es un mensaje automático.</p>
+
+[16-May-2025 16:58:48 America/Bogota] CLIENT -> SERVER:     
+
+[16-May-2025 16:58:48 America/Bogota] CLIENT -> SERVER: 
+
+[16-May-2025 16:58:48 America/Bogota] CLIENT -> SERVER: .
+
+[16-May-2025 16:58:50 America/Bogota] SERVER -> CLIENT: 250 OK id=1uG34r-0000000D5FC-3Pyb
+
+[16-May-2025 16:58:50 America/Bogota] CLIENT -> SERVER: QUIT
+
+[16-May-2025 16:58:50 America/Bogota] SERVER -> CLIENT: 221 cpanel6-co.conexcol.net closing connection
+
+[18-May-2025 11:05:22 America/Bogota] SERVER -> CLIENT: 220-cpanel6-co.conexcol.net ESMTP Exim 4.98.1 #2 Sun, 18 May 2025 11:05:22 -0500 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+[18-May-2025 11:05:22 America/Bogota] CLIENT -> SERVER: EHLO fds.com.co
+
+[18-May-2025 11:05:22 America/Bogota] SERVER -> CLIENT: 250-cpanel6-co.conexcol.net Hello fds.com.co [190.90.160.172]
+250-SIZE 209715200
+250-LIMITS MAILMAX=1000 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+[18-May-2025 11:05:22 America/Bogota] CLIENT -> SERVER: AUTH LOGIN
+
+[18-May-2025 11:05:22 America/Bogota] SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[18-May-2025 11:05:22 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[18-May-2025 11:05:22 America/Bogota] SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[18-May-2025 11:05:22 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[18-May-2025 11:05:22 America/Bogota] SERVER -> CLIENT: 235 Authentication succeeded
+
+[18-May-2025 11:05:22 America/Bogota] CLIENT -> SERVER: MAIL FROM:<notificaciones@fds.com.co>
+
+[18-May-2025 11:05:22 America/Bogota] SERVER -> CLIENT: 250 OK
+
+[18-May-2025 11:05:22 America/Bogota] CLIENT -> SERVER: RCPT TO:<fdstecnologia@fueradeserie.com.co>
+
+[18-May-2025 11:05:22 America/Bogota] SERVER -> CLIENT: 250 Accepted
+
+[18-May-2025 11:05:22 America/Bogota] CLIENT -> SERVER: DATA
+
+[18-May-2025 11:05:22 America/Bogota] SERVER -> CLIENT: 354 Enter message, ending with "." on a line by itself
+
+[18-May-2025 11:05:22 America/Bogota] CLIENT -> SERVER: Date: Sun, 18 May 2025 11:05:22 -0500
+
+[18-May-2025 11:05:22 America/Bogota] CLIENT -> SERVER: To: fdstecnologia@fueradeserie.com.co
+
+[18-May-2025 11:05:22 America/Bogota] CLIENT -> SERVER: From: Sistema de Cargas <notificaciones@fds.com.co>
+
+[18-May-2025 11:05:22 America/Bogota] CLIENT -> SERVER: Subject: =?iso-8859-1?Q?Modificaci=C3=B3n_de_carga_N=C2=B0_82?=
+
+[18-May-2025 11:05:22 America/Bogota] CLIENT -> SERVER: Message-ID: <VojeMVcbYKtrNMKlgfpiBeuql9W6cGKthz1RTXifQI@fds.com.co>
+
+[18-May-2025 11:05:22 America/Bogota] CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+[18-May-2025 11:05:22 America/Bogota] CLIENT -> SERVER: MIME-Version: 1.0
+
+[18-May-2025 11:05:22 America/Bogota] CLIENT -> SERVER: Content-Type: text/html; charset=iso-8859-1
+
+[18-May-2025 11:05:22 America/Bogota] CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+[18-May-2025 11:05:22 America/Bogota] CLIENT -> SERVER: 
+
+[18-May-2025 11:05:22 America/Bogota] CLIENT -> SERVER: 
+
+[18-May-2025 11:05:22 America/Bogota] CLIENT -> SERVER:         <p>Se ha realizado una modificación en la carga <b>N° 82</b>.</p>
+
+[18-May-2025 11:05:22 America/Bogota] CLIENT -> SERVER:         <ul>
+
+[18-May-2025 11:05:22 America/Bogota] CLIENT -> SERVER:             <li><b>Usuario:</b> Camilo Vera</li>
+
+[18-May-2025 11:05:22 America/Bogota] CLIENT -> SERVER:             <li><b>Fecha:</b> 2025-05-18 11:05:22</li>
+
+[18-May-2025 11:05:22 America/Bogota] CLIENT -> SERVER:         </ul>
+
+[18-May-2025 11:05:22 America/Bogota] CLIENT -> SERVER:         <p><b>Resumen de cambios:</b></p>
+
+[18-May-2025 11:05:22 America/Bogota] CLIENT -> SERVER:         <table border='1' cellpadding='4' cellspacing='0'><tr><th>Campo</th><th>Antes</th><th>Después</th></tr><tr><td>OCASION_DE_USO</td><td>ESSENTIALS</td><td>FAVORITO WOMAN</td></tr></table>
+
+[18-May-2025 11:05:22 America/Bogota] CLIENT -> SERVER:         <p>Este es un mensaje automático.</p>
+
+[18-May-2025 11:05:22 America/Bogota] CLIENT -> SERVER:     
+
+[18-May-2025 11:05:22 America/Bogota] CLIENT -> SERVER: 
+
+[18-May-2025 11:05:22 America/Bogota] CLIENT -> SERVER: .
+
+[18-May-2025 11:05:24 America/Bogota] SERVER -> CLIENT: 250 OK id=1uGgVu-0000000HMae-2YaD
+
+[18-May-2025 11:05:24 America/Bogota] CLIENT -> SERVER: QUIT
+
+[18-May-2025 11:05:24 America/Bogota] SERVER -> CLIENT: 221 cpanel6-co.conexcol.net closing connection
+
+[20-May-2025 09:00:24 America/Bogota] SERVER -> CLIENT: 220-cpanel6-co.conexcol.net ESMTP Exim 4.98.1 #2 Tue, 20 May 2025 09:00:24 -0500 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+[20-May-2025 09:00:24 America/Bogota] CLIENT -> SERVER: EHLO fds.com.co
+
+[20-May-2025 09:00:24 America/Bogota] SERVER -> CLIENT: 250-cpanel6-co.conexcol.net Hello fds.com.co [190.90.160.172]
+250-SIZE 209715200
+250-LIMITS MAILMAX=1000 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+[20-May-2025 09:00:24 America/Bogota] CLIENT -> SERVER: AUTH LOGIN
+
+[20-May-2025 09:00:24 America/Bogota] SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[20-May-2025 09:00:24 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[20-May-2025 09:00:24 America/Bogota] SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[20-May-2025 09:00:24 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[20-May-2025 09:00:24 America/Bogota] SERVER -> CLIENT: 235 Authentication succeeded
+
+[20-May-2025 09:00:24 America/Bogota] CLIENT -> SERVER: MAIL FROM:<notificaciones@fds.com.co>
+
+[20-May-2025 09:00:24 America/Bogota] SERVER -> CLIENT: 250 OK
+
+[20-May-2025 09:00:24 America/Bogota] CLIENT -> SERVER: RCPT TO:<fdstecnologia@fueradeserie.com.co>
+
+[20-May-2025 09:00:24 America/Bogota] SERVER -> CLIENT: 250 Accepted
+
+[20-May-2025 09:00:24 America/Bogota] CLIENT -> SERVER: DATA
+
+[20-May-2025 09:00:24 America/Bogota] SERVER -> CLIENT: 354 Enter message, ending with "." on a line by itself
+
+[20-May-2025 09:00:24 America/Bogota] CLIENT -> SERVER: Date: Tue, 20 May 2025 09:00:24 -0500
+
+[20-May-2025 09:00:24 America/Bogota] CLIENT -> SERVER: To: fdstecnologia@fueradeserie.com.co
+
+[20-May-2025 09:00:24 America/Bogota] CLIENT -> SERVER: From: Sistema de Cargas <notificaciones@fds.com.co>
+
+[20-May-2025 09:00:24 America/Bogota] CLIENT -> SERVER: Subject: =?iso-8859-1?Q?Modificaci=C3=B3n_de_carga_N=C2=B0_84?=
+
+[20-May-2025 09:00:24 America/Bogota] CLIENT -> SERVER: Message-ID: <RJrTflJtDnIgVo39PMPc4MEJKF1cNZcuj8wC3Cx0x8@fds.com.co>
+
+[20-May-2025 09:00:24 America/Bogota] CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+[20-May-2025 09:00:24 America/Bogota] CLIENT -> SERVER: MIME-Version: 1.0
+
+[20-May-2025 09:00:24 America/Bogota] CLIENT -> SERVER: Content-Type: text/html; charset=iso-8859-1
+
+[20-May-2025 09:00:24 America/Bogota] CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+[20-May-2025 09:00:24 America/Bogota] CLIENT -> SERVER: 
+
+[20-May-2025 09:00:24 America/Bogota] CLIENT -> SERVER: 
+
+[20-May-2025 09:00:24 America/Bogota] CLIENT -> SERVER:         <p>Se ha realizado una modificación en la carga <b>N° 84</b>.</p>
+
+[20-May-2025 09:00:24 America/Bogota] CLIENT -> SERVER:         <ul>
+
+[20-May-2025 09:00:24 America/Bogota] CLIENT -> SERVER:             <li><b>Usuario:</b> Camilo Vera</li>
+
+[20-May-2025 09:00:24 America/Bogota] CLIENT -> SERVER:             <li><b>Fecha:</b> 2025-05-20 09:00:24</li>
+
+[20-May-2025 09:00:24 America/Bogota] CLIENT -> SERVER:         </ul>
+
+[20-May-2025 09:00:24 America/Bogota] CLIENT -> SERVER:         <p><b>Resumen de cambios:</b></p>
+
+[20-May-2025 09:00:24 America/Bogota] CLIENT -> SERVER:         <table border='1' cellpadding='4' cellspacing='0'><tr><th>Campo</th><th>Antes</th><th>Después</th></tr><tr><td>YEAR</td><td>2023</td><td>2020</td></tr></table>
+
+[20-May-2025 09:00:24 America/Bogota] CLIENT -> SERVER:         <p>Este es un mensaje automático.</p>
+
+[20-May-2025 09:00:24 America/Bogota] CLIENT -> SERVER:     
+
+[20-May-2025 09:00:24 America/Bogota] CLIENT -> SERVER: 
+
+[20-May-2025 09:00:24 America/Bogota] CLIENT -> SERVER: .
+
+[20-May-2025 09:00:25 America/Bogota] SERVER -> CLIENT: 250 OK id=1uHNW5-00000008dE2-1SFW
+
+[20-May-2025 09:00:25 America/Bogota] CLIENT -> SERVER: QUIT
+
+[20-May-2025 09:00:25 America/Bogota] SERVER -> CLIENT: 221 cpanel6-co.conexcol.net closing connection
+
+[20-May-2025 09:02:36 America/Bogota] SERVER -> CLIENT: 220-cpanel6-co.conexcol.net ESMTP Exim 4.98.1 #2 Tue, 20 May 2025 09:02:36 -0500 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+[20-May-2025 09:02:36 America/Bogota] CLIENT -> SERVER: EHLO fds.com.co
+
+[20-May-2025 09:02:36 America/Bogota] SERVER -> CLIENT: 250-cpanel6-co.conexcol.net Hello fds.com.co [190.90.160.172]
+250-SIZE 209715200
+250-LIMITS MAILMAX=1000 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+[20-May-2025 09:02:36 America/Bogota] CLIENT -> SERVER: AUTH LOGIN
+
+[20-May-2025 09:02:36 America/Bogota] SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[20-May-2025 09:02:36 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[20-May-2025 09:02:36 America/Bogota] SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[20-May-2025 09:02:36 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[20-May-2025 09:02:36 America/Bogota] SERVER -> CLIENT: 235 Authentication succeeded
+
+[20-May-2025 09:02:36 America/Bogota] CLIENT -> SERVER: MAIL FROM:<notificaciones@fds.com.co>
+
+[20-May-2025 09:02:36 America/Bogota] SERVER -> CLIENT: 250 OK
+
+[20-May-2025 09:02:36 America/Bogota] CLIENT -> SERVER: RCPT TO:<fdstecnologia@fueradeserie.com.co>
+
+[20-May-2025 09:02:36 America/Bogota] SERVER -> CLIENT: 250 Accepted
+
+[20-May-2025 09:02:36 America/Bogota] CLIENT -> SERVER: DATA
+
+[20-May-2025 09:02:36 America/Bogota] SERVER -> CLIENT: 354 Enter message, ending with "." on a line by itself
+
+[20-May-2025 09:02:36 America/Bogota] CLIENT -> SERVER: Date: Tue, 20 May 2025 09:02:36 -0500
+
+[20-May-2025 09:02:36 America/Bogota] CLIENT -> SERVER: To: fdstecnologia@fueradeserie.com.co
+
+[20-May-2025 09:02:36 America/Bogota] CLIENT -> SERVER: From: Sistema de Cargas <notificaciones@fds.com.co>
+
+[20-May-2025 09:02:36 America/Bogota] CLIENT -> SERVER: Subject: =?UTF-8?Q?Modificaci=C3=B3n_de_carga_N=C2=B0_84?=
+
+[20-May-2025 09:02:36 America/Bogota] CLIENT -> SERVER: Message-ID: <llEJR0C8dMgYrDJB6AnFN2JGngcaoPbv3XmvcZcyigw@fds.com.co>
+
+[20-May-2025 09:02:36 America/Bogota] CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+[20-May-2025 09:02:36 America/Bogota] CLIENT -> SERVER: MIME-Version: 1.0
+
+[20-May-2025 09:02:36 America/Bogota] CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+
+[20-May-2025 09:02:36 America/Bogota] CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+[20-May-2025 09:02:36 America/Bogota] CLIENT -> SERVER: 
+
+[20-May-2025 09:02:36 America/Bogota] CLIENT -> SERVER: 
+
+[20-May-2025 09:02:36 America/Bogota] CLIENT -> SERVER:         <p>Se ha realizado una modificación en la carga <b>N° 84</b>.</p>
+
+[20-May-2025 09:02:36 America/Bogota] CLIENT -> SERVER:         <ul>
+
+[20-May-2025 09:02:36 America/Bogota] CLIENT -> SERVER:             <li><b>Usuario:</b> Camilo Vera</li>
+
+[20-May-2025 09:02:36 America/Bogota] CLIENT -> SERVER:             <li><b>Fecha:</b> 2025-05-20 09:02:36</li>
+
+[20-May-2025 09:02:36 America/Bogota] CLIENT -> SERVER:         </ul>
+
+[20-May-2025 09:02:36 America/Bogota] CLIENT -> SERVER:         <p><b>Resumen de cambios:</b></p>
+
+[20-May-2025 09:02:36 America/Bogota] CLIENT -> SERVER:         <table border='1' cellpadding='4' cellspacing='0'><tr><th>Campo</th><th>Antes</th><th>Después</th></tr><tr><td>YEAR</td><td>2020</td><td>2023</td></tr></table>
+
+[20-May-2025 09:02:36 America/Bogota] CLIENT -> SERVER:         <p>Este es un mensaje automático.</p>
+
+[20-May-2025 09:02:36 America/Bogota] CLIENT -> SERVER:     
+
+[20-May-2025 09:02:36 America/Bogota] CLIENT -> SERVER: 
+
+[20-May-2025 09:02:36 America/Bogota] CLIENT -> SERVER: .
+
+[20-May-2025 09:02:37 America/Bogota] SERVER -> CLIENT: 250 OK id=1uHNYD-00000008fUX-1Pa5
+
+[20-May-2025 09:02:37 America/Bogota] CLIENT -> SERVER: QUIT
+
+[20-May-2025 09:02:37 America/Bogota] SERVER -> CLIENT: 221 cpanel6-co.conexcol.net closing connection
+
+[20-May-2025 09:05:20 America/Bogota] SERVER -> CLIENT: 220-cpanel6-co.conexcol.net ESMTP Exim 4.98.1 #2 Tue, 20 May 2025 09:05:20 -0500 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+[20-May-2025 09:05:20 America/Bogota] CLIENT -> SERVER: EHLO fds.com.co
+
+[20-May-2025 09:05:20 America/Bogota] SERVER -> CLIENT: 250-cpanel6-co.conexcol.net Hello fds.com.co [190.90.160.172]
+250-SIZE 209715200
+250-LIMITS MAILMAX=1000 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+[20-May-2025 09:05:20 America/Bogota] CLIENT -> SERVER: AUTH LOGIN
+
+[20-May-2025 09:05:20 America/Bogota] SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[20-May-2025 09:05:20 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[20-May-2025 09:05:20 America/Bogota] SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[20-May-2025 09:05:20 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[20-May-2025 09:05:20 America/Bogota] SERVER -> CLIENT: 235 Authentication succeeded
+
+[20-May-2025 09:05:20 America/Bogota] CLIENT -> SERVER: MAIL FROM:<notificaciones@fds.com.co>
+
+[20-May-2025 09:05:20 America/Bogota] SERVER -> CLIENT: 250 OK
+
+[20-May-2025 09:05:20 America/Bogota] CLIENT -> SERVER: RCPT TO:<fdstecnologia@fueradeserie.com.co>
+
+[20-May-2025 09:05:20 America/Bogota] SERVER -> CLIENT: 250 Accepted
+
+[20-May-2025 09:05:20 America/Bogota] CLIENT -> SERVER: DATA
+
+[20-May-2025 09:05:20 America/Bogota] SERVER -> CLIENT: 354 Enter message, ending with "." on a line by itself
+
+[20-May-2025 09:05:20 America/Bogota] CLIENT -> SERVER: Date: Tue, 20 May 2025 09:05:20 -0500
+
+[20-May-2025 09:05:20 America/Bogota] CLIENT -> SERVER: To: fdstecnologia@fueradeserie.com.co
+
+[20-May-2025 09:05:20 America/Bogota] CLIENT -> SERVER: From: Sistema de Cargas <notificaciones@fds.com.co>
+
+[20-May-2025 09:05:20 America/Bogota] CLIENT -> SERVER: Subject: =?UTF-8?Q?Modificaci=C3=B3n_de_carga_N=C2=B0_83_en_el_sistema_de_creacion_de_SKU's?=
+
+[20-May-2025 09:05:20 America/Bogota] CLIENT -> SERVER: Message-ID: <dvZCLTfAe5GtaJ88xouQV3sIp2MNsEKz2DL98828@fds.com.co>
+
+[20-May-2025 09:05:20 America/Bogota] CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+[20-May-2025 09:05:20 America/Bogota] CLIENT -> SERVER: MIME-Version: 1.0
+
+[20-May-2025 09:05:20 America/Bogota] CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+
+[20-May-2025 09:05:20 America/Bogota] CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+[20-May-2025 09:05:20 America/Bogota] CLIENT -> SERVER: 
+
+[20-May-2025 09:05:20 America/Bogota] CLIENT -> SERVER: 
+
+[20-May-2025 09:05:20 America/Bogota] CLIENT -> SERVER:         <p>Se ha realizado una modificación en la carga <b>N° 83</b>.</p>
+
+[20-May-2025 09:05:20 America/Bogota] CLIENT -> SERVER:         <ul>
+
+[20-May-2025 09:05:20 America/Bogota] CLIENT -> SERVER:             <li><b>Usuario:</b> Camilo Vera</li>
+
+[20-May-2025 09:05:20 America/Bogota] CLIENT -> SERVER:             <li><b>Fecha:</b> 2025-05-20 09:05:20</li>
+
+[20-May-2025 09:05:20 America/Bogota] CLIENT -> SERVER:         </ul>
+
+[20-May-2025 09:05:20 America/Bogota] CLIENT -> SERVER:         <p><b>Resumen de cambios:</b></p>
+
+[20-May-2025 09:05:20 America/Bogota] CLIENT -> SERVER:         <table border='1' cellpadding='4' cellspacing='0'><tr><th>Campo</th><th>Antes</th><th>Después</th></tr><tr><td>YEAR</td><td>2021</td><td>2023</td></tr></table>
+
+[20-May-2025 09:05:20 America/Bogota] CLIENT -> SERVER:         <p>Este es un mensaje automático. Por favor no responder.</p>
+
+[20-May-2025 09:05:20 America/Bogota] CLIENT -> SERVER:     
+
+[20-May-2025 09:05:20 America/Bogota] CLIENT -> SERVER: 
+
+[20-May-2025 09:05:20 America/Bogota] CLIENT -> SERVER: .
+
+[20-May-2025 09:05:22 America/Bogota] SERVER -> CLIENT: 250 OK id=1uHNar-00000008iDc-2uv4
+
+[20-May-2025 09:05:22 America/Bogota] CLIENT -> SERVER: QUIT
+
+[20-May-2025 09:05:22 America/Bogota] SERVER -> CLIENT: 221 cpanel6-co.conexcol.net closing connection
+
+[20-May-2025 09:20:52 America/Bogota] PHP Fatal error:  Uncaught TypeError: htmlspecialchars(): Argument #1 ($string) must be of type string, array given in /home/services/public_html/diseno/backend/enviar_correo_nueva_carga.php:21
+Stack trace:
+#0 /home/services/public_html/diseno/backend/enviar_correo_nueva_carga.php(21): htmlspecialchars()
+#1 /home/services/public_html/diseno/backend/save_manual.php(77): enviarCorreoNuevaCarga()
+#2 {main}
+  thrown in /home/services/public_html/diseno/backend/enviar_correo_nueva_carga.php on line 21
+[20-May-2025 09:47:01 America/Bogota] SERVER -> CLIENT: 220-cpanel6-co.conexcol.net ESMTP Exim 4.98.1 #2 Tue, 20 May 2025 09:47:01 -0500 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+[20-May-2025 09:47:01 America/Bogota] CLIENT -> SERVER: EHLO fds.com.co
+
+[20-May-2025 09:47:01 America/Bogota] SERVER -> CLIENT: 250-cpanel6-co.conexcol.net Hello fds.com.co [190.90.160.172]
+250-SIZE 209715200
+250-LIMITS MAILMAX=1000 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+[20-May-2025 09:47:01 America/Bogota] CLIENT -> SERVER: AUTH LOGIN
+
+[20-May-2025 09:47:01 America/Bogota] SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[20-May-2025 09:47:01 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[20-May-2025 09:47:01 America/Bogota] SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[20-May-2025 09:47:01 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[20-May-2025 09:47:01 America/Bogota] SERVER -> CLIENT: 235 Authentication succeeded
+
+[20-May-2025 09:47:01 America/Bogota] CLIENT -> SERVER: MAIL FROM:<notificaciones@fds.com.co>
+
+[20-May-2025 09:47:01 America/Bogota] SERVER -> CLIENT: 250 OK
+
+[20-May-2025 09:47:01 America/Bogota] CLIENT -> SERVER: RCPT TO:<fdstecnologia@fueradeserie.com.co>
+
+[20-May-2025 09:47:01 America/Bogota] SERVER -> CLIENT: 250 Accepted
+
+[20-May-2025 09:47:01 America/Bogota] CLIENT -> SERVER: DATA
+
+[20-May-2025 09:47:01 America/Bogota] SERVER -> CLIENT: 354 Enter message, ending with "." on a line by itself
+
+[20-May-2025 09:47:01 America/Bogota] CLIENT -> SERVER: Date: Tue, 20 May 2025 09:47:01 -0500
+
+[20-May-2025 09:47:01 America/Bogota] CLIENT -> SERVER: To: fdstecnologia@fueradeserie.com.co
+
+[20-May-2025 09:47:01 America/Bogota] CLIENT -> SERVER: From: Sistema de Cargas <notificaciones@fds.com.co>
+
+[20-May-2025 09:47:01 America/Bogota] CLIENT -> SERVER: Subject: =?UTF-8?Q?Modificaci=C3=B3n_de_carga_N=C2=B0_85_en_el_sistema_de_creacion_de_SKU's?=
+
+[20-May-2025 09:47:01 America/Bogota] CLIENT -> SERVER: Message-ID: <mBqx4LhQd7otchljb4AbPKQx3lVPj7Vd7gwgoY10T4@fds.com.co>
+
+[20-May-2025 09:47:01 America/Bogota] CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+[20-May-2025 09:47:01 America/Bogota] CLIENT -> SERVER: MIME-Version: 1.0
+
+[20-May-2025 09:47:01 America/Bogota] CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+
+[20-May-2025 09:47:01 America/Bogota] CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+[20-May-2025 09:47:01 America/Bogota] CLIENT -> SERVER: 
+
+[20-May-2025 09:47:01 America/Bogota] CLIENT -> SERVER: 
+
+[20-May-2025 09:47:01 America/Bogota] CLIENT -> SERVER:         <p>Se ha realizado una modificación en la carga <b>N° 85</b> (Código SAP: <b>100</b>).</p>
+
+[20-May-2025 09:47:01 America/Bogota] CLIENT -> SERVER:         <ul>
+
+[20-May-2025 09:47:01 America/Bogota] CLIENT -> SERVER:             <li><b>Usuario:</b> Camilo Vera</li>
+
+[20-May-2025 09:47:01 America/Bogota] CLIENT -> SERVER:             <li><b>Fecha:</b> 2025-05-20 09:47:01</li>
+
+[20-May-2025 09:47:01 America/Bogota] CLIENT -> SERVER:         </ul>
+
+[20-May-2025 09:47:01 America/Bogota] CLIENT -> SERVER:         <p><b>Resumen de cambios:</b></p>
+
+[20-May-2025 09:47:01 America/Bogota] CLIENT -> SERVER:         <table border='1' cellpadding='4' cellspacing='0'><tr><th>Campo</th><th>Antes</th><th>Después</th></tr><tr><td>YEAR</td><td>2021</td><td>2024</td></tr><tr><td>INSTRUCCION_DE_LAVADO_1</td><td>TEMP MAX 30°CPROC MODERADO</td><td>TEMP MAX 30�CPROC MODERADO</td></tr></table>
+
+[20-May-2025 09:47:01 America/Bogota] CLIENT -> SERVER:         <p>Este es un mensaje automático. Por favor no responder.</p>
+
+[20-May-2025 09:47:01 America/Bogota] CLIENT -> SERVER:     
+
+[20-May-2025 09:47:01 America/Bogota] CLIENT -> SERVER: 
+
+[20-May-2025 09:47:01 America/Bogota] CLIENT -> SERVER: .
+
+[20-May-2025 09:47:06 America/Bogota] SERVER -> CLIENT: 250 OK id=1uHOFC-00000009Nbp-3eLE
+
+[20-May-2025 09:47:06 America/Bogota] CLIENT -> SERVER: QUIT
+
+[20-May-2025 09:47:06 America/Bogota] SERVER -> CLIENT: 221 cpanel6-co.conexcol.net closing connection
+
+[20-May-2025 09:52:56 America/Bogota] SERVER -> CLIENT: 220-cpanel6-co.conexcol.net ESMTP Exim 4.98.1 #2 Tue, 20 May 2025 09:52:56 -0500 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+[20-May-2025 09:52:56 America/Bogota] CLIENT -> SERVER: EHLO fds.com.co
+
+[20-May-2025 09:52:56 America/Bogota] SERVER -> CLIENT: 250-cpanel6-co.conexcol.net Hello fds.com.co [190.90.160.172]
+250-SIZE 209715200
+250-LIMITS MAILMAX=1000 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+[20-May-2025 09:52:56 America/Bogota] CLIENT -> SERVER: AUTH LOGIN
+
+[20-May-2025 09:52:56 America/Bogota] SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[20-May-2025 09:52:56 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[20-May-2025 09:52:56 America/Bogota] SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[20-May-2025 09:52:56 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[20-May-2025 09:52:56 America/Bogota] SERVER -> CLIENT: 235 Authentication succeeded
+
+[20-May-2025 09:52:56 America/Bogota] CLIENT -> SERVER: MAIL FROM:<notificaciones@fds.com.co>
+
+[20-May-2025 09:52:56 America/Bogota] SERVER -> CLIENT: 250 OK
+
+[20-May-2025 09:52:56 America/Bogota] CLIENT -> SERVER: RCPT TO:<fdstecnologia@fueradeserie.com.co>
+
+[20-May-2025 09:52:56 America/Bogota] SERVER -> CLIENT: 250 Accepted
+
+[20-May-2025 09:52:56 America/Bogota] CLIENT -> SERVER: DATA
+
+[20-May-2025 09:52:56 America/Bogota] SERVER -> CLIENT: 354 Enter message, ending with "." on a line by itself
+
+[20-May-2025 09:52:56 America/Bogota] CLIENT -> SERVER: Date: Tue, 20 May 2025 09:52:56 -0500
+
+[20-May-2025 09:52:56 America/Bogota] CLIENT -> SERVER: To: fdstecnologia@fueradeserie.com.co
+
+[20-May-2025 09:52:56 America/Bogota] CLIENT -> SERVER: From: Sistema de Cargas <notificaciones@fds.com.co>
+
+[20-May-2025 09:52:56 America/Bogota] CLIENT -> SERVER: Subject: =?UTF-8?Q?Modificaci=C3=B3n_de_carga_N=C2=B0_85_en_el_sistema_de_creacion_de_SKU's?=
+
+[20-May-2025 09:52:56 America/Bogota] CLIENT -> SERVER: Message-ID: <IN2Lx9nnBAJ5FbCgDmz4BfVBOFAOZPjrCaWtAYgvlhQ@fds.com.co>
+
+[20-May-2025 09:52:56 America/Bogota] CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+[20-May-2025 09:52:56 America/Bogota] CLIENT -> SERVER: MIME-Version: 1.0
+
+[20-May-2025 09:52:56 America/Bogota] CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+
+[20-May-2025 09:52:56 America/Bogota] CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+[20-May-2025 09:52:56 America/Bogota] CLIENT -> SERVER: 
+
+[20-May-2025 09:52:56 America/Bogota] CLIENT -> SERVER: 
+
+[20-May-2025 09:52:56 America/Bogota] CLIENT -> SERVER:         <p>Se ha realizado una modificación en la carga <b>N° 85</b> (Código SAP: <b>100</b>).</p>
+
+[20-May-2025 09:52:56 America/Bogota] CLIENT -> SERVER:         <ul>
+
+[20-May-2025 09:52:56 America/Bogota] CLIENT -> SERVER:             <li><b>Usuario:</b> Camilo Vera</li>
+
+[20-May-2025 09:52:56 America/Bogota] CLIENT -> SERVER:             <li><b>Fecha:</b> 2025-05-20 09:52:56</li>
+
+[20-May-2025 09:52:56 America/Bogota] CLIENT -> SERVER:         </ul>
+
+[20-May-2025 09:52:56 America/Bogota] CLIENT -> SERVER:         <p><b>Resumen de cambios:</b></p>
+
+[20-May-2025 09:52:56 America/Bogota] CLIENT -> SERVER:         <table border='1' cellpadding='4' cellspacing='0'><tr><th>Campo</th><th>Antes</th><th>Después</th></tr><tr><td>INSTRUCCION_DE_LAVADO_1</td><td>TEMP MAX 30�CPROC MODERADO</td><td>TEMP MAX 30°CPROC MODERADO</td></tr></table>
+
+[20-May-2025 09:52:56 America/Bogota] CLIENT -> SERVER:         <p>Este es un mensaje automático. Por favor no responder.</p>
+
+[20-May-2025 09:52:56 America/Bogota] CLIENT -> SERVER:     
+
+[20-May-2025 09:52:56 America/Bogota] CLIENT -> SERVER: 
+
+[20-May-2025 09:52:56 America/Bogota] CLIENT -> SERVER: .
+
+[20-May-2025 09:52:57 America/Bogota] SERVER -> CLIENT: 250 OK id=1uHOKv-00000009Sxw-0MMw
+
+[20-May-2025 09:52:57 America/Bogota] CLIENT -> SERVER: QUIT
+
+[20-May-2025 09:52:57 America/Bogota] SERVER -> CLIENT: 221 cpanel6-co.conexcol.net closing connection
+
+[20-May-2025 09:53:56 America/Bogota] SERVER -> CLIENT: 220-cpanel6-co.conexcol.net ESMTP Exim 4.98.1 #2 Tue, 20 May 2025 09:53:56 -0500 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+[20-May-2025 09:53:56 America/Bogota] CLIENT -> SERVER: EHLO fds.com.co
+
+[20-May-2025 09:53:56 America/Bogota] SERVER -> CLIENT: 250-cpanel6-co.conexcol.net Hello fds.com.co [190.90.160.172]
+250-SIZE 209715200
+250-LIMITS MAILMAX=1000 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+[20-May-2025 09:53:56 America/Bogota] CLIENT -> SERVER: AUTH LOGIN
+
+[20-May-2025 09:53:56 America/Bogota] SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[20-May-2025 09:53:56 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[20-May-2025 09:53:56 America/Bogota] SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[20-May-2025 09:53:56 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[20-May-2025 09:53:56 America/Bogota] SERVER -> CLIENT: 235 Authentication succeeded
+
+[20-May-2025 09:53:56 America/Bogota] CLIENT -> SERVER: MAIL FROM:<notificaciones@fds.com.co>
+
+[20-May-2025 09:53:56 America/Bogota] SERVER -> CLIENT: 250 OK
+
+[20-May-2025 09:53:56 America/Bogota] CLIENT -> SERVER: RCPT TO:<fdstecnologia@fueradeserie.com.co>
+
+[20-May-2025 09:53:56 America/Bogota] SERVER -> CLIENT: 250 Accepted
+
+[20-May-2025 09:53:56 America/Bogota] CLIENT -> SERVER: DATA
+
+[20-May-2025 09:53:56 America/Bogota] SERVER -> CLIENT: 354 Enter message, ending with "." on a line by itself
+
+[20-May-2025 09:53:56 America/Bogota] CLIENT -> SERVER: Date: Tue, 20 May 2025 09:53:56 -0500
+
+[20-May-2025 09:53:56 America/Bogota] CLIENT -> SERVER: To: fdstecnologia@fueradeserie.com.co
+
+[20-May-2025 09:53:56 America/Bogota] CLIENT -> SERVER: From: Sistema de Cargas <notificaciones@fds.com.co>
+
+[20-May-2025 09:53:56 America/Bogota] CLIENT -> SERVER: Subject: =?UTF-8?Q?Modificaci=C3=B3n_de_carga_N=C2=B0_85_en_el_sistema_de_creacion_de_SKU's?=
+
+[20-May-2025 09:53:56 America/Bogota] CLIENT -> SERVER: Message-ID: <oEMrPlOiUxzAsE8b4bo9qgOgYtNnmtjeEdA2cVHWg@fds.com.co>
+
+[20-May-2025 09:53:56 America/Bogota] CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+[20-May-2025 09:53:56 America/Bogota] CLIENT -> SERVER: MIME-Version: 1.0
+
+[20-May-2025 09:53:56 America/Bogota] CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+
+[20-May-2025 09:53:56 America/Bogota] CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+[20-May-2025 09:53:56 America/Bogota] CLIENT -> SERVER: 
+
+[20-May-2025 09:53:56 America/Bogota] CLIENT -> SERVER: 
+
+[20-May-2025 09:53:56 America/Bogota] CLIENT -> SERVER:         <p>Se ha realizado una modificación en la carga <b>N° 85</b>.</p>
+
+[20-May-2025 09:53:56 America/Bogota] CLIENT -> SERVER:         <ul>
+
+[20-May-2025 09:53:56 America/Bogota] CLIENT -> SERVER:             <li><b>Usuario:</b> Camilo Vera</li>
+
+[20-May-2025 09:53:56 America/Bogota] CLIENT -> SERVER:             <li><b>Fecha:</b> 2025-05-20 09:53:56</li>
+
+[20-May-2025 09:53:56 America/Bogota] CLIENT -> SERVER:         </ul>
+
+[20-May-2025 09:53:56 America/Bogota] CLIENT -> SERVER:         <p><b>Resumen de cambios:</b></p>
+
+[20-May-2025 09:53:56 America/Bogota] CLIENT -> SERVER:         <table border='1' cellpadding='4' cellspacing='0'><tr><th>Campo</th><th>Antes</th><th>Después</th></tr><tr><td>SAP</td><td>100</td><td></td></tr><tr><td>INSTRUCCION_DE_LAVADO_1</td><td>TEMP MAX 30°CPROC MODERADO</td><td>TEMP MAX 30�CPROC MODERADO</td></tr></table>
+
+[20-May-2025 09:53:56 America/Bogota] CLIENT -> SERVER:         <p>Este es un mensaje automático. Por favor no responder.</p>
+
+[20-May-2025 09:53:56 America/Bogota] CLIENT -> SERVER:     
+
+[20-May-2025 09:53:56 America/Bogota] CLIENT -> SERVER: 
+
+[20-May-2025 09:53:56 America/Bogota] CLIENT -> SERVER: .
+
+[20-May-2025 09:53:58 America/Bogota] SERVER -> CLIENT: 250 OK id=1uHOLt-00000009Tri-2ZNc
+
+[20-May-2025 09:53:58 America/Bogota] CLIENT -> SERVER: QUIT
+
+[20-May-2025 09:53:58 America/Bogota] SERVER -> CLIENT: 221 cpanel6-co.conexcol.net closing connection
+
+[20-May-2025 11:42:54 America/Bogota] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'correo electronico' in 'SELECT' in /home/services/public_html/diseno/backend/update_manual.php:37
+Stack trace:
+#0 /home/services/public_html/diseno/backend/update_manual.php(37): PDO->prepare()
+#1 /home/services/public_html/diseno/backend/update_manual.php(157): obtenerDestinatarios()
+#2 {main}
+  thrown in /home/services/public_html/diseno/backend/update_manual.php on line 37
+[20-May-2025 11:43:33 America/Bogota] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'correo electronico' in 'SELECT' in /home/services/public_html/diseno/backend/update_manual.php:37
+Stack trace:
+#0 /home/services/public_html/diseno/backend/update_manual.php(37): PDO->prepare()
+#1 /home/services/public_html/diseno/backend/update_manual.php(157): obtenerDestinatarios()
+#2 {main}
+  thrown in /home/services/public_html/diseno/backend/update_manual.php on line 37
+[20-May-2025 11:44:09 America/Bogota] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'correo electronico' in 'SELECT' in /home/services/public_html/diseno/backend/update_manual.php:37
+Stack trace:
+#0 /home/services/public_html/diseno/backend/update_manual.php(37): PDO->prepare()
+#1 /home/services/public_html/diseno/backend/update_manual.php(157): obtenerDestinatarios()
+#2 {main}
+  thrown in /home/services/public_html/diseno/backend/update_manual.php on line 37
+[20-May-2025 11:45:20 America/Bogota] PHP Warning:  Undefined array key "correo electronico" in /home/services/public_html/diseno/backend/update_manual.php on line 42
+[20-May-2025 11:46:14 America/Bogota] SERVER -> CLIENT: 220-cpanel6-co.conexcol.net ESMTP Exim 4.98.1 #2 Tue, 20 May 2025 11:46:14 -0500 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+[20-May-2025 11:46:14 America/Bogota] CLIENT -> SERVER: EHLO fds.com.co
+
+[20-May-2025 11:46:14 America/Bogota] SERVER -> CLIENT: 250-cpanel6-co.conexcol.net Hello fds.com.co [190.90.160.172]
+250-SIZE 209715200
+250-LIMITS MAILMAX=1000 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+[20-May-2025 11:46:14 America/Bogota] CLIENT -> SERVER: AUTH LOGIN
+
+[20-May-2025 11:46:14 America/Bogota] SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[20-May-2025 11:46:14 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[20-May-2025 11:46:14 America/Bogota] SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[20-May-2025 11:46:14 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[20-May-2025 11:46:14 America/Bogota] SERVER -> CLIENT: 235 Authentication succeeded
+
+[20-May-2025 11:46:14 America/Bogota] CLIENT -> SERVER: MAIL FROM:<notificaciones@fds.com.co>
+
+[20-May-2025 11:46:14 America/Bogota] SERVER -> CLIENT: 250 OK
+
+[20-May-2025 11:46:14 America/Bogota] CLIENT -> SERVER: RCPT TO:<fdstecnologia@fueradeserie.com.co>
+
+[20-May-2025 11:46:14 America/Bogota] SERVER -> CLIENT: 250 Accepted
+
+[20-May-2025 11:46:14 America/Bogota] CLIENT -> SERVER: DATA
+
+[20-May-2025 11:46:14 America/Bogota] SERVER -> CLIENT: 354 Enter message, ending with "." on a line by itself
+
+[20-May-2025 11:46:14 America/Bogota] CLIENT -> SERVER: Date: Tue, 20 May 2025 11:46:13 -0500
+
+[20-May-2025 11:46:14 America/Bogota] CLIENT -> SERVER: To: fdstecnologia@fueradeserie.com.co
+
+[20-May-2025 11:46:14 America/Bogota] CLIENT -> SERVER: From: Sistema de Cargas <notificaciones@fds.com.co>
+
+[20-May-2025 11:46:14 America/Bogota] CLIENT -> SERVER: Subject: =?UTF-8?Q?Modificaci=C3=B3n_de_carga_N=C2=B0_85_en_el_sistema_de_creacion_de_SKU's?=
+
+[20-May-2025 11:46:14 America/Bogota] CLIENT -> SERVER: Message-ID: <zsBTM1tjVzsrnmfcaOqUdWf89sjUgru0TgZvUROS1Cc@fds.com.co>
+
+[20-May-2025 11:46:14 America/Bogota] CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+[20-May-2025 11:46:14 America/Bogota] CLIENT -> SERVER: MIME-Version: 1.0
+
+[20-May-2025 11:46:14 America/Bogota] CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+
+[20-May-2025 11:46:14 America/Bogota] CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+[20-May-2025 11:46:14 America/Bogota] CLIENT -> SERVER: 
+
+[20-May-2025 11:46:14 America/Bogota] CLIENT -> SERVER: 
+
+[20-May-2025 11:46:14 America/Bogota] CLIENT -> SERVER:         <p>Se ha realizado una modificación en la carga <b>N° 85</b> (Código SAP: <b>200</b>).</p>
+
+[20-May-2025 11:46:14 America/Bogota] CLIENT -> SERVER:         <ul>
+
+[20-May-2025 11:46:14 America/Bogota] CLIENT -> SERVER:             <li><b>Usuario:</b> Camilo Vera</li>
+
+[20-May-2025 11:46:14 America/Bogota] CLIENT -> SERVER:             <li><b>Fecha:</b> 2025-05-20 11:46:13</li>
+
+[20-May-2025 11:46:14 America/Bogota] CLIENT -> SERVER:         </ul>
+
+[20-May-2025 11:46:14 America/Bogota] CLIENT -> SERVER:         <p><b>Resumen de cambios:</b></p>
+
+[20-May-2025 11:46:14 America/Bogota] CLIENT -> SERVER:         <table border='1' cellpadding='4' cellspacing='0'><tr><th>Campo</th><th>Antes</th><th>Después</th></tr><tr><td>YEAR</td><td>2023</td><td>2021</td></tr></table>
+
+[20-May-2025 11:46:14 America/Bogota] CLIENT -> SERVER:         <p>Este es un mensaje automático. Por favor no responder.</p>
+
+[20-May-2025 11:46:14 America/Bogota] CLIENT -> SERVER:     
+
+[20-May-2025 11:46:14 America/Bogota] CLIENT -> SERVER: 
+
+[20-May-2025 11:46:14 America/Bogota] CLIENT -> SERVER: .
+
+[20-May-2025 11:46:16 America/Bogota] SERVER -> CLIENT: 250 OK id=1uHQ6Y-0000000BCfR-471L
+
+[20-May-2025 11:46:16 America/Bogota] CLIENT -> SERVER: QUIT
+
+[20-May-2025 11:46:16 America/Bogota] SERVER -> CLIENT: 221 cpanel6-co.conexcol.net closing connection
+
+[20-May-2025 11:47:17 America/Bogota] SERVER -> CLIENT: 220-cpanel6-co.conexcol.net ESMTP Exim 4.98.1 #2 Tue, 20 May 2025 11:47:17 -0500 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+[20-May-2025 11:47:17 America/Bogota] CLIENT -> SERVER: EHLO fds.com.co
+
+[20-May-2025 11:47:17 America/Bogota] SERVER -> CLIENT: 250-cpanel6-co.conexcol.net Hello fds.com.co [190.90.160.172]
+250-SIZE 209715200
+250-LIMITS MAILMAX=1000 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+[20-May-2025 11:47:17 America/Bogota] CLIENT -> SERVER: AUTH LOGIN
+
+[20-May-2025 11:47:17 America/Bogota] SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[20-May-2025 11:47:17 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[20-May-2025 11:47:17 America/Bogota] SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[20-May-2025 11:47:17 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[20-May-2025 11:47:17 America/Bogota] SERVER -> CLIENT: 235 Authentication succeeded
+
+[20-May-2025 11:47:17 America/Bogota] CLIENT -> SERVER: MAIL FROM:<notificaciones@fds.com.co>
+
+[20-May-2025 11:47:17 America/Bogota] SERVER -> CLIENT: 250 OK
+
+[20-May-2025 11:47:17 America/Bogota] CLIENT -> SERVER: RCPT TO:<fdstecnologia@fueradeserie.com.co>
+
+[20-May-2025 11:47:17 America/Bogota] SERVER -> CLIENT: 250 Accepted
+
+[20-May-2025 11:47:17 America/Bogota] CLIENT -> SERVER: RCPT TO:<camilov0310@gmail.com>
+
+[20-May-2025 11:47:17 America/Bogota] SERVER -> CLIENT: 250 Accepted
+
+[20-May-2025 11:47:17 America/Bogota] CLIENT -> SERVER: DATA
+
+[20-May-2025 11:47:17 America/Bogota] SERVER -> CLIENT: 354 Enter message, ending with "." on a line by itself
+
+[20-May-2025 11:47:17 America/Bogota] CLIENT -> SERVER: Date: Tue, 20 May 2025 11:47:17 -0500
+
+[20-May-2025 11:47:17 America/Bogota] CLIENT -> SERVER: To: fdstecnologia@fueradeserie.com.co, camilov0310@gmail.com
+
+[20-May-2025 11:47:17 America/Bogota] CLIENT -> SERVER: From: Sistema de Cargas <notificaciones@fds.com.co>
+
+[20-May-2025 11:47:17 America/Bogota] CLIENT -> SERVER: Subject: =?UTF-8?Q?Modificaci=C3=B3n_de_carga_N=C2=B0_85_en_el_sistema_de_creacion_de_SKU's?=
+
+[20-May-2025 11:47:17 America/Bogota] CLIENT -> SERVER: Message-ID: <f0G6LaiPiIp5V9nrVEGISUmY1hqMyHa06tavM2LNXo@fds.com.co>
+
+[20-May-2025 11:47:17 America/Bogota] CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+[20-May-2025 11:47:17 America/Bogota] CLIENT -> SERVER: MIME-Version: 1.0
+
+[20-May-2025 11:47:17 America/Bogota] CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+
+[20-May-2025 11:47:17 America/Bogota] CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+[20-May-2025 11:47:17 America/Bogota] CLIENT -> SERVER: 
+
+[20-May-2025 11:47:17 America/Bogota] CLIENT -> SERVER: 
+
+[20-May-2025 11:47:17 America/Bogota] CLIENT -> SERVER:         <p>Se ha realizado una modificación en la carga <b>N° 85</b> (Código SAP: <b>200</b>).</p>
+
+[20-May-2025 11:47:17 America/Bogota] CLIENT -> SERVER:         <ul>
+
+[20-May-2025 11:47:17 America/Bogota] CLIENT -> SERVER:             <li><b>Usuario:</b> Camilo Vera</li>
+
+[20-May-2025 11:47:17 America/Bogota] CLIENT -> SERVER:             <li><b>Fecha:</b> 2025-05-20 11:47:17</li>
+
+[20-May-2025 11:47:17 America/Bogota] CLIENT -> SERVER:         </ul>
+
+[20-May-2025 11:47:17 America/Bogota] CLIENT -> SERVER:         <p><b>Resumen de cambios:</b></p>
+
+[20-May-2025 11:47:17 America/Bogota] CLIENT -> SERVER:         <table border='1' cellpadding='4' cellspacing='0'><tr><th>Campo</th><th>Antes</th><th>Después</th></tr><tr><td>YEAR</td><td>2021</td><td>2026</td></tr></table>
+
+[20-May-2025 11:47:17 America/Bogota] CLIENT -> SERVER:         <p>Este es un mensaje automático. Por favor no responder.</p>
+
+[20-May-2025 11:47:17 America/Bogota] CLIENT -> SERVER:     
+
+[20-May-2025 11:47:17 America/Bogota] CLIENT -> SERVER: 
+
+[20-May-2025 11:47:17 America/Bogota] CLIENT -> SERVER: .
+
+[20-May-2025 11:47:19 America/Bogota] SERVER -> CLIENT: 250 OK id=1uHQ7a-0000000BDZg-2qrY
+
+[20-May-2025 11:47:19 America/Bogota] CLIENT -> SERVER: QUIT
+
+[20-May-2025 11:47:19 America/Bogota] SERVER -> CLIENT: 221 cpanel6-co.conexcol.net closing connection
+
+[20-May-2025 12:22:49 America/Bogota] SERVER -> CLIENT: 220-cpanel6-co.conexcol.net ESMTP Exim 4.98.1 #2 Tue, 20 May 2025 12:22:49 -0500 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+[20-May-2025 12:22:49 America/Bogota] CLIENT -> SERVER: EHLO fds.com.co
+
+[20-May-2025 12:22:49 America/Bogota] SERVER -> CLIENT: 250-cpanel6-co.conexcol.net Hello fds.com.co [190.90.160.172]
+250-SIZE 209715200
+250-LIMITS MAILMAX=1000 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+[20-May-2025 12:22:49 America/Bogota] CLIENT -> SERVER: AUTH LOGIN
+
+[20-May-2025 12:22:49 America/Bogota] SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[20-May-2025 12:22:49 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[20-May-2025 12:22:49 America/Bogota] SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[20-May-2025 12:22:49 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[20-May-2025 12:22:49 America/Bogota] SERVER -> CLIENT: 235 Authentication succeeded
+
+[20-May-2025 12:22:49 America/Bogota] CLIENT -> SERVER: MAIL FROM:<notificaciones@fds.com.co>
+
+[20-May-2025 12:22:49 America/Bogota] SERVER -> CLIENT: 250 OK
+
+[20-May-2025 12:22:49 America/Bogota] CLIENT -> SERVER: RCPT TO:<fdstecnologia@fueradeserie.com.co>
+
+[20-May-2025 12:22:49 America/Bogota] SERVER -> CLIENT: 250 Accepted
+
+[20-May-2025 12:22:49 America/Bogota] CLIENT -> SERVER: DATA
+
+[20-May-2025 12:22:49 America/Bogota] SERVER -> CLIENT: 354 Enter message, ending with "." on a line by itself
+
+[20-May-2025 12:22:49 America/Bogota] CLIENT -> SERVER: Date: Tue, 20 May 2025 12:22:49 -0500
+
+[20-May-2025 12:22:49 America/Bogota] CLIENT -> SERVER: To: fdstecnologia@fueradeserie.com.co
+
+[20-May-2025 12:22:49 America/Bogota] CLIENT -> SERVER: From: Sistema de Cargas <notificaciones@fds.com.co>
+
+[20-May-2025 12:22:49 America/Bogota] CLIENT -> SERVER: Subject: =?UTF-8?Q?Modificaci=C3=B3n_de_carga_N=C2=B0_85_en_el_sistema_de_creacion_de_SKU's?=
+
+[20-May-2025 12:22:49 America/Bogota] CLIENT -> SERVER: Message-ID: <gHc4d99BzCIPbYa4kHNEIAdoin9E8ZIvD4lX0tlQ@fds.com.co>
+
+[20-May-2025 12:22:49 America/Bogota] CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+[20-May-2025 12:22:49 America/Bogota] CLIENT -> SERVER: MIME-Version: 1.0
+
+[20-May-2025 12:22:49 America/Bogota] CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+
+[20-May-2025 12:22:49 America/Bogota] CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+[20-May-2025 12:22:49 America/Bogota] CLIENT -> SERVER: 
+
+[20-May-2025 12:22:49 America/Bogota] CLIENT -> SERVER: 
+
+[20-May-2025 12:22:49 America/Bogota] CLIENT -> SERVER:         <p>Se ha realizado una modificación en la carga <b>N° 85</b> (Código SAP: <b>200</b>).</p>
+
+[20-May-2025 12:22:49 America/Bogota] CLIENT -> SERVER:         <ul>
+
+[20-May-2025 12:22:49 America/Bogota] CLIENT -> SERVER:             <li><b>Usuario:</b> Camilo Vera</li>
+
+[20-May-2025 12:22:49 America/Bogota] CLIENT -> SERVER:             <li><b>Fecha:</b> 2025-05-20 12:22:49</li>
+
+[20-May-2025 12:22:49 America/Bogota] CLIENT -> SERVER:         </ul>
+
+[20-May-2025 12:22:49 America/Bogota] CLIENT -> SERVER:         <p><b>Resumen de cambios:</b></p>
+
+[20-May-2025 12:22:49 America/Bogota] CLIENT -> SERVER:         <table border='1' cellpadding='4' cellspacing='0'><tr><th>Campo</th><th>Antes</th><th>Después</th></tr><tr><td>YEAR</td><td>2026</td><td>2023</td></tr></table>
+
+[20-May-2025 12:22:49 America/Bogota] CLIENT -> SERVER:         <p>Este es un mensaje automático. Por favor no responder.</p>
+
+[20-May-2025 12:22:49 America/Bogota] CLIENT -> SERVER:     
+
+[20-May-2025 12:22:49 America/Bogota] CLIENT -> SERVER: 
+
+[20-May-2025 12:22:49 America/Bogota] CLIENT -> SERVER: .
+
+[20-May-2025 12:22:51 America/Bogota] SERVER -> CLIENT: 250 OK id=1uHQfy-0000000BiXN-3QeQ
+
+[20-May-2025 12:22:51 America/Bogota] CLIENT -> SERVER: QUIT
+
+[20-May-2025 12:22:51 America/Bogota] SERVER -> CLIENT: 221 cpanel6-co.conexcol.net closing connection
+
+[20-May-2025 12:23:50 America/Bogota] SERVER -> CLIENT: 220-cpanel6-co.conexcol.net ESMTP Exim 4.98.1 #2 Tue, 20 May 2025 12:23:50 -0500 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+[20-May-2025 12:23:50 America/Bogota] CLIENT -> SERVER: EHLO fds.com.co
+
+[20-May-2025 12:23:50 America/Bogota] SERVER -> CLIENT: 250-cpanel6-co.conexcol.net Hello fds.com.co [190.90.160.172]
+250-SIZE 209715200
+250-LIMITS MAILMAX=1000 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+[20-May-2025 12:23:50 America/Bogota] CLIENT -> SERVER: AUTH LOGIN
+
+[20-May-2025 12:23:50 America/Bogota] SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[20-May-2025 12:23:50 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[20-May-2025 12:23:50 America/Bogota] SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[20-May-2025 12:23:50 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[20-May-2025 12:23:50 America/Bogota] SERVER -> CLIENT: 235 Authentication succeeded
+
+[20-May-2025 12:23:50 America/Bogota] CLIENT -> SERVER: MAIL FROM:<notificaciones@fds.com.co>
+
+[20-May-2025 12:23:50 America/Bogota] SERVER -> CLIENT: 250 OK
+
+[20-May-2025 12:23:50 America/Bogota] CLIENT -> SERVER: RCPT TO:<fdstecnologia@fueradeserie.com.co>
+
+[20-May-2025 12:23:50 America/Bogota] SERVER -> CLIENT: 250 Accepted
+
+[20-May-2025 12:23:50 America/Bogota] CLIENT -> SERVER: RCPT TO:<camilov0310@gmail.com>
+
+[20-May-2025 12:23:50 America/Bogota] SERVER -> CLIENT: 250 Accepted
+
+[20-May-2025 12:23:50 America/Bogota] CLIENT -> SERVER: DATA
+
+[20-May-2025 12:23:50 America/Bogota] SERVER -> CLIENT: 354 Enter message, ending with "." on a line by itself
+
+[20-May-2025 12:23:50 America/Bogota] CLIENT -> SERVER: Date: Tue, 20 May 2025 12:23:50 -0500
+
+[20-May-2025 12:23:50 America/Bogota] CLIENT -> SERVER: To: fdstecnologia@fueradeserie.com.co, camilov0310@gmail.com
+
+[20-May-2025 12:23:50 America/Bogota] CLIENT -> SERVER: From: Sistema de Cargas <notificaciones@fds.com.co>
+
+[20-May-2025 12:23:50 America/Bogota] CLIENT -> SERVER: Subject: =?UTF-8?Q?Modificaci=C3=B3n_de_carga_N=C2=B0_85_en_el_sistema_de_creacion_de_SKU's?=
+
+[20-May-2025 12:23:50 America/Bogota] CLIENT -> SERVER: Message-ID: <AcCFp0IglH5Yl08fZTQWxPrumbAi6YFRT5fQ7yagw@fds.com.co>
+
+[20-May-2025 12:23:50 America/Bogota] CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+[20-May-2025 12:23:50 America/Bogota] CLIENT -> SERVER: MIME-Version: 1.0
+
+[20-May-2025 12:23:50 America/Bogota] CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+
+[20-May-2025 12:23:50 America/Bogota] CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+[20-May-2025 12:23:50 America/Bogota] CLIENT -> SERVER: 
+
+[20-May-2025 12:23:50 America/Bogota] CLIENT -> SERVER: 
+
+[20-May-2025 12:23:50 America/Bogota] CLIENT -> SERVER:         <p>Se ha realizado una modificación en la carga <b>N° 85</b> (Código SAP: <b>200</b>).</p>
+
+[20-May-2025 12:23:50 America/Bogota] CLIENT -> SERVER:         <ul>
+
+[20-May-2025 12:23:50 America/Bogota] CLIENT -> SERVER:             <li><b>Usuario:</b> Camilo Vera</li>
+
+[20-May-2025 12:23:50 America/Bogota] CLIENT -> SERVER:             <li><b>Fecha:</b> 2025-05-20 12:23:50</li>
+
+[20-May-2025 12:23:50 America/Bogota] CLIENT -> SERVER:         </ul>
+
+[20-May-2025 12:23:50 America/Bogota] CLIENT -> SERVER:         <p><b>Resumen de cambios:</b></p>
+
+[20-May-2025 12:23:50 America/Bogota] CLIENT -> SERVER:         <table border='1' cellpadding='4' cellspacing='0'><tr><th>Campo</th><th>Antes</th><th>Después</th></tr><tr><td>YEAR</td><td>2023</td><td>2020</td></tr></table>
+
+[20-May-2025 12:23:50 America/Bogota] CLIENT -> SERVER:         <p>Este es un mensaje automático. Por favor no responder.</p>
+
+[20-May-2025 12:23:50 America/Bogota] CLIENT -> SERVER:     
+
+[20-May-2025 12:23:50 America/Bogota] CLIENT -> SERVER: 
+
+[20-May-2025 12:23:50 America/Bogota] CLIENT -> SERVER: .
+
+[20-May-2025 12:23:51 America/Bogota] SERVER -> CLIENT: 250 OK id=1uHQgx-0000000BjSv-117T
+
+[20-May-2025 12:23:51 America/Bogota] CLIENT -> SERVER: QUIT
+
+[20-May-2025 12:23:51 America/Bogota] SERVER -> CLIENT: 221 cpanel6-co.conexcol.net closing connection
+
+[22-May-2025 19:39:04 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'correo' cannot be null in /home/services/public_html/diseno/backend/crear_usuario.php:51
+Stack trace:
+#0 /home/services/public_html/diseno/backend/crear_usuario.php(51): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/services/public_html/diseno/backend/crear_usuario.php on line 51
+[22-May-2025 19:40:01 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Column 'correo' cannot be null in /home/services/public_html/diseno/backend/crear_usuario.php:51
+Stack trace:
+#0 /home/services/public_html/diseno/backend/crear_usuario.php(51): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/services/public_html/diseno/backend/crear_usuario.php on line 51
+[22-May-2025 19:40:41 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`services_cargamasiva`.`users`, CONSTRAINT `users_ibfk_2` FOREIGN KEY (`area_id`) REFERENCES `area` (`id`)) in /home/services/public_html/diseno/backend/crear_usuario.php:51
+Stack trace:
+#0 /home/services/public_html/diseno/backend/crear_usuario.php(51): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/services/public_html/diseno/backend/crear_usuario.php on line 51
+[09-Jun-2025 11:12:41 America/Bogota] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'correo_electronico' in 'SELECT' in /home/services/public_html/diseno/backend/update_manual.php:37
+Stack trace:
+#0 /home/services/public_html/diseno/backend/update_manual.php(37): PDO->prepare()
+#1 /home/services/public_html/diseno/backend/update_manual.php(157): obtenerDestinatarios()
+#2 {main}
+  thrown in /home/services/public_html/diseno/backend/update_manual.php on line 37
