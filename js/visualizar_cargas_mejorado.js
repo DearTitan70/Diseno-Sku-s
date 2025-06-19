@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (from && fecha < from) return false;
             if (to && fecha > to) return false;
             // Filtro por ID (exacto o parcial)
-            if (NameValue && !registro.NOMBRE.toString().includes(NameValue)) return false;
+            if (NameValue.toUpperCase() && !registro.NOMBRE.toString().includes(NameValue)) return false;
             // Filtro por usuario (parcial, insensible a mayúsculas)
             if (usuarioValue && (!registro.usuario || !registro.usuario.toLowerCase().includes(usuarioValue))) return false;
             return true;
