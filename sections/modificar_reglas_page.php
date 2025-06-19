@@ -282,7 +282,7 @@ require_login_and_role(1);
     <!-- Título de la página -->
     <h1 class="title">Modificar Regla de Dependencia</h1>
     <!-- Botón para volver a la lista de reglas -->
-    <button onclick="window.location.href='visualizar_reglas.html'">Volver a la lista de reglas</button><br><br>
+    <button onclick="window.location.href='visualizar_reglas.php'">Volver a la lista de reglas</button><br><br>
 
     <!-- ===========================
          FORMULARIO DE EDICIÓN DE REGLA

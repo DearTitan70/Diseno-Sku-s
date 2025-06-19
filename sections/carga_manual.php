@@ -71,10 +71,55 @@ $fecha_actual = date("Y-m-d H:i:s");
             box-shadow: 0 8px 24px var(--color-shadow);
             max-width: 98%;
             margin: 30px auto;
-            width: 100%;
+            width: 95%;
             text-align: center;
             animation: fadeIn 0.8s ease-out;
             border-top: 5px solid var(--color-primary);
+        }
+
+        .custom-scrollbar-container {
+            width: 99.5%;
+            height: 18px;
+            user-select: none;
+            background: transparent;
+            z-index: 20;
+            padding: 5px;
+        }
+
+        #top-scrollbar-container {
+            position: sticky;
+            top: 0;
+            z-index: 30;
+            background: var(--color-background);
+            margin-bottom: 0;
+        }
+
+        .custom-scrollbar-track {
+            width: 100%;
+            height: 8px;
+            background: #e7e7e7;
+            border-radius: 4px;
+            position: relative;
+            margin: 5px 0;
+        }
+        .custom-scrollbar-thumb {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+            border-radius: 4px;
+            cursor: grab;
+            transition: background 0.2s;
+            min-width: 40px;
+            box-shadow: 0 2px 6px rgba(135,150,131,0.08);
+        }
+        .custom-scrollbar-thumb:active {
+            cursor: grabbing;
+            background: linear-gradient(90deg, var(--color-secondary), var(--color-primary));
+        }
+        .scrollbar-dragging {
+            cursor: grabbing !important;
         }
 
         @keyframes fadeIn {
@@ -112,13 +157,17 @@ $fecha_actual = date("Y-m-d H:i:s");
         }
 
         .table-container {
-            width: 100%;
-            overflow-x: auto;
-            margin-top: 40px;
+            width: 99%;
+            max-width: 99%;
+            max-height: 700px;
+            overflow-x: hidden; 
             border: 1px solid var(--color-table-border);
             border-radius: var(--border-radius);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            position: relative;
+            background: white;
             padding: 5px;
+            overflow-y: auto;
         }
 
         #skuTable {
@@ -228,15 +277,6 @@ $fecha_actual = date("Y-m-d H:i:s");
             display: none;
         }
 
-        .options {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 40px;
-            gap: 20px;
-            padding: 10px;
-        }
-
         button {
             display: inline-block;
             padding: 14px 28px;
@@ -267,40 +307,15 @@ $fecha_actual = date("Y-m-d H:i:s");
 
         /* Botón de volver */
         a button {
-            background-color: var(--color-highlight);
-            color: var(--color-text-dark);
+            background-color: var(--color-primary);
+            color: var(--color-white);
             margin: 0 15px 30px;
             padding: 14px 30px;
         }
 
         a button:hover {
-            background-color: var(--color-primary);
+            background-color: var(--color-secondary);
             color: var(--color-white);
-        }
-
-        /* Botón de guardar */
-        #guardarBtn {
-            background-color: var(--color-primary);
-            position: relative;
-            overflow: hidden;
-            padding: 16px 32px;
-            font-size: 1.2em;
-            margin: 20px 0 30px;
-        }
-
-        #guardarBtn::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: 0.5s;
-        }
-
-        #guardarBtn:hover::after {
-            left: 100%;
         }
 
         /* Mejoras para campos específicos */
@@ -357,6 +372,12 @@ $fecha_actual = date("Y-m-d H:i:s");
         }
 
         /* Mejora visual para los encabezados de columna */
+        #skuTable th,
+        #skuTable td {
+            min-width: 140px;
+            white-space: nowrap;
+        }
+
         #skuTable th {
             position: relative;
             white-space: nowrap;
@@ -409,11 +430,29 @@ $fecha_actual = date("Y-m-d H:i:s");
             min-width: 140px;
             max-width: 300px;
         }
+
+        #abrirReplicarModalBtn {
+            margin-left: 5px;
+        }
+
+        #guardarBtn {
+            margin-left: 5px;
+        }
+         
+        #abrirReplicarColorModalBtn {
+            margin-left: 5px;
+        }
+
+        .opciones {
+            align-items: center;
+            padding: 10px;
+        }
     </style>
     <!-- Scripts adicionales para funcionalidades específicas -->
     <script src="../js/ocultar_columnas.js"></script>
     <script src="../js/filtrar_categorias.js"></script>
-    <script src="../js/replicar_filas.js"></script>
+    <script src="../js/replicar_filas_color.js"></script>
+    <script src="../js/table-horizontal-scroll-sync.js"></script>
 </head>
 <body>
 <div class="container">
@@ -446,9 +485,22 @@ $fecha_actual = date("Y-m-d H:i:s");
         </div>
 
     <!-- Botón para volver al menú principal -->
-    <a href="index.php">
-        <button>Volver al menu</button>     
-    </a>
+    <div>
+        <a href="index.php">
+            <button>Volver al menu</button>     
+        </a>
+    </div>
+    <div class = "opciones">
+        <button id="abrirReplicarModalBtn" class="btn-replicar-modal">Replicar filas por tallas</button>
+        <button id="abrirReplicarColorModalBtn" class="btn-replicar-color-modal">Replicar filas por color</button>
+        <button id="guardarBtn" class="btn btn-success">Guardar cambios</button>
+        <button id="limpiarTablaBtn" style="background-color: #e74c3c; margin-left: 5px;">Limpiar</button>
+    </div>
+    <div class="custom-scrollbar-container" id="top-scrollbar-container">
+    <div class="custom-scrollbar-track">
+        <div class="custom-scrollbar-thumb" id="top-scrollbar-thumb"></div>
+    </div>
+    </div>
     <div class="table-container">
         <!-- 
         =========================
@@ -730,7 +782,7 @@ $fecha_actual = date("Y-m-d H:i:s");
                         </select>
                     </td>
                     <td >
-                        <select id="color_fds" onchange="asignarnomcolor(this), asignargamacolor(this)" class="campo-formulario" data-campo-nombre="COLOR_FDS" data-campo-type="static">
+                        <select id="color_fds" class="campo-formulario" data-campo-nombre="COLOR_FDS" data-campo-type="static">
                             <option value="">Seleccione</option>
                         </select>
                     </td>
@@ -896,10 +948,7 @@ $fecha_actual = date("Y-m-d H:i:s");
             </tbody>
         </table>
         <!-- Botón para guardar los cambios realizados en la tabla -->
-        <div class="options">
-            <button id="guardarBtn" class="btn btn-success">Guardar cambios</button>
     </div>
-</div>
 <script>
 /*
 ==========================================
@@ -910,7 +959,7 @@ Incluye validaciones, carga dinámica de opciones, lógica de dependencias, mane
 
 // Lista de campos obligatorios para validación antes de guardar
 const CAMPOS_OBLIGATORIOS_save = [
-    "tipo", "usuario", "fecha_creacion", "YEAR", "TOT_COMP", "TIPO_TEJIDO", "TIPO_DE_FIBRA", "TIENDA", "TEMPORADA", "TALLAS", "SUB_DETALLES", "SUBCATEGORIAS", "PROVEEDOR", "PRINT", "OCASION_DE_USO", "NOM_COLOR", "NOMBRE", "MODULO", "MES", "MANGA", "LARGO", "GRUPO", "GAMA", "DETALLES", "DESCRIPCION", "COLOR_FDS", "CLUSTER", "CLIMA", "CLASIFICACION", "CATEGORIAS", "CAPSULA", "BASE_TEXTIL", "%_COMP_1", "COMPOSICION_1", "precio_compra", "costo", "precio_venta"
+    "tipo", "usuario", "fecha_creacion", "YEAR", "TOT_COMP", "TIPO_TEJIDO", "TIPO_DE_FIBRA", "TIENDA", "TEMPORADA", "TALLAS", "SUB_DETALLES", "SUBCATEGORIAS", "PROVEEDOR", "OCASION_DE_USO", "NOM_COLOR", "NOMBRE", "MODULO", "MES", "GRUPO", "GAMA", "DETALLES", "DESCRIPCION", "COLOR_FDS", "CLUSTER", "CLIMA", "CLASIFICACION", "CATEGORIAS", "CAPSULA", "BASE_TEXTIL", "%_COMP_1", "COMPOSICION_1", "precio_compra", "costo", "precio_venta"
 ];
 
 /**
@@ -1112,6 +1161,44 @@ function actualizarTotalRelleno(rowElement) {
     }
 }
 
+function validarPrintMulticolor(rowElement) {
+    const colorFdsSelect = rowElement.querySelector('.campo-formulario[data-campo-nombre="COLOR_FDS"]');
+    const printSelect = rowElement.querySelector('.campo-formulario[data-campo-nombre="PRINT"]');
+    if (!colorFdsSelect || !printSelect) return true;
+
+    const colorFdsValue = colorFdsSelect.value.trim();
+    const printValue = printSelect.value.trim();
+
+    // Si COLOR_FDS no es 999 y PRINT tiene valor, error
+    if (colorFdsValue !== "999" && printValue !== "") {
+        alert("Solo Multicolor (999) puede tener Print. Por favor, deje el campo PRINT vacío para este color.");
+        printSelect.value = "";
+        printSelect.focus();
+        printSelect.style.backgroundColor = "#ffe0e0";
+        setTimeout(() => { printSelect.style.backgroundColor = ""; }, 1500);
+        return false;
+    }
+    return true;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const guardarBtn = document.getElementById('guardarBtn');
+    if (guardarBtn) {
+        guardarBtn.addEventListener('click', function(e) {
+            let errorEncontrado = false;
+            const skuTableBody = document.querySelector('#skuTable tbody');
+            skuTableBody.querySelectorAll('.fila-carga').forEach(row => {
+                if (!validarPrintMulticolor(row)) {
+                    errorEncontrado = true;
+                }
+            });
+            if (errorEncontrado) {
+                e.preventDefault();
+                alert("Corrige los errores de Print antes de guardar.");
+            }
+        });
+    }
+});
 
 function inicializarListenersRelleno(rowElement) {
     const campos = ['%_RELLENO_1', '%_RELLENO_2'];
@@ -1152,241 +1239,6 @@ function asignarvalortemporada(moduloSelect) {
         "M4" : "OTOÑO/INVIERNO"
     };
     temporadaCell.textContent = valores[moduloSelect.value] || "-";
-}
-
-function asignarnomcolor(colorSelect) {
-    const row = colorSelect.closest('.fila-carga');
-    if (!row) return;
-    const nomColorCell = row.querySelector('.campo-formulario[data-campo-nombre="NOM_COLOR"]');
-    if (!nomColorCell) return;
-    const valores = {
-        "100": "BLANCO",
-        "101": "OFFWHITE",
-        "102": "IVORY",
-        "103": "IVORY",
-        "106": "BLANCO",
-        "109": "BEIGE",
-        "110": "BEIGE",
-        "121": "ARENA",
-        "123": "KAKI",
-        "203": "AMARILLO CLARO",
-        "207": "LIMA",
-        "209": "AMARILLO QUEMADO",
-        "219": "BRIGHT GOLD",
-        "220": "TIERRA",
-        "224": "FLUORECENTE",
-        "233": "CYBER LIME",
-        "237": "AMARILLO",
-        "258": "NARANJA",
-        "260": "NARANJA CLARO",
-        "263": "CORAL",
-        "264": "CORAL",
-        "266": "NARANJA",
-        "277": "CORAL",
-        "279": "TERRACOTA",
-        "281": "CORAL",
-        "283": "TERRACOTA",
-        "284": "NARANJA",
-        "300": "ROJO",
-        "301": "ROJO",
-        "313": "ROJO",
-        "315": "ROJO",
-        "319": "ROJO",
-        "322": "VINO",
-        "328": "VINO",
-        "337": "BURGUNDY",
-        "350": "FUCCIA",
-        "354": "ROSADO",
-        "356": "ROSADO",
-        "357": "ROSADO",
-        "361": "ROSA MARCHITA",
-        "362": "ROSA MARCHITA",
-        "363": "ROSA MARCHITA",
-        "366": "PALO DE ROSA",
-        "368": "BLUSH",
-        "367": "ROSADO",
-        "370": "ROSADO",
-        "372": "ROSADO",
-        "375": "FUCSIA",
-        "369": "ROSADO",
-        "380": "MAGENTA",
-        "393": "ROSADO",
-        "394": "ROSADO",
-        "395": "MAUVE",
-        "401": "VIOLETA",
-        "407": "PURPURA",
-        "417": "LILA",
-        "418": "LILA CLARO",
-        "431": "MORADO",
-        "454": "AZUL",
-        "463": "AZUL CIELO",
-        "473": "ROYAL",
-        "480": "CLARO",
-        "481": "MEDIO OSC",
-        "460": "CLARO",
-        "461": "CLARO",
-        "464": "MEDIO",
-        "467": "AZUL",
-        "475": "HIELO",
-        "479": "NAVY",
-        "482": "AZUL",
-        "484": "TURQUEZA",
-        "494": "TURQUEZA",
-        "505": "TURQUEZA",
-        "504": "TURQUEZA",
-        "510": "TURQUEZA",
-        "513": "PETROL",
-        "515": "ALPINE GREEN",
-        "556": "VERDE",
-        "565": "VERDE CLARO",
-        "567": "VERDE",
-        "570": "VERDE",
-        "575": "GREEN TE",
-        "579": "VERDE OSCURO",
-        "583": "JADE",
-        "588": "VERDE LIMON",
-        "591": "VERDE OSCURO", 
-        "592": "VERDE CHIVE",
-        "596": "OLIVO",
-        "597": "VERDE MILITAR",
-        "606": "CAQUI",
-        "608": "CAQUI",
-        "611": "CAFÉ",
-        "613": "CAFÉ",
-        "622": "CAQUI",
-        "623": "CAQUI",
-        "624": "CHOCOLATE",
-        "625": "CAQUI",
-        "626": "TAUPE",
-        "627": "COFFE",
-        "700": "NEGRO",
-        "701": "CAVIAR",
-        "803": "GRIS CLARO",
-        "811": "GRIS MEDIO", 
-        "815": "GRIS MEDIO",
-        "817": "GRIS OSCURO",
-        "819": "GRIS OSCURO",
-        "999": "MULTICOLOR"
-    };
-    nomColorCell.textContent = valores[colorSelect.value] || "-";
-}
-
-function asignargamacolor(gamaSelect) {
-    const row = gamaSelect.closest('.fila-carga');
-    if (!row) return;
-    const gamacell = row.querySelector('.campo-formulario[data-campo-nombre="GAMA"]');
-    if (!gamacell) return;
-
-    const valores_gama = {
-        "100": "BLANCO",
-        "101": "BLANCO",
-        "102": "BLANCO",
-        "103": "BLANCO",
-        "106": "BLANCO",
-        "109": "BEIGE",
-        "110": "BEIGE",
-        "121": "BEIGE",
-        "123": "BEIGE",
-        "203": "AMARILLO",
-        "207": "AMARILLO",
-        "209": "AMARILLO",
-        "219": "AMARILLO",
-        "220": "AMARILLO",
-        "224": "AMARILLO",
-        "233": "AMARILLO",
-        "237": "AMARILLO",
-        "258": "NARANJA",
-        "260": "NARANJA",
-        "263": "NARANJA",
-        "264": "NARANJA",
-        "266": "NARANJA",
-        "277": "NARANJA",
-        "279": "NARANJA",
-        "281": "NARANJA",
-        "283": "NARANJA",
-        "284": "NARANJA",
-        "300": "ROJO",
-        "301": "ROJO",
-        "313": "ROJO",
-        "315": "ROJO",
-        "319": "ROJO",
-        "322": "ROJO",
-        "328": "ROJO",
-        "337": "ROJO",
-        "350": "ROSADO",
-        "354": "ROSADO",
-        "356": "ROSADO",
-        "357": "ROSADO",
-        "361": "ROSADO",
-        "362": "ROSADO",
-        "363": "ROSADO",
-        "366": "ROSADO",
-        "368": "ROSADO",
-        "367": "ROSADO",
-        "370": "ROSADO",
-        "372": "ROSADO",
-        "375": "MAGENTA",
-        "369": "ROSADO",
-        "380": "MAGENTA",
-        "393": "MAGENTA",
-        "394": "MAGENTA",
-        "395": "MAGENTA",
-        "401": "MORADO",
-        "407": "MORADO",
-        "417": "MORADO",
-        "418": "MORADO",
-        "431": "MORADO",
-        "454": "AZUL",
-        "463": "AZUL",
-        "473": "AZUL",
-        "480": "AZUL",
-        "481": "AZUL",
-        "460": "AZUL",
-        "461": "AZUL",
-        "464": "AZUL",
-        "467": "AZUL",
-        "475": "AZUL",
-        "479": "AZUL",
-        "482": "AZUL",
-        "484": "TURQUEZA",
-        "494": "TURQUEZA",
-        "505": "TURQUEZA",
-        "504": "TURQUEZA",
-        "510": "TURQUEZA",
-        "513": "TURQUEZA",
-        "515": "TURQUEZA",
-        "556": "VERDE",
-        "565": "VERDE",
-        "567": "VERDE",
-        "570": "VERDE",
-        "575": "VERDE",
-        "579": "VERDE",
-        "583": "VERDE",
-        "588": "VERDE",
-        "591": "VERDE", 
-        "592": "VERDE",
-        "596": "VERDE",
-        "597": "VERDE",
-        "606": "CAFE",
-        "608": "CAFE",
-        "611": "CAFÉ",
-        "613": "CAFÉ",
-        "622": "CAFE",
-        "623": "CAFE",
-        "624": "CAFE",
-        "625": "CAFE",
-        "626": "CAFE",
-        "627": "CAFE",
-        "700": "NEGRO",
-        "701": "NEGRO",
-        "803": "NEGRO",
-        "811": "NEGRO", 
-        "815": "NEGRO",
-        "817": "NEGRO",
-        "819": "NEGRO",
-        "999": "MULTICOLOR"
-    };
-    gamacell.textContent = valores_gama[gamaSelect.value] || "-";
 }
 
 function asignarvalorgrupo(grupoSelect){
@@ -2569,7 +2421,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Función para inicializar los campos de una fila (usuario, fecha, selects, listeners, etc.)
-    function initializeRowFields(rowElement) {
+    // Función para inicializar los campos de una fila (usuario, fecha, selects, listeners, etc.)
+function initializeRowFields(rowElement) {
     // 1. Usuario y fecha
     rowElement.querySelectorAll('.campo-formulario[data-campo-nombre]').forEach(field => {
         const fieldName = field.dataset.campoNombre;
@@ -2608,17 +2461,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. Llama a la API para selects dependientes
     fetchDependentOptionsAndUpdateRow(rowElement);
 
+    // 5. Listeners específicos
     const moduloSelect = rowElement.querySelector('select.campo-formulario[data-campo-nombre="MODULO"]');
     if (moduloSelect) {
         moduloSelect.addEventListener('change', function() {
             asignarvalortemporada(this);
-        });
-    }
-
-    const colorSelect = rowElement.querySelector('select.campo-formulario[data-campo-nombre="COLOR_FDS"]');
-    if (colorSelect) {
-        colorSelect.addEventListener('change', function() {
-            asignarnomcolor(this);
         });
     }
 
@@ -2636,6 +2483,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 6. Inicializar validación Print/Multicolor
+    inicializarValidacionPrintMulticolor(rowElement);
+
+    // 7. Otros listeners
     inicializarListenersComposicion(rowElement);
     actualizarTotalComposicion(rowElement);
     inicializarListenersForro(rowElement);
@@ -2643,15 +2494,11 @@ document.addEventListener('DOMContentLoaded', () => {
     inicializarListenersRelleno(rowElement);
     actualizarTotalRelleno(rowElement);
     agregarListenerCategoriaTallas(rowElement);
-    }
+}
 
     // Inicializa los campos de todas las filas existentes al cargar la página
     skuTableBody.querySelectorAll('.fila-carga').forEach(row => {
         initializeRowFields(row); 
-    });
-
-    skuTableBody.querySelectorAll('.fila-carga').forEach(row => {
-        initializeRowFields(row);
     });
 
     // Lógica para eliminar filas (excepto la primera)
@@ -2677,6 +2524,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     protegerPrimeraFila();
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const guardarBtn = document.getElementById('guardarBtn');
+    if (guardarBtn) {
+        guardarBtn.addEventListener('click', function(e) {
+            // Validar Print/Multicolor en todas las filas
+            if (!validarTodasLasFilasPrintMulticolor()) {
+                e.preventDefault();
+                alert("Corrige los errores de Print antes de guardar. Solo Multicolor (999) puede tener Print.");
+                return;
+            }
+            
+            // Resto de la lógica de validación y guardado...
+        });
+    }
 });
 /**
  * Valida que los totales de composición, forro y relleno sean exactamente 100,
@@ -2755,6 +2618,18 @@ function validarTotalesFila(rowElement) {
     return { esValida, errores };
 }
 
+function agregarListenerCategoriaTallas(rowElement) {
+    const categoriaSelect = rowElement.querySelector('select.campo-formulario[data-campo-nombre="CATEGORIAS"]');
+    const tallasSelect = rowElement.querySelector('select.campo-formulario[data-campo-nombre="TALLAS"]');
+    
+    if (categoriaSelect && tallasSelect) {
+        categoriaSelect.addEventListener('change', function() {
+            // Lógica para actualizar tallas según categoría si es necesario
+            console.log('Categoría cambiada:', this.value);
+        });
+    }
+}
+
 // Hook para recalcular y validar cada vez que cambian los campos de composición, forro o relleno o los selects de FORRO/RELLENO
 function agregarValidacionTotales(rowElement) {
     // Escucha cambios en los campos de composición, forro y relleno
@@ -2810,6 +2685,153 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Selecciona el contenedor de la tabla
+    const tableContainer = document.querySelector('.table-container');
+    if (!tableContainer) return;
+
+    // Crea el contenedor del indicador
+    let progressBarContainer = document.createElement('div');
+    progressBarContainer.className = 'table-scroll-progress-container';
+
+    // Crea la barra de progreso
+    let progressBar = document.createElement('div');
+    progressBar.className = 'table-scroll-progress-bar';
+
+    progressBarContainer.appendChild(progressBar);
+
+    // Inserta el indicador después de la tabla
+    tableContainer.parentNode.insertBefore(progressBarContainer, tableContainer.nextSibling);
+
+    // Función para actualizar el ancho del indicador
+    function updateProgressBar() {
+        const scrollLeft = tableContainer.scrollLeft;
+        const scrollWidth = tableContainer.scrollWidth;
+        const clientWidth = tableContainer.clientWidth;
+        const percent = scrollWidth > clientWidth
+            ? (scrollLeft / (scrollWidth - clientWidth)) * 100
+            : 0;
+        progressBar.style.width = percent + '%';
+    }
+
+    // Actualiza al hacer scroll
+    tableContainer.addEventListener('scroll', updateProgressBar);
+
+    // Inicializa
+    updateProgressBar();
+
+    // Si la tabla cambia de tamaño, actualiza el indicador
+    window.addEventListener('resize', updateProgressBar);
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const limpiarBtn = document.getElementById('limpiarTablaBtn');
+    const skuTableBody = document.querySelector('#skuTable tbody');
+
+    limpiarBtn.addEventListener('click', function () {
+        if (!confirm('¿Estás seguro de que deseas limpiar toda la tabla? Esta acción no se puede deshacer.')) {
+            return;
+        }
+
+        // Elimina todas las filas excepto la primera
+        const filas = skuTableBody.querySelectorAll('.fila-carga');
+        filas.forEach((fila, idx) => {
+            if (idx > 0) fila.remove();
+        });
+
+        // Limpia todos los campos de la primera fila
+        const primeraFila = skuTableBody.querySelector('.fila-carga');
+        if (primeraFila) {
+            // Limpia inputs y textareas
+            primeraFila.querySelectorAll('input, textarea').forEach(input => {
+                input.value = '';
+            });
+            // Limpia selects (deja en blanco o en la opción por defecto)
+            primeraFila.querySelectorAll('select').forEach(select => {
+                select.selectedIndex = 0;
+            });
+            // Limpia celdas de texto (TDs que no son inputs/selects)
+            primeraFila.querySelectorAll('td.campo-formulario').forEach(td => {
+                // Si es usuario o fecha, los reinicializa
+                if (td.dataset.campoNombre === 'usuario') {
+                    td.textContent = typeof CURRENT_USER !== 'undefined' ? CURRENT_USER : '-';
+                } else if (td.dataset.campoNombre === 'fecha_creacion') {
+                    td.textContent = getCurrentDateTimeString();
+                } else if (!td.querySelector('input') && !td.querySelector('select') && !td.querySelector('textarea')) {
+                    td.textContent = '-';
+                }
+            });
+
+            // Vuelve a inicializar la fila (opciones, listeners, dependientes, etc.)
+            if (typeof initializeRowFields === 'function') {
+                initializeRowFields(primeraFila);
+            }
+        }
+    });
+});
+
+// Función para inicializar listeners de Print/Multicolor en una fila específica
+function inicializarValidacionPrintMulticolor(rowElement) {
+    if (!rowElement) return;
+    
+    const printSelect = rowElement.querySelector('.campo-formulario[data-campo-nombre="PRINT"]');
+    const colorFdsSelect = rowElement.querySelector('.campo-formulario[data-campo-nombre="COLOR_FDS"]');
+    
+    // Función de validación específica para esta fila
+    function validarPrintMulticolorFila() {
+        if (!colorFdsSelect || !printSelect) return true;
+
+        const colorFdsValue = colorFdsSelect.value.trim();
+        const printValue = printSelect.value.trim();
+
+        if (colorFdsValue !== "999" && printValue !== "") {
+            alert("Solo Multicolor (999) puede tener Print. Por favor, deje el campo PRINT vacío para este color.");
+            printSelect.value = "";
+            printSelect.focus();
+            printSelect.style.backgroundColor = "#ffe0e0";
+            setTimeout(() => { printSelect.style.backgroundColor = ""; }, 1500);
+            return false;
+        }
+        return true;
+    }
+    
+    // Remover listeners existentes antes de agregar nuevos
+    if (printSelect) {
+        printSelect.removeEventListener('change', validarPrintMulticolorFila);
+        printSelect.addEventListener('change', validarPrintMulticolorFila);
+    }
+    
+    if (colorFdsSelect) {
+        colorFdsSelect.removeEventListener('change', validarPrintMulticolorFila);
+        colorFdsSelect.addEventListener('change', validarPrintMulticolorFila);
+    }
+}
+// Función para validar todas las filas antes de guardar
+function validarTodasLasFilasPrintMulticolor() {
+    const skuTableBody = document.querySelector('#skuTable tbody');
+    let errorEncontrado = false;
+    
+    if (skuTableBody) {
+        skuTableBody.querySelectorAll('.fila-carga').forEach(row => {
+            const colorFdsSelect = row.querySelector('.campo-formulario[data-campo-nombre="COLOR_FDS"]');
+            const printSelect = row.querySelector('.campo-formulario[data-campo-nombre="PRINT"]');
+            
+            if (colorFdsSelect && printSelect) {
+                const colorFdsValue = colorFdsSelect.value.trim();
+                const printValue = printSelect.value.trim();
+                
+                if (colorFdsValue !== "999" && printValue !== "") {
+                    errorEncontrado = true;
+                    printSelect.style.backgroundColor = "#ffe0e0";
+                    setTimeout(() => { printSelect.style.backgroundColor = ""; }, 3000);
+                }
+            }
+        });
+    }
+    
+    return !errorEncontrado;
+}
 </script>
 </body>
 </html>

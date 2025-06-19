@@ -2,10 +2,12 @@
  * Listado de tallas para prendas superiores (ej: camisetas, chaquetas, etc.)
  */
 const TALLAS_SUPERIOR = [
+  { value: "XXS", text: "XXS"},
   { value: "XS", text: "XS" },
   { value: "S", text: "S" },
   { value: "M", text: "M" },
   { value: "L", text: "L" },
+  { value: "T", text: "T"},
   { value: "XL", text: "XL" },
   { value: "XXL", text: "XXL" },
 ];
@@ -14,7 +16,14 @@ const TALLAS_SUPERIOR = [
  * Listado de tallas para prendas inferiores (ej: pantalones, faldas, etc.)
  */
 const TALLAS_INFERIOR = [
-  { value: "26", text: "26" },
+  { value: "2", text: "2" },
+  { value: "4", text: "4" },
+  { value: "6", text: "6" },
+  { value: "8", text: "8" },
+  { value: "10", text: "10" },
+  { value: "12", text: "12" },
+  { value: "14", text: "14" },
+  { value: "16", text: "16" },
   { value: "28", text: "28" },
   { value: "30", text: "30" },
   { value: "32", text: "32" },

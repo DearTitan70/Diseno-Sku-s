@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const filterDateFrom = document.getElementById("filterDateFrom");
     const filterDateTo = document.getElementById("filterDateTo");
     // NUEVOS FILTROS
-    const filterId = document.getElementById("filterId");
+    const filterName = document.getElementById("filterName");
     const filterUsuario = document.getElementById("filterUsuario");
     const exportBtn = document.getElementById("exportarXLSX");
     let allData = [];
@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function filterData(data) {
         const from = filterDateFrom.value;
         const to = filterDateTo.value;
-        const idValue = filterId && filterId.value ? filterId.value.trim() : "";
+        const NameValue = filterName && filterName.value ? filterName.value.trim() : "";
         const usuarioValue = filterUsuario && filterUsuario.value ? filterUsuario.value.trim().toLowerCase() : "";
 
         return data.filter(registro => {
@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (from && fecha < from) return false;
             if (to && fecha > to) return false;
             // Filtro por ID (exacto o parcial)
-            if (idValue && !registro.id.toString().includes(idValue)) return false;
+            if (NameValue && !registro.NOMBRE.toString().includes(NameValue)) return false;
             // Filtro por usuario (parcial, insensible a mayúsculas)
             if (usuarioValue && (!registro.usuario || !registro.usuario.toLowerCase().includes(usuarioValue))) return false;
             return true;
@@ -418,7 +418,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // EVENTOS para los filtros
     filterDateFrom.addEventListener("change", renderGroupedTable);
     filterDateTo.addEventListener("change", renderGroupedTable);
-    if (filterId) filterId.addEventListener("input", renderGroupedTable);
+    if (filterName) filterName.addEventListener("input", renderGroupedTable);
     if (filterUsuario) filterUsuario.addEventListener("input", renderGroupedTable);
 
     // Exportar registros filtrados (sin ID, usuario, fecha_creacion ni Acciones)

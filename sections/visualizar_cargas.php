@@ -439,8 +439,8 @@ require_login_and_role();
             <input type="date" id="filterDateTo">
         </label>
         <label>
-            ID
-            <input type="text" id="filterId" placeholder="Filtrar por ID" style="width:350px;">
+            Nombre
+            <input type="text" id="filterName" placeholder="Filtrar por Nombre" style="width:350px;">
         </label>
         
         <label>
