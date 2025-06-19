@@ -1,4 +1,3 @@
-
 <?php
 header('Content-Type: application/json');
 include '../conexion.php';
@@ -38,7 +37,6 @@ function obtenerDestinatarios($pdo_users) {
     $stmt->execute();
     $correos = [];
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        // Asegúrate de que el campo se llama exactamente así en la BD
         $correo = $row['correo_electronico'];
         if (filter_var($correo, FILTER_VALIDATE_EMAIL)) {
             $correos[] = $correo;
@@ -98,18 +96,22 @@ foreach ($rows as $row) {
     date_default_timezone_set('America/Bogota');
     $fechaBitacora = date('Y-m-d H:i:s');
 
-    $cambiosParaCorreo = []; // <--- NUEVO: recolecta los cambios para el correo
+    $cambiosParaCorreo = []; // Recolecta los cambios para el correo
+
+    // Obtener el nombre actual (nuevo) para bitácora y correo
+    $nombreRegistro = isset($row['NOMBRE']) ? $row['NOMBRE'] : (isset($oldData['NOMBRE']) ? $oldData['NOMBRE'] : '');
 
     foreach ($fields as $field) {
         $oldValue = isset($oldData[$field]) ? $oldData[$field] : null;
         $newValue = isset($row[$field]) ? $row[$field] : null;
         // Solo registrar si hay cambio (incluye null vs "")
         if ($oldValue != $newValue) {
-            $stmtBitacora = $pdo->prepare("INSERT INTO bitacora_cambios (usuario, fecha, registro_id, campo, valor_anterior, valor_nuevo, accion) VALUES (?, ?, ?, ?, ?, ?, 'UPDATE')");
+            $stmtBitacora = $pdo->prepare("INSERT INTO bitacora_cambios (usuario, fecha, registro_id, nombre, campo, valor_anterior, valor_nuevo, accion) VALUES (?, ?, ?, ?, ?, ?, ?, 'UPDATE')");
             $stmtBitacora->execute([
                 $usuarioBitacora,
                 $fechaBitacora,
                 $idValue,
+                $nombreRegistro,
                 $field,
                 $oldValue,
                 $newValue
@@ -154,9 +156,10 @@ foreach ($rows as $row) {
 
     // 4. Enviar correo si hubo cambios
     if (!empty($cambiosParaCorreo)) {
-        $destinatarios = obtenerDestinatarios($pdo_users); // <--- AHORA SE OBTIENEN DE LA BD
+        $destinatarios = obtenerDestinatarios($pdo_users);
         if (!empty($destinatarios)) {
-            enviarCorreoCambioCarga($idValue, $cambiosParaCorreo, $usuarioBitacora, $fechaBitacora, $destinatarios, $pdo);
+            // Ahora se pasa el nombre en vez del id
+            enviarCorreoCambioCarga($nombreRegistro, $cambiosParaCorreo, $usuarioBitacora, $fechaBitacora, $destinatarios, $pdo);
         }
     }
 }

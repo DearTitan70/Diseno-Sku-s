@@ -5,7 +5,7 @@ include '../conexion.php';
 $conn->set_charset('utf8mb4');
 
 // Define la consulta SQL para obtener todas las reglas de dependencia
-$sql = "SELECT usuario, fecha, registro_id, campo, valor_anterior, valor_nuevo
+$sql = "SELECT usuario, fecha, registro_id, nombre, campo, valor_anterior, valor_nuevo
         FROM bitacora_cambios";
 
 // Ejecuta la consulta SQL y almacena el resultado
@@ -23,6 +23,7 @@ if ($result->num_rows > 0) {
             "usuario" => $row["usuario"],
             "fecha" => $row["fecha"],
             "registro_id" => $row["registro_id"],
+            "nombre" => $row["nombre"],
             "campo" => $row["campo"],
             "valor_anterior" => $row["valor_anterior"],
             "valor_nuevo" => $row["valor_nuevo"],

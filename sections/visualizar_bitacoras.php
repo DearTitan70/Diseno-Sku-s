@@ -844,7 +844,8 @@ document.addEventListener("DOMContentLoaded", function () {
       (cambio.usuario && cambio.usuario.toLowerCase().includes(searchTerm)) ||
       (cambio.valor_anterior && cambio.valor_anterior.toLowerCase().includes(searchTerm)) ||
       (cambio.valor_nuevo && cambio.valor_nuevo.toLowerCase().includes(searchTerm)) ||
-      (cambio.registro_id && cambio.registro_id.toString().includes(searchTerm));
+      (cambio.nombre && cambio.nombre.toLowerCase().includes(searchTerm)) ||
+      (cambio.registro_id && cambio.registro_id.toString().includes(searchTerm)); 
 
     // Filtro por campo modificado
     const matchesCampo =
@@ -890,6 +891,7 @@ if (campoFilter) campoFilter.addEventListener("input", applyFilters);
         "Usuario que modifico",
         "Fecha de modificacion",
         "ID del registro afectado",
+        "Nombre del registro afectado",
         "Campo Modificado",
         "Valor antes del cambio",
         "Valor despues del cambio"
@@ -923,6 +925,7 @@ if (campoFilter) campoFilter.addEventListener("input", applyFilters);
                 <td>${registro.usuario}</td>
                 <td>${registro.fecha}</td>
                 <td>${registro.registro_id}</td>
+                <td>${registro.nombre}</td>
                 <td>${registro.campo}</td>
                 <td>${registro.valor_anterior}</td>
                 <td>${registro.valor_nuevo}</td>
