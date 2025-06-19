@@ -440,7 +440,7 @@ require_login_and_role();
         </label>
         <label>
             Nombre
-            <input type="text" id="filterName" placeholder="Filtrar por Nombre" style="width:350px;  text-transform: uppercase;">
+            <input type="text" id="filterName" placeholder="Filtrar por Nombre" style="width:350px;" oninput="this.value=this.value.toUpperCase();">
         </label>
         
         <label>
