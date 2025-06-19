@@ -705,6 +705,9 @@ require_login_and_role([1, 2]);
           <button type="button" id="open-capsula-modal-btn" class="btn">
             + Crear Cápsula
           </button>
+          <button type="button" id="open-proveedor-modal-btn" class="btn">
+            + Crear Proveedor
+          </button>
           <!-- Botón para ver cápsulas existentes -->
           <button
             type="button"
@@ -713,6 +716,14 @@ require_login_and_role([1, 2]);
             onclick="window.location.href='visualizar_capsulas.php'"
           >
             Ver Capsulas
+          </button>
+          <button
+            type="button"
+            id="open-proveedores-modal-btn"
+            class="btn"
+            onclick="window.location.href='visualizar_proveedores.php'"
+          >
+            Ver Proveedores
           </button>
         </div>
       </div>
@@ -890,6 +901,76 @@ require_login_and_role([1, 2]);
       </div>
     </div>
 
+    <!-- =====================
+        MODAL PARA CREAR PROVEEDORES
+        ======================= -->
+    <div
+      id="proveedor-modal"
+      class="hidden"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+      "
+    >
+      <div
+        style="
+          background: #fff;
+          padding: 30px 20px 20px 20px;
+          border-radius: 8px;
+          min-width: 320px;
+          max-width: 90vw;
+          position: relative;
+        "
+      >
+        <!-- Botón para cerrar el modal -->
+        <button
+          id="close-proveedor-modal-btn"
+          style="
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            color: #888;
+            cursor: pointer;
+          "
+        >
+          &times;
+        </button>
+        <h3>Crear Nuevo Proveedor</h3>
+        <form id="proveedor-form">
+          <label for="nombre_proveedor">Nombre del proveedor:</label>
+          <input
+            type="text"
+            id="nombre_proveedor"
+            name="nombre_proveedor"
+            required
+            maxlength="100"
+            placeholder="Ej: HiperModa"
+          />
+          <div style="margin-top: 10px">
+            <button type="submit" style="background-color: #5cb85c">
+              Guardar Proveedor
+            </button>
+          </div>
+          <div
+            id="proveedor-status-message"
+            style="margin-top: 10px; display: none"
+          ></div>
+        </form>
+      </div>
+    </div>
+      
+
     <!-- =========================
          SCRIPTS DE INTERACCIÓN
          ========================= -->
@@ -944,6 +1025,73 @@ require_login_and_role([1, 2]);
               setTimeout(() => {
                 document
                   .getElementById("capsula-modal")
+                  .classList.add("hidden");
+              }, 1000);
+              // Aquí podrías recargar selects de cápsulas si existen
+            } else {
+              statusDiv.textContent =
+                data.message || "Error al crear la cápsula.";
+              statusDiv.className = "error";
+              statusDiv.style.display = "block";
+            }
+          })
+          .catch((err) => {
+            statusDiv.textContent = "Error de red o servidor.";
+            statusDiv.className = "error";
+            statusDiv.style.display = "block";
+          });
+      };
+
+      // =========================
+      // MODAL DE PROVEEDOR
+      // =========================
+      // Abrir modal de cápsula
+      document.getElementById("open-proveedor-modal-btn").onclick = function () {
+        document.getElementById("proveedor-modal").classList.remove("hidden");
+        document.getElementById("nombre_proveedor").value = "";
+        document.getElementById("proveedor-status-message").style.display =
+          "none";
+      };
+      // Cerrar modal de cápsula
+      document.getElementById("close-proveedor-modal-btn").onclick = function () {
+        document.getElementById("proveedor-modal").classList.add("hidden");
+      };
+
+      // =========================
+      // ENVÍO DEL FORMULARIO DE CÁPSULA
+      // =========================
+      document.getElementById("proveedor-form").onsubmit = function (e) {
+        e.preventDefault();
+        const nombre = document.getElementById("nombre_proveedor").value.trim();
+        const statusDiv = document.getElementById("proveedor-status-message");
+        statusDiv.style.display = "none";
+        statusDiv.textContent = "";
+        statusDiv.className = "";
+
+        // Validación simple
+        if (!nombre) {
+          statusDiv.textContent = "El nombre es obligatorio.";
+          statusDiv.className = "error";
+          statusDiv.style.display = "block";
+          return;
+        }
+
+        // Enviar datos al backend para crear la cápsula
+        fetch("../backend/crear_proveedor.php", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ nombre: nombre }),
+        })
+          .then((resp) => resp.json())
+          .then((data) => {
+            if (data.success) {
+              statusDiv.textContent = "¡Proveedor creado!";
+              statusDiv.className = "success";
+              statusDiv.style.display = "block";
+              // Cerrar modal tras 1 segundo
+              setTimeout(() => {
+                document
+                  .getElementById("proveedor-modal")
                   .classList.add("hidden");
               }, 1000);
               // Aquí podrías recargar selects de cápsulas si existen

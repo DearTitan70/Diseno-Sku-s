@@ -678,7 +678,7 @@ $fecha_actual = date("Y-m-d H:i:s");
                         </select>
                     </td>
                     <td>
-                        <select class="campo-formulario" data-campo-nombre="PROVEEDOR" data-campo-type="static">
+                        <select class="campo-formulario" data-campo-nombre="PROVEEDOR" data-campo-type="variable">
                             <option value="">Seleccione</option>
                         </select>
                     </td>
@@ -1081,8 +1081,32 @@ function cargarCapsulasEnSelects() {
         });
 }
 
+function cargarProveedoresEnSelects() {
+    fetch('../api/get_proveedores.php')
+        .then(response => response.json())
+        .then(data => {
+            // Llena todos los selects de CAPSULA con las opciones recibidas
+            document.querySelectorAll('select.campo-formulario[data-campo-nombre="PROVEEDOR"]').forEach(select => {
+                // Limpia las opciones actuales
+                select.innerHTML = '<option value="">Seleccione</option>';
+                if (Array.isArray(data)) {
+                    data.forEach(capsula => {
+                        const opt = document.createElement('option');
+                        opt.value = capsula.nombre;
+                        opt.textContent = capsula.nombre;
+                        select.appendChild(opt);
+                    });
+                }
+            });
+        })
+        .catch(err => {
+            console.error('Error cargando cápsulas:', err);
+        });
+}
+
 // Llama a la función al cargar la página
 document.addEventListener('DOMContentLoaded', cargarCapsulasEnSelects);
+document.addEventListener('DOMContentLoaded', cargarProveedoresEnSelects);
 
 // Variable global con el nombre del usuario actual
 const CURRENT_USER = "<?php echo htmlspecialchars($userName . ' ' . $userApellido); ?>";
@@ -1726,44 +1750,6 @@ function getStaticOptions(fieldName) {
                 {value:"A-B-C", text:"A-B-C"},
                 {value:"B-C", text:"B-C"},
                 {value:"A-C", text:"A-C"},
-            ];
-        case "PROVEEDOR":
-            return [
-                {value:"B&R FASHION", text:"B&R FASHION"},
-                {value:"BODEGA DE MODA", text:"BODEGA DE MODA"},
-                {value:"CREITEX", text:"CREITEX"},
-                {value:"DINAMIC", text:"DINAMIC"},
-                {value:"EVERFIT", text:"EVERFIT"},
-                {value:"FANDA", text:"FANDA"},
-                {value:"GLOBAL CONTEX", text:"GLOBAL CONTEX"},
-                {value:"INHOUSE", text:"INHOUSE"},
-                {value:"ISHAJON S.A.S.", text:"ISHAJON S.A.S."},
-                {value:"J ORTIZ", text:"J ORTIZ"},
-                {value:"LA COSTURETA", text:"LA COSTURETA"},
-                {value:"LYNETTE", text:"LYNETTE"},
-                {value:"PACK PLATINO", text:"PACK PLATINO"},
-                {value:"QUANZHOU BLOSSOM", text:"QUANZHOU BLOSSOM"},
-                {value:"SINOSKY", text:"SINOSKY"},
-                {value:"SODIMCO", text:"SODIMCO"},
-                {value:"UGLY DUCK", text:"UGLY DUCK"},
-                {value:"XINGI", text:"XINGI"},
-                {value:"MICTEX", text:"MICTEX"},
-                {value:"VERSATILE TECHNOLOGY", text:"VERSATILE TECHNOLOGY"},
-                {value:"DISEX", text:"DISEX"},
-                {value:"MONALISA", text:"MONALISA"},
-                {value:"PACCO", text:"PACCO"},
-                {value:"XABBA", text:"XABBA"},
-                {value:"INVERZAMAN", text:"INVERZAMAN"},
-                {value:"EMBU", text:"EMBU"},
-                {value:"CI-IBLU", text:"CI-IBLU"},
-                {value:"TOXIC", text:"TOXIC"},
-                {value:"CATNAT", text:"CATNAT"},
-                {value:"J ORTIZ", text:"J ORTIZ"},
-                {value:"VIKATS", text:"VIKATS"},
-                {value:"PORKY", text:"PORKY"},
-                {value:"NESD", text:"NESD"},
-                {value:"BINBO APPAREL", text:"BINBO APPAREL"},
-                {value:"HUZHOU ZHENGXING", text:"HUZHOU ZHENGXING"}
             ];
         case "CATEGORIAS":
             return [
