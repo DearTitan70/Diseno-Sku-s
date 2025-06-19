@@ -625,7 +625,7 @@ $fecha_actual = date("Y-m-d H:i:s");
                     <td class="campo-formulario" data-campo-nombre="usuario" data-campo-type="static"><?php echo htmlspecialchars($userName); echo " "; echo htmlspecialchars($userApellido) ?></td>
                     <td class="campo-formulario" data-campo-nombre="fecha_creacion" data-campo-type="static"><?php echo htmlspecialchars($fecha_actual); ?></td>
                     <td>
-                        <input type="text"  class="campo-formulario" data-campo-nombre="SAP" data-campo-type="static"></input>
+                        <input type="text"  class="campo-formulario" data-campo-nombre="SAP" data-campo-type="static" readonly></input>
                     </td>
                     <td>
                         <select class="campo-formulario" data-campo-nombre="YEAR" data-campo-type="static">
@@ -643,7 +643,7 @@ $fecha_actual = date("Y-m-d H:i:s");
                         </select>
                     </td>
                     <td>
-                        <input type="text" class="campo-formulario" data-campo-nombre="NOMBRE" data-campo-type="static">
+                        <input type="text" class="campo-formulario" data-campo-nombre="NOMBRE" data-campo-type="static" oninput="this.value=this.value.toUpperCase();">
                     </td>
                     <td>
                         <select id="mod" class="campo-formulario" data-campo-nombre="MODULO" data-campo-type="static" onchange="asignarvalortemporada(this)">
@@ -698,7 +698,7 @@ $fecha_actual = date("Y-m-d H:i:s");
                         </select>
                     </td>
                     <td>
-                        <input type="text" class="campo-formulario" data-campo-nombre="DESCRIPCION" data-campo-type="static">
+                        <input type="text" class="campo-formulario" data-campo-nombre="DESCRIPCION" data-campo-type="static" oninput="this.value=this.value.toUpperCase();">
                     </td>
                     <td>
                         <select class="campo-formulario" data-campo-nombre="MANGA" data-campo-type="dependent">
@@ -860,7 +860,7 @@ $fecha_actual = date("Y-m-d H:i:s");
                         </select>
                     </td>
                     <td>
-                        <input type="number" class="campo-formulario" data-campo-nombre="%_COMP_1" data-campo-type="static"></input>
+                        <input type="number" class="campo-formulario" data-campo-nombre="%_COMP_1" data-campo-type="static" oninput="this.value=this.value.toUpperCase();"></input>
                     </td>
                     <td>
                         <select class="campo-formulario" data-campo-nombre="COMPOSICION_2" data-campo-type="static">
@@ -868,7 +868,7 @@ $fecha_actual = date("Y-m-d H:i:s");
                         </select>
                     </td>
                     <td>
-                        <input type="number" class="campo-formulario" data-campo-nombre="%_COMP_2" data-campo-type="static"></input>
+                        <input type="number" class="campo-formulario" data-campo-nombre="%_COMP_2" data-campo-type="static" oninput="this.value=this.value.toUpperCase();"></input>
                     </td>
                     <td>
                         <select class="campo-formulario" data-campo-nombre="COMPOSICION_3" data-campo-type="static">
@@ -876,7 +876,7 @@ $fecha_actual = date("Y-m-d H:i:s");
                         </select>
                     </td>
                     <td>
-                        <input type="number" class="campo-formulario" data-campo-nombre="%_COMP_3" data-campo-type="static"></input>
+                        <input type="number" class="campo-formulario" data-campo-nombre="%_COMP_3" data-campo-type="static" oninput="this.value=this.value.toUpperCase();"></input>
                     </td>
                     <td>
                         <select class="campo-formulario" data-campo-nombre="COMPOSICION_4" data-campo-type="static">
@@ -884,7 +884,7 @@ $fecha_actual = date("Y-m-d H:i:s");
                         </select>
                     </td>
                     <td>
-                        <input type="number" class="campo-formulario" data-campo-nombre="%_COMP_4" data-campo-type="static"></input>
+                        <input type="number" class="campo-formulario" data-campo-nombre="%_COMP_4" data-campo-type="static" oninput="this.value=this.value.toUpperCase();"></input>
                     </td>
                     <td class="campo-formulario" data-campo-nombre="TOT_COMP" data-campo-type="static">-
                     </td>
@@ -899,7 +899,7 @@ $fecha_actual = date("Y-m-d H:i:s");
                         </select>
                     </td>
                     <td>
-                        <input type="number" class="campo-formulario" data-campo-nombre="%_FORRO_1" data-campo-type="static"></input>
+                        <input type="number" class="campo-formulario" data-campo-nombre="%_FORRO_1" data-campo-type="static" oninput="this.value=this.value.toUpperCase();"></input>
                     </td>
                     <td>
                         <select class="campo-formulario" data-campo-nombre="COMP_FORRO_2" data-campo-type="dependent">
@@ -907,7 +907,7 @@ $fecha_actual = date("Y-m-d H:i:s");
                         </select>
                     </td>
                     <td>
-                        <input type="number" class="campo-formulario" data-campo-nombre="%_FORRO_2" data-campo-type="static"></input>
+                        <input type="number" class="campo-formulario" data-campo-nombre="%_FORRO_2" data-campo-type="static" oninput="this.value=this.value.toUpperCase();"></input>
                     </td>
                     <td class="campo-formulario" data-campo-nombre="TOT_FORRO" data-campo-type="static">-
                     </td>
@@ -922,7 +922,7 @@ $fecha_actual = date("Y-m-d H:i:s");
                         </select>
                     </td>
                     <td>
-                        <input type="number" class="campo-formulario" data-campo-nombre="%_RELLENO_1" data-campo-type="static"></input>
+                        <input type="number" class="campo-formulario" data-campo-nombre="%_RELLENO_1" data-campo-type="static" oninput="this.value=this.value.toUpperCase();"></input>
                     </td>
                     <td>
                         <select class="campo-formulario" data-campo-nombre="COMP_RELLENO_2" data-campo-type="dependent">
@@ -930,18 +930,18 @@ $fecha_actual = date("Y-m-d H:i:s");
                         </select>
                     </td>
                     <td>
-                        <input type="number" class="campo-formulario" data-campo-nombre="%_RELLENO_2" data-campo-type="static"></input>
+                        <input type="number" class="campo-formulario" data-campo-nombre="%_RELLENO_2" data-campo-type="static" oninput="this.value=this.value.toUpperCase();"></input>
                     </td>
                     <td class="campo-formulario" data-campo-nombre="TOT_RELLENO" data-campo-type="static">-
                     </td>
                     <td>
-                        <input type="number" class="campo-formulario" data-campo-nombre="precio_compra" data-campo-type="static"></input>
+                        <input type="number" class="campo-formulario" data-campo-nombre="precio_compra" data-campo-type="static" oninput="this.value=this.value.toUpperCase();"></input>
                     </td>
                     <td>
-                        <input type="number" class="campo-formulario" data-campo-nombre="costo" data-campo-type="static"></input>
+                        <input type="number" class="campo-formulario" data-campo-nombre="costo" data-campo-type="static" oninput="this.value=this.value.toUpperCase();"></input>
                     </td>
                     <td>
-                        <input type="number" class="campo-formulario" data-campo-nombre="precio_venta" data-campo-type="static"></input>
+                        <input type="number" class="campo-formulario" data-campo-nombre="precio_venta" data-campo-type="static" oninput="this.value=this.value.toUpperCase();"></input>
                     </td>
                     <td><button class="delete-row">Eliminar</button></td>
                 </tr>

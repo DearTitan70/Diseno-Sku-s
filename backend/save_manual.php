@@ -36,7 +36,8 @@ $fields = [
     'tipo', 'usuario','fecha_creacion','SAP', 'YEAR', 'MES', 'OCASION_DE_USO', 'NOMBRE', 'MODULO', 'TEMPORADA', 'CAPSULA', 'CLIMA', 'TIENDA', 'CLASIFICACION', 'CLUSTER', 'PROVEEDOR', 'CATEGORIAS', 'SUBCATEGORIAS', 'DISENO', 'DESCRIPCION', 'MANGA', 'TIPO_MANGA', 'PUNO', 'CAPOTA', 'ESCOTE', 'LARGO', 'CUELLO', 'TIRO', 'BOTA', 'CINTURA', 'SILUETA', 'CIERRE', 'GALGA', 'TIPO_GALGA', 'COLOR_FDS', 'NOM_COLOR', 'GAMA', 'PRINT', 'TALLAS', 'TIPO_TEJIDO', 'TIPO_DE_FIBRA', 'BASE_TEXTIL', 'DETALLES', 'SUB_DETALLES', 'GRUPO', 'INSTRUCCION_DE_LAVADO_1', 'INSTRUCCION_DE_LAVADO_2', 'INSTRUCCION_DE_LAVADO_3', 'INSTRUCCION_DE_LAVADO_4', 'INSTRUCCION_DE_LAVADO_5', 'INSTRUCCION_BLANQUEADO_1', 'INSTRUCCION_BLANQUEADO_2', 'INSTRUCCION_BLANQUEADO_3', 'INSTRUCCION_BLANQUEADO_4', 'INSTRUCCION_BLANQUEADO_5', 'INSTRUCCION_SECADO_1', 'INSTRUCCION_SECADO_2', 'INSTRUCCION_SECADO_3', 'INSTRUCCION_SECADO_4', 'INSTRUCCION_SECADO_5', 'INSTRUCCION_PLANCHADO_1', 'INSTRUCCION_PLANCHADO_2', 'INSTRUCCION_PLANCHADO_3', 'INSTRUCCION_PLANCHADO_4', 'INSTRUCCION_PLANCHADO_5', 'INSTRUCC_CUIDADO_TEXTIL_PROF_1', 'INSTRUCC_CUIDADO_TEXTIL_PROF_2', 'INSTRUCC_CUIDADO_TEXTIL_PROF_3', 'INSTRUCC_CUIDADO_TEXTIL_PROF_4', 'INSTRUCC_CUIDADO_TEXTIL_PROF_5', 'COMPOSICION_1', '%_COMP_1', 'COMPOSICION_2', '%_COMP_2', 'COMPOSICION_3', '%_COMP_3', 'COMPOSICION_4', '%_COMP_4', 'TOT_COMP', 'FORRO', 'COMP_FORRO_1', '%_FORRO_1', 'COMP_FORRO_2', '%_FORRO_2', 'TOT_FORRO', 'RELLENO', 'COMP_RELLENO_1', '%_RELLENO_1', 'COMP_RELLENO_2', '%_RELLENO_2', 'TOT_RELLENO', 'precio_compra', 'costo', 'precio_venta'
 ];
 
-$idsInsertados = [];
+// Cambiar de idsInsertados a nombresInsertados
+$nombresInsertados = [];
 foreach ($rows as $row) {
     $placeholders = [];
     $values = [];
@@ -50,7 +51,10 @@ foreach ($rows as $row) {
         $stmt = $pdo->prepare($sql);
         $stmt->execute($values);
         $inserted++;
-        $idsInsertados[] = $pdo->lastInsertId();
+        // Guardar el NOMBRE insertado
+        if (isset($row['NOMBRE'])) {
+            $nombresInsertados[] = $row['NOMBRE'];
+        }
     } catch (Exception $e) {
         $errors[] = $e->getMessage();
     }
@@ -70,13 +74,12 @@ try {
         $destinatarios[] = $rowDest['correo'];
     }
 } catch (Exception $e) {
-    // Si falla la consulta, puedes decidir si continuar o no
     $errors[] = "Error obteniendo destinatarios: " . $e->getMessage();
 }
 
 // Enviar correo solo si hubo inserciones y hay destinatarios
-if ($inserted > 0 && !empty($idsInsertados) && !empty($destinatarios)) {
-    enviarCorreoNuevaCarga($idsInsertados, $usuarioBitacora, $fechaBitacora, $destinatarios);
+if ($inserted > 0 && !empty($nombresInsertados) && !empty($destinatarios)) {
+    enviarCorreoNuevaCarga($nombresInsertados, $usuarioBitacora, $fechaBitacora, $destinatarios);
 }
 
 if ($inserted > 0) {

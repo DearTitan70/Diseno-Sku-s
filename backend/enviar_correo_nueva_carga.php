@@ -1,4 +1,3 @@
-
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -6,26 +5,26 @@ use PHPMailer\PHPMailer\Exception;
 require_once __DIR__ . '/../vendor/autoload.php'; // PHPMailer
 
 /**
- * Envía un correo notificando la creación de nuevas cargas, mostrando solo los IDs asignados.
- * @param array $idsInsertados Array de IDs autoincrementales asignados por la BD.
+ * Envía un correo notificando la creación de nuevas cargas, mostrando los NOMBRES asignados.
+ * @param array $nombresInsertados Array de nombres insertados en la BD.
  * @param string $usuario
  * @param string $fecha
  * @param array $destinatarios
  * @return bool
  */
-function enviarCorreoNuevaCarga($idsInsertados, $usuario, $fecha, $destinatarios = []) {
-    if (empty($idsInsertados)) return false;
+function enviarCorreoNuevaCarga($nombresInsertados, $usuario, $fecha, $destinatarios = []) {
+    if (empty($nombresInsertados)) return false;
 
-    // Construir la lista de IDs en HTML (robusto para arrays o escalares)
-    $listaIds = "<ul>";
-    foreach ($idsInsertados as $id) {
-        // Si $id es array, toma el primer valor
-        if (is_array($id)) {
-            $id = reset($id);
+    // Construir la lista de nombres en HTML
+    $listaNombres = "<ul>";
+    foreach ($nombresInsertados as $nombre) {
+        // Si $nombre es array, toma el primer valor
+        if (is_array($nombre)) {
+            $nombre = reset($nombre);
         }
-        $listaIds .= "<li><b>ID:</b> " . htmlspecialchars((string)$id) . "</li>";
+        $listaNombres .= "<li><b>Nombre:</b> " . htmlspecialchars((string)$nombre) . "</li>";
     }
-    $listaIds .= "</ul>";
+    $listaNombres .= "</ul>";
 
     $subject = "NUEVA CARGA en el sistema de creación de SKU's";
     $body = "
@@ -33,11 +32,11 @@ function enviarCorreoNuevaCarga($idsInsertados, $usuario, $fecha, $destinatarios
         <ul>
             <li><b>Usuario:</b> $usuario</li>
             <li><b>Fecha:</b> $fecha</li>
-            <li><b>Cantidad de filas:</b> " . count($idsInsertados) . "</li>
+            <li><b>Cantidad de filas:</b> " . count($nombresInsertados) . "</li>
         </ul>
-        <p><b>IDs asignados por la base de datos:</b></p>
-        $listaIds
-        <a href='https://fds.com.co/diseno/sections/index.php'>Click aqui para ingresar al sistema</a>
+        <p><b>Nombres de los registros:</b></p>
+        $listaNombres
+        <a href='https://fds.com.co/diseno/sections/index.php'>Click aquí para ingresar al sistema</a>
         <p>Este es un mensaje automático. Por favor no responder.</p>
     ";
 
