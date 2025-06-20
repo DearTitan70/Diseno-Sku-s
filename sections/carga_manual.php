@@ -515,6 +515,7 @@ $fecha_actual = date("Y-m-d H:i:s");
                 <tr>
                     <!-- Encabezados de la tabla, cada uno con su data-campo-nombre para identificación -->
                     <th data-campo-nombre="tipo">TIPO DE PRODUCTO</th>
+                    <th data-campo-nombre="LINEA">LINEA DEL PRODUCTO</th>
                     <th data-campo-nombre="usuario">USUARIO</th>
                     <th data-campo-nombre="fecha_creacion">FECHA DE CREACION</th>
                     <th data-campo-nombre="SAP">SAP</th>
@@ -605,6 +606,7 @@ $fecha_actual = date("Y-m-d H:i:s");
                     <th data-campo-nombre="COMP_RELLENO_2">COMPOSICION RELLENO 2</th>
                     <th data-campo-nombre="%_RELLENO_2">% RELLENO 2</th>
                     <th data-campo-nombre="TOT_RELLENO">TOTAL RELLENO</th>
+                    <th data-campo-nombre="XX">XX</th>
                     <th data-campo-nombre="precio_compra">PRECIO DE COMPRA</th>
                     <th data-campo-nombre="costo">COSTO</th>
                     <th data-campo-nombre="precio_venta">PRECIO DE VENTA</th>
@@ -621,6 +623,11 @@ $fecha_actual = date("Y-m-d H:i:s");
                     -->
                     <td>
                         <select class="campo-formulario" data-campo-nombre="tipo" data-campo-type="static">
+                            <option value="">Seleccione</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="campo-formulario" data-campo-nombre="LINEA" data-campo-type="static">
                             <option value="">Seleccione</option>
                         </select>
                     </td>
@@ -937,6 +944,9 @@ $fecha_actual = date("Y-m-d H:i:s");
                     <td class="campo-formulario" data-campo-nombre="TOT_RELLENO" data-campo-type="static">-
                     </td>
                     <td>
+                        <input type="number" class="campo-formulario" data-campo-nombre="XX" data-campo-type="static" readonly></input>
+                    </td>
+                    <td>
                         <input type="number" class="campo-formulario" data-campo-nombre="precio_compra" data-campo-type="static" oninput="this.value=this.value.toUpperCase();"></input>
                     </td>
                     <td>
@@ -961,7 +971,7 @@ Incluye validaciones, carga dinámica de opciones, lógica de dependencias, mane
 
 // Lista de campos obligatorios para validación antes de guardar
 const CAMPOS_OBLIGATORIOS_save = [
-    "tipo", "usuario", "fecha_creacion", "YEAR", "TOT_COMP", "TIPO_TEJIDO", "TIPO_DE_FIBRA", "TIENDA", "TEMPORADA", "TALLAS", "SUB_DETALLES", "SUBCATEGORIAS", "PROVEEDOR", "OCASION_DE_USO", "NOM_COLOR", "NOMBRE", "MODULO", "MES", "GRUPO", "GAMA", "DETALLES", "DESCRIPCION", "COLOR_FDS", "CLUSTER", "CLIMA", "CLASIFICACION", "CATEGORIAS", "CAPSULA", "BASE_TEXTIL", "%_COMP_1", "COMPOSICION_1", "precio_compra", "costo", "precio_venta"
+    "tipo", "LINEA", "usuario", "fecha_creacion", "YEAR", "TOT_COMP", "TIPO_TEJIDO", "TIPO_DE_FIBRA", "TIENDA", "TEMPORADA", "TALLAS", "SUB_DETALLES", "SUBCATEGORIAS", "PROVEEDOR", "OCASION_DE_USO", "NOM_COLOR", "NOMBRE", "MODULO", "MES", "GRUPO", "GAMA", "DETALLES", "DESCRIPCION", "COLOR_FDS", "CLUSTER", "CLIMA", "CLASIFICACION", "CATEGORIAS", "CAPSULA", "BASE_TEXTIL", "%_COMP_1", "COMPOSICION_1", "precio_compra", "costo", "precio_venta"
 ];
 
 /**
@@ -1666,6 +1676,11 @@ function getStaticOptions(fieldName) {
                 { value: "2028", text: "2028" },
                 { value: "2029", text: "2029" },
                 { value: "2030", text: "2030" }
+            ];
+        case "LINEA":
+            return [
+                { value: "Paquete Completo", text: "Paquete Completo" },
+                { value: "Colaboracion", text: "Colaboracion" }
             ];
         case "MES":
             return [

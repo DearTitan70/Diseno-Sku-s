@@ -7,7 +7,7 @@ require_once __DIR__ . '/../vendor/autoload.php'; // PHPMailer
 /**
  * Envía un correo notificando los cambios realizados a una carga.
  * Incluye el código SAP si está disponible.
- * @param int $idCarga
+ * @param string $nombreRegistro
  * @param array $cambios Array de arrays: ['campo', 'anterior', 'nuevo']
  * @param string $usuario
  * @param string $fecha
@@ -15,14 +15,14 @@ require_once __DIR__ . '/../vendor/autoload.php'; // PHPMailer
  * @param PDO|null $pdo (opcional) Conexión PDO para consultar el código SAP
  * @return bool
  */
-function enviarCorreoCambioCarga($idCarga, $cambios, $usuario, $fecha, $destinatarios = [], $pdo = null) {
+function enviarCorreoCambioCarga($nombreRegistro, $idCarga, $cambios, $usuario, $fecha, $destinatarios = [], $pdo = null) {
     if (empty($cambios)) return false;
 
     // Consultar el código SAP si se proporciona una conexión PDO
     $codigoSAP = null;
     if ($pdo instanceof PDO) {
-        $stmt = $pdo->prepare("SELECT SAP FROM cargas WHERE id = ?");
-        if ($stmt->execute([$idCarga])) {
+        $stmt = $pdo->prepare("SELECT id FROM catalogo_disenos WHERE id = ?");
+        if ($stmt->execute([$nombreRegistro])) {
             $codigoSAP = $stmt->fetchColumn();
         }
     }
@@ -34,14 +34,14 @@ function enviarCorreoCambioCarga($idCarga, $cambios, $usuario, $fecha, $destinat
     $tabla .= "</table>";
 
     // Construir el encabezado con ID y/o Código SAP
-    $infoCarga = "<b>N° $idCarga</b>";
+    $infoCarga = "<b>Nombre: $nombreRegistro</b>";
     if (!empty($codigoSAP)) {
         $infoCarga .= " (Código SAP: <b>$codigoSAP</b>)";
     }
 
-    $subject = "Modificación de carga N° $idCarga en el sistema de creacion de SKU's";
+    $subject = "Modificación de carga Nombre $nombreRegistro en el sistema de creacion de SKU's";
     $body = "
-        <p>Se ha realizado una modificación en la carga $infoCarga.</p>
+        <p>Se ha realizado una modificación en la carga ID. $idCarga.</p>
         <ul>
             <li><b>Usuario:</b> $usuario</li>
             <li><b>Fecha:</b> $fecha</li>

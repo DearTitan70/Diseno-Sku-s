@@ -374,7 +374,7 @@ require_login_and_role();
         #tabla-visualizar-cargas tr:nth-child(10) { animation-delay: 0.5s; }
 
         .btn-modificar {
-            background-color: #f0ad4e;
+            background-color: var(--color-primary);
             color: white;
         }
         .btn-modificar:hover {
@@ -391,6 +391,10 @@ require_login_and_role();
                 <i class="fas fa-arrow-left"></i> Regresar
             </button>
         </a>
+                <!-- Botón para abrir el modal de cambio masivo -->
+        <button class="btn" id="btnCambioMasivo">
+            <i class="fas fa-edit"></i> Cambio Masivo de color por Nombre
+        </button>
         <script src="../js/creacion_consecutivos.js"></script>
     </div>
     <div style="background: #e6f7ff; border: 1px solid #91d5ff; border-radius: 8px; padding: 18px 24px; margin: 24px 24px 0 24px; text-align: left; color: #274c5e; font-size: 1.08em;">
@@ -454,5 +458,251 @@ require_login_and_role();
             <tbody id="tabla-visualizar-cargas">
             </tbody>
     </div>
+
+<!-- Modal para cambio masivo -->
+<div id="modalCambioMasivo" style="display:none; position:fixed; top:0; left:0; width:100%; height:100vh; background:rgba(0,0,0,0.4); z-index:1000; align-items:center; justify-content:center;">
+    <div style="background:white; padding:32px; border-radius:12px; min-width:300px; max-width:20vh; box-shadow:0 8px 32px rgba(0,0,0,0.2);">
+        <h2>Cambio Masivo de color por Nombre</h2>
+        <form id="formCambioMasivo">
+            <label>
+                Nombre a modificar:
+                <input type="text" id="nombreCambioMasivo" required style="width:100%;" oninput="this.value=this.value.toUpperCase();">
+            </label>
+            <label>
+                Nuevo color:
+                <select id="nuevoColorFDS" required style="width:100%;">
+                    <!-- Opciones generadas por JS -->
+                </select>
+            </label>
+            <label id="labelPrintMasivo" style="display:none;">
+                PRINT:
+                <select id="printMasivo" style="width:100%;">
+                    <option value="">Seleccione un PRINT</option>
+                    <option value="BLANCO">BLANCO</option>
+                    <option value="AMARILLO">AMARILLO</option>
+                    <option value="AZUL">AZUL</option>
+                    <option value="BEIGE">BEIGE</option>
+                    <option value="CAFE">CAFE</option>
+                    <option value="MAGENTA">MAGENTA</option>
+                    <option value="MORADO">MORADO</option>
+                    <option value="NARANJA">NARANJA</option>
+                    <option value="NEGRO">NEGRO</option>
+                    <option value="ROJO">ROJO</option>
+                    <option value="ROSADO">ROSADO</option>
+                    <option value="TURQUEZA">TURQUEZA</option>
+                    <option value="VERDE">VERDE</option>
+                </select>
+            </label>
+            <label>
+                Campo a modificar:
+                <select id="campoCambioMasivo" required style="width:100%;">
+                    <option value="COLOR_FDS">COLOR_FDS</option>
+                </select>
+            </label>
+            <div style="margin-top:18px; display:flex; gap:12px;">
+                <button type="submit" class="btn btn-modificar">Aplicar Cambio Masivo</button>
+                <button type="button" class="btn" id="cerrarModalCambioMasivo" style="background:#a0a0a0;">Cancelar</button>
+            </div>
+        </form>
+        <div id="resultadoCambioMasivo" style="margin-top:12px; color:#274c5e;"></div>
+    </div>
+</div>
+<script>
+const COLORES_FDS = [
+    { codigo: "100", nombre: "BLANCO", gama: "BLANCO" },
+  { codigo: "101", nombre: "OFFWHITE", gama: "BLANCO" },
+  { codigo: "102", nombre: "IVORY", gama: "BLANCO" },
+  { codigo: "103", nombre: "IVORY", gama: "BLANCO" },
+  { codigo: "106", nombre: "BLANCO", gama: "BLANCO" },
+  { codigo: "109", nombre: "BEIGE", gama: "BEIGE" },
+  { codigo: "110", nombre: "BEIGE", gama: "BEIGE" },
+  { codigo: "121", nombre: "ARENA", gama: "BEIGE" },
+  { codigo: "123", nombre: "KAKI", gama: "BEIGE" },
+  { codigo: "203", nombre: "AMARILLO CLARO", gama: "AMARILLO" },
+  { codigo: "207", nombre: "LIMA", gama: "AMARILLO" },
+  { codigo: "209", nombre: "AMARILLO QUEMADO", gama: "AMARILLO" },
+  { codigo: "219", nombre: "BRIGHT GOLD", gama: "AMARILLO" },
+  { codigo: "220", nombre: "TIERRA", gama: "AMARILLO" },
+  { codigo: "224", nombre: "FLUORECENTE", gama: "AMARILLO" },
+  { codigo: "233", nombre: "CYBER LIME", gama: "AMARILLO" },
+  { codigo: "237", nombre: "AMARILLO", gama: "AMARILLO" },
+  { codigo: "258", nombre: "NARANJA", gama: "NARANJA" },
+  { codigo: "260", nombre: "NARANJA CLARO", gama: "NARANJA" },
+  { codigo: "263", nombre: "CORAL", gama: "NARANJA" },
+  { codigo: "264", nombre: "CORAL", gama: "NARANJA" },
+  { codigo: "266", nombre: "NARANJA", gama: "NARANJA" },
+  { codigo: "277", nombre: "CORAL", gama: "NARANJA" },
+  { codigo: "279", nombre: "TERRACOTA", gama: "NARANJA" },
+  { codigo: "281", nombre: "CORAL", gama: "NARANJA" },
+  { codigo: "283", nombre: "TERRACOTA", gama: "NARANJA" },
+  { codigo: "284", nombre: "NARANJA", gama: "NARANJA" },
+  { codigo: "300", nombre: "ROJO", gama: "ROJO" },
+  { codigo: "301", nombre: "ROJO", gama: "ROJO" },
+  { codigo: "313", nombre: "ROJO", gama: "ROJO" },
+  { codigo: "315", nombre: "ROJO", gama: "ROJO" },
+  { codigo: "319", nombre: "ROJO", gama: "ROJO" },
+  { codigo: "322", nombre: "VINO", gama: "ROJO" },
+  { codigo: "328", nombre: "VINO", gama: "ROJO" },
+  { codigo: "337", nombre: "BURGUNDY", gama: "ROJO" },
+  { codigo: "350", nombre: "FUCCIA", gama: "ROSADO" },
+  { codigo: "354", nombre: "ROSADO", gama: "ROSADO" },
+  { codigo: "356", nombre: "ROSADO", gama: "ROSADO" },
+  { codigo: "357", nombre: "ROSADO", gama: "ROSADO" },
+  { codigo: "361", nombre: "ROSA MARCHITA", gama: "ROSADO" },
+  { codigo: "362", nombre: "ROSA MARCHITA", gama: "ROSADO" },
+  { codigo: "363", nombre: "ROSA MARCHITA", gama: "ROSADO" },
+  { codigo: "366", nombre: "PALO DE ROSA", gama: "ROSADO" },
+  { codigo: "368", nombre: "BLUSH", gama: "ROSADO" },
+  { codigo: "367", nombre: "ROSADO", gama: "ROSADO" },
+  { codigo: "370", nombre: "ROSADO", gama: "ROSADO" },
+  { codigo: "372", nombre: "ROSADO", gama: "ROSADO" },
+  { codigo: "375", nombre: "FUCSIA", gama: "MAGENTA" },
+  { codigo: "369", nombre: "ROSADO", gama: "ROSADO" },
+  { codigo: "380", nombre: "MAGENTA", gama: "MAGENTA" },
+  { codigo: "393", nombre: "ROSADO", gama: "MAGENTA" },
+  { codigo: "394", nombre: "ROSADO", gama: "MAGENTA" },
+  { codigo: "395", nombre: "MAUVE", gama: "MAGENTA" },
+  { codigo: "401", nombre: "VIOLETA", gama: "MORADO" },
+  { codigo: "407", nombre: "PURPURA", gama: "MORADO" },
+  { codigo: "417", nombre: "LILA", gama: "MORADO" },
+  { codigo: "418", nombre: "LILA CLARO", gama: "MORADO" },
+  { codigo: "431", nombre: "MORADO", gama: "MORADO" },
+  { codigo: "454", nombre: "AZUL", gama: "AZUL" },
+  { codigo: "463", nombre: "AZUL CIELO", gama: "AZUL" },
+  { codigo: "473", nombre: "ROYAL", gama: "AZUL" },
+  { codigo: "480", nombre: "CLARO", gama: "AZUL" },
+  { codigo: "481", nombre: "MEDIO OSC", gama: "AZUL" },
+  { codigo: "460", nombre: "CLARO", gama: "AZUL" },
+  { codigo: "461", nombre: "CLARO", gama: "AZUL" },
+  { codigo: "464", nombre: "MEDIO", gama: "AZUL" },
+  { codigo: "467", nombre: "AZUL", gama: "AZUL" },
+  { codigo: "475", nombre: "HIELO", gama: "AZUL" },
+  { codigo: "479", nombre: "NAVY", gama: "AZUL" },
+  { codigo: "482", nombre: "AZUL", gama: "AZUL" },
+  { codigo: "484", nombre: "TURQUEZA", gama: "TURQUEZA" },
+  { codigo: "494", nombre: "TURQUEZA", gama: "TURQUEZA" },
+  { codigo: "505", nombre: "TURQUEZA", gama: "TURQUEZA" },
+  { codigo: "504", nombre: "TURQUEZA", gama: "TURQUEZA" },
+  { codigo: "510", nombre: "TURQUEZA", gama: "TURQUEZA" },
+  { codigo: "513", nombre: "PETROL", gama: "TURQUEZA" },
+  { codigo: "515", nombre: "ALPINE GREEN", gama: "TURQUEZA" },
+  { codigo: "556", nombre: "VERDE", gama: "VERDE" },
+  { codigo: "565", nombre: "VERDE CLARO", gama: "VERDE" },
+  { codigo: "567", nombre: "VERDE", gama: "VERDE" },
+  { codigo: "570", nombre: "VERDE", gama: "VERDE" },
+  { codigo: "575", nombre: "GREEN TE", gama: "VERDE" },
+  { codigo: "579", nombre: "VERDE OSCURO", gama: "VERDE" },
+  { codigo: "583", nombre: "JADE", gama: "VERDE" },
+  { codigo: "588", nombre: "VERDE LIMON", gama: "VERDE" },
+  { codigo: "591", nombre: "VERDE OSCURO", gama: "VERDE" },
+  { codigo: "592", nombre: "VERDE CHIVE", gama: "VERDE" },
+  { codigo: "596", nombre: "OLIVO", gama: "VERDE" },
+  { codigo: "597", nombre: "VERDE MILITAR", gama: "VERDE" },
+  { codigo: "606", nombre: "CAQUI", gama: "CAFE" },
+  { codigo: "608", nombre: "CAQUI", gama: "CAFE" },
+  { codigo: "611", nombre: "CAFÉ", gama: "CAFE" },
+  { codigo: "613", nombre: "CAFÉ", gama: "CAFE" },
+  { codigo: "622", nombre: "CAQUI", gama: "CAFE" },
+  { codigo: "623", nombre: "CAQUI", gama: "CAFE" },
+  { codigo: "624", nombre: "CHOCOLATE", gama: "CAFE" },
+  { codigo: "625", nombre: "CAQUI", gama: "CAFE" },
+  { codigo: "626", nombre: "TAUPE", gama: "CAFE" },
+  { codigo: "627", nombre: "COFFE", gama: "CAFE" },
+  { codigo: "700", nombre: "NEGRO", gama: "NEGRO" },
+  { codigo: "701", nombre: "CAVIAR", gama: "NEGRO" },
+  { codigo: "803", nombre: "GRIS CLARO", gama: "NEGRO" },
+  { codigo: "811", nombre: "GRIS MEDIO", gama: "NEGRO" },
+  { codigo: "815", nombre: "GRIS MEDIO", gama: "NEGRO" },
+  { codigo: "817", nombre: "GRIS OSCURO", gama: "NEGRO" },
+  { codigo: "819", nombre: "GRIS OSCURO", gama: "NEGRO" },
+  { codigo: "999", nombre: "MULTICOLOR", gama: "MULTICOLOR" }
+];
+
+const selectColor = document.getElementById('nuevoColorFDS');
+const labelPrint = document.getElementById('labelPrintMasivo');
+const selectPrint = document.getElementById('printMasivo');
+selectColor.innerHTML = COLORES_FDS.map(c => 
+  `<option value="${c.codigo}">${c.codigo} - ${c.nombre} (${c.gama})</option>`
+).join('');
+
+// Mostrar/ocultar modal
+document.getElementById('btnCambioMasivo').onclick = function() {
+    document.getElementById('modalCambioMasivo').style.display = 'flex';
+};
+document.getElementById('cerrarModalCambioMasivo').onclick = function() {
+    document.getElementById('modalCambioMasivo').style.display = 'none';
+    document.getElementById('resultadoCambioMasivo').innerText = '';
+};
+
+// Enviar formulario de cambio masivo
+document.getElementById('formCambioMasivo').onsubmit = function(e) {
+    e.preventDefault();
+    const nombre = document.getElementById('nombreCambioMasivo').value.trim();
+    const nuevoCodigoColor = document.getElementById('nuevoColorFDS').value;
+
+    fetch('../backend/cambio_masivo.php', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ nombre, nuevoCodigoColor })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            document.getElementById('resultadoCambioMasivo').innerText = '¡Cambio masivo realizado con éxito!';
+            // Aquí podrías recargar la tabla si lo deseas
+        } else {
+            document.getElementById('resultadoCambioMasivo').innerText = 'Error: ' + (data.message || 'No se pudo realizar el cambio.');
+        }
+    })
+    .catch(err => {
+        document.getElementById('resultadoCambioMasivo').innerText = 'Error de red o servidor.';
+    });
+};
+
+// Mostrar/ocultar PRINT según color seleccionado
+selectColor.addEventListener('change', function() {
+    if (this.value === "999") {
+        labelPrint.style.display = '';
+        selectPrint.required = true;
+    } else {
+        labelPrint.style.display = 'none';
+        selectPrint.value = '';
+        selectPrint.required = false;
+    }
+});
+
+// Enviar formulario de cambio masivo
+document.getElementById('formCambioMasivo').onsubmit = function(e) {
+    e.preventDefault();
+    const nombre = document.getElementById('nombreCambioMasivo').value.trim();
+    const nuevoCodigoColor = document.getElementById('nuevoColorFDS').value;
+    let print = "";
+    if (nuevoCodigoColor === "999") {
+        print = selectPrint.value;
+        if (!print) {
+            document.getElementById('resultadoCambioMasivo').innerText = 'Debe seleccionar un valor para PRINT.';
+            return;
+        }
+    }
+
+    fetch('../backend/cambio_masivo.php', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ nombre, nuevoCodigoColor, print })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            document.getElementById('resultadoCambioMasivo').innerText = '¡Cambio masivo realizado con éxito!';
+            // Aquí podrías recargar la tabla si lo deseas
+        } else {
+            document.getElementById('resultadoCambioMasivo').innerText = 'Error: ' + (data.message || 'No se pudo realizar el cambio.');
+        }
+    })
+    .catch(err => {
+        document.getElementById('resultadoCambioMasivo').innerText = 'Error de red o servidor.';
+    });
+};
+</script>
 </body>
 </html>

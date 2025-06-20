@@ -428,6 +428,7 @@ if ($id > 0) {
     <a href="index.php">
         <button>Volver al menú</button>
     </a>
+    <button type="submit" id="guardarBtn" class="btn btn-success">Guardar cambios</button>
     <div class="table-container">
         <form id="modificarCargaForm">
         <table id="skuTable">
@@ -435,6 +436,7 @@ if ($id > 0) {
                 <tr>
                     <!-- Encabezados de la tabla, cada uno con su data-campo-nombre para identificación -->
                     <th data-campo-nombre="tipo">Tipo de producto:</th>
+                    <th data-campo-nombre="LINEA">Linea de producto:</th>
                     <th data-campo-nombre="usuario">Creado por:</th>
                     <th data-campo-nombre="fecha_creacion">FECHA DE MODIFICACION</th>
                     <th data-campo-nombre="SAP">SAP</th>
@@ -535,6 +537,11 @@ if ($id > 0) {
                 <tr class="fila-carga" data_fila_original="1">
                     <td>
                         <select class="campo-formulario" data-campo-nombre="tipo" data-campo-type="static" data-valor-actual="<?php echo htmlspecialchars($carga['tipo'] ?? ''); ?>">
+                            <option value=""></option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="campo-formulario" data-campo-nombre="LINEA" data-campo-type="static" data-valor-actual="<?php echo htmlspecialchars($carga['LINEA'] ?? ''); ?>">
                             <option value=""></option>
                         </select>
                     </td>
@@ -849,9 +856,6 @@ if ($id > 0) {
                 </tr>
             </tbody>
         </table>
-        <div class="options">
-            <button type="submit" id="guardarBtn" class="btn btn-success">Guardar cambios</button>
-        </div>
         </form>
     </div>
 </div>
@@ -1734,6 +1738,11 @@ function getStaticOptions(fieldName) {
             return [
                 { value: "NACIONAL", text: "NACIONAL" },
                 { value: "IMPORTADO", text: "IMPORTADO" }
+            ];
+        case "LINEA":
+            return [
+                { value: "Paquete Completo", text: "Paquete Completo" },
+                { value: "Colaboracion", text: "Colaboracion" }
             ];
         case "YEAR":
             return [

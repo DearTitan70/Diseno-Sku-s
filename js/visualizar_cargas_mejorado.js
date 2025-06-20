@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Define los headers de la tabla (ajusta los nombres si es necesario)
     const headers = [
-        "TIPO DE PRODUCTO", "ID", "SAP", "YEAR", "MES", "OCASION_DE_USO", "NOMBRE", "MODULO", "TEMPORADA", "CAPSULA", "CLIMA", "TIENDA",
+        "TIPO DE PRODUCTO", "LINEA DEL PRODUCTO", "ID", "SAP", "YEAR", "MES", "OCASION_DE_USO", "NOMBRE", "MODULO", "TEMPORADA", "CAPSULA", "CLIMA", "TIENDA",
         "CLASIFICACION", "CLUSTER", "PROVEEDOR", "CATEGORIAS", "SUBCATEGORIAS", "DISENO", "DESCRIPCION", "MANGA",
         "TIPO_MANGA", "PUNO", "CAPOTA", "ESCOTE", "LARGO", "CUELLO", "TIRO", "BOTA", "CINTURA", "SILUETA", "CIERRE",
         "GALGA", "TIPO_GALGA", "COLOR_FDS", "NOM_COLOR", "GAMA", "PRINT", "TALLAS", "TIPO_TEJIDO", "TIPO_DE_FIBRA",
@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Mapeo de headers a campos de registro 
     const headerToField = {
         "TIPO": "tipo",
+        "LINEA": "LINEA",
         "ID": "id",
         "SAP": "SAP",
         "YEAR": "YEAR",
@@ -242,6 +243,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     row.style.display = "none";
                     row.innerHTML = `
                         <td>${registro.tipo}</td>
+                        <td>${registro.LINEA}</td>
                         <td>${registro.id}</td>
                         <td>${registro.SAP}</td>
                         <td>${registro.YEAR}</td>
