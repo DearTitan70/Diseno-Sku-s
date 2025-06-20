@@ -453,6 +453,8 @@ $fecha_actual = date("Y-m-d H:i:s");
     <script src="../js/filtrar_categorias.js"></script>
     <script src="../js/replicar_filas_color.js"></script>
     <script src="../js/table-horizontal-scroll-sync.js"></script>
+    <script src="../js/borrador_carga_manual.js"></script>
+    <script src="../js/borrador_carga_manual_ui.js"></script>
 </head>
 <body>
 <div class="container">

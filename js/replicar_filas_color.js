@@ -1,4 +1,4 @@
-const CAMPOS_OBLIGATORIOS = [ "tipo", "usuario", "fecha_creacion", "YEAR", "TOT_COMP", "TIPO_TEJIDO", "TIPO_DE_FIBRA", "TIENDA", "TEMPORADA", "TALLAS", "SUB_DETALLES", "SUBCATEGORIAS", "PROVEEDOR", "OCASION_DE_USO", "NOM_COLOR", "NOMBRE", "MODULO", "MES", "GRUPO", "GAMA", "DETALLES", "DESCRIPCION", "COLOR_FDS", "CLUSTER", "CLIMA", "CLASIFICACION", "CATEGORIAS", "CAPSULA", "BASE_TEXTIL", "%_COMP_1", "COMPOSICION_1", "precio_compra", "costo", "precio_venta"
+const CAMPOS_OBLIGATORIOS = [ 
 ];
 
 const TALLAS_SUP = ["XXS", "XS", "S", "M", "L", "T", "XL", "XXL"];
