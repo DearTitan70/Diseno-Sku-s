@@ -1,8 +1,8 @@
 <?php
-$host = "localhost";
-$user = "services_cargamasiva";
-$pass = "S1ST3NFDS-";
-$db   = "services_cargamasiva";
+$host = "";
+$user = "";
+$pass = "";
+$db   = "";
 
 // Procedural fallback + OOP para mejor control
 $conn = mysqli_connect($host, $user, $pass, $db);
