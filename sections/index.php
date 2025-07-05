@@ -19,8 +19,7 @@ if ($isLoggedIn) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - Sistema de creacion SKU's FDS</title>
-    <link rel="icon" type="image/x-icon" href="../img/FDS_Favicon.png">
+    <title>Inicio - Sistema de creacion SKU's</title>
     <style>
         /* 
             Definición de la paleta de colores y variables CSS para mantener la consistencia 
@@ -336,7 +335,6 @@ if ($isLoggedIn) {
     </div>
 
     <div class="menu_container">
-        <img src="../img/FDS_Logo.webp">
 
     <?php if ($isLoggedIn): ?>
         <!-- 
@@ -346,7 +344,7 @@ if ($isLoggedIn) {
         <div class="name_container">
     <h1>Bienvenido <?php echo htmlspecialchars($userName); ?></h1>
     <p>
-        Bienvenido al Sistema de Creación de SKU’s de FDS.<br>
+        Bienvenido al Sistema de Creación de SKU’s.<br>
         Aquí podrás gestionar usuarios, cargar productos manualmente, administrar reglas y visualizar el historial de cambios de manera sencilla y segura.<br>
         Utiliza el menú para acceder a las diferentes funciones según tu perfil.
     </p>
