@@ -63,7 +63,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Cambiar Contraseña</title>
-    <link rel="icon" type="image/x-icon" href="../img/FDS_Favicon.png">
     <style>
         body {
             font-family: 'Poppins', Arial, sans-serif;

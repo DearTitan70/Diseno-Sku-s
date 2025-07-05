@@ -10,7 +10,6 @@ require_login_and_role(1);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Visualizar Capsulas</title>
-    <link rel="icon" type="image/x-icon" href="../img/FDS_Favicon.png">
     <!-- Iconos de FontAwesome -->
     <link
       rel="stylesheet"

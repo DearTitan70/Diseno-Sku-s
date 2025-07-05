@@ -30,7 +30,6 @@ if ($id > 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modificar Carga</title>
-    <link rel="icon" type="image/x-icon" href="../img/FDS_Favicon.png">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../js/tallas_dinamicas.js"></script>
     <script src="../js/ocultar_columnas.js"></script>

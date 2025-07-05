@@ -10,7 +10,6 @@ require_login_and_role();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visualizar Historico de Cargas</title>
-    <link rel="icon" type="image/x-icon" href="../img/FDS_Favicon.png">
     <script src="../js/visualizar_cargas_mejorado.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
     <style>

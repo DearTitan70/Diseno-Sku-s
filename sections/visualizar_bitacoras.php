@@ -10,7 +10,6 @@ require_login_and_role();
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Visualizar Cambios</title>
-    <link rel="icon" type="image/x-icon" href="../img/FDS_Favicon.png">
     <!-- Iconos de FontAwesome para botones y estados -->
     <link
       rel="stylesheet"

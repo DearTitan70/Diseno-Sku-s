@@ -21,7 +21,6 @@ $fecha_actual = date("Y-m-d H:i:s");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carga Manual</title>
-    <link rel="icon" type="image/x-icon" href="../img/FDS_Favicon.png">
     <!-- jQuery para manipulación DOM y AJAX -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
