@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Define los headers de la tabla (ajusta los nombres si es necesario)
     const headers = [
-        "TIPO DE PRODUCTO", "LINEA DEL PRODUCTO", "ID", "SAP", "YEAR", "MES", "OCASION_DE_USO", "NOMBRE", "MODULO", "TEMPORADA", "CAPSULA", "CLIMA", "TIENDA",
+        "TIPO DE PRODUCTO", "LINEA", "ID", "SAP", "YEAR", "MES", "OCASION_DE_USO", "NOMBRE", "MODULO", "TEMPORADA", "CAPSULA", "CLIMA", "TIENDA",
         "CLASIFICACION", "CLUSTER", "PROVEEDOR", "CATEGORIAS", "SUBCATEGORIAS", "DISENO", "DESCRIPCION", "MANGA",
         "TIPO_MANGA", "PUNO", "CAPOTA", "ESCOTE", "LARGO", "CUELLO", "TIRO", "BOTA", "CINTURA", "SILUETA", "CIERRE",
         "GALGA", "TIPO_GALGA", "COLOR_FDS", "NOM_COLOR", "GAMA", "PRINT", "TALLAS", "TIPO_TEJIDO", "TIPO_DE_FIBRA",
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
 
     // Indices de las columnas a excluir en la exportación
-    const excludeHeaders = ["ID", "TIPO DE PRODUCTO", "LINEA DEL PRODUCTO", "USUARIO", "FECHA DE CREACION", "Acciones", "TIPO DE PRODUCTO"];
+    const excludeHeaders = ["ID", "TIPO DE PRODUCTO", "USUARIO", "FECHA DE CREACION", "Acciones"];
     const exportHeaders = headers.filter(h => !excludeHeaders.includes(h));
 
     // Mapeo de headers a campos de registro 
@@ -201,234 +201,399 @@ document.addEventListener("DOMContentLoaded", function () {
         return headerRow;
     }
 
-    function renderGroupedTable() {
-        tbody.innerHTML = "";
-        const filtered = filterData(allData);
-        const groups = groupByTypeAndDate(filtered);
+    /**
+ * ... (resto del código igual)
+ */
 
-        if (Object.keys(groups).length === 0) {
-            tbody.innerHTML = `<tr><td colspan="${headers.length}" class="no-results">No hay registros en el rango seleccionado</td></tr>`;
-            return;
-        }
+// Reemplaza la función renderGroupedTable() por esta versión mejorada:
+/**
+ * ... (resto del código igual)
+ */
 
-        // Ordena tipos alfabéticamente
-        Object.entries(groups).sort((a, b) => a[0].localeCompare(b[0])).forEach(([tipo, fechasObj]) => {
-            // Fila de encabezado de grupo tipo
-            const tipoRow = document.createElement("tr");
-            tipoRow.className = "group-header tipo-header";
-            tipoRow.innerHTML = `<td colspan="${headers.length}" style="background:#e0e0e0;font-weight:bold;cursor:pointer;">
-                Tipo: ${tipo} <span style="float:right;">[+]</span>
+// Reemplaza la función renderGroupedTable() por esta versión mejorada:
+/**
+ * ... (resto del código igual)
+ */
+
+function renderGroupedTable() {
+    tbody.innerHTML = "";
+    const filtered = filterData(allData);
+
+    // 1. Filtrar errores y normales
+    const errores = filtered.filter(registro => registro.ESTADO && registro.ESTADO.toString().toUpperCase().includes("X"));
+    const normales = filtered.filter(registro => !(registro.ESTADO && registro.ESTADO.toString().toUpperCase().includes("X")));
+
+    // 2. Renderizar los grupos normales (como antes)
+    const groups = groupByTypeAndDate(normales);
+
+    if (Object.keys(groups).length === 0 && errores.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="${headers.length}" class="no-results">No hay registros en el rango seleccionado</td></tr>`;
+        return;
+    }
+
+    Object.entries(groups).sort((a, b) => a[0].localeCompare(b[0])).forEach(([tipo, fechasObj]) => {
+        // Fila de encabezado de grupo tipo
+        const tipoRow = document.createElement("tr");
+        tipoRow.className = "group-header tipo-header";
+        tipoRow.innerHTML = `<td colspan="${headers.length}" style="background:#e0e0e0;font-weight:bold;cursor:pointer;">
+            Tipo: ${tipo} <span style="float:right;">[+]</span>
+        </td>`;
+        tbody.appendChild(tipoRow);
+
+        // Para manejar la expansión/colapso de fechas dentro del tipo
+        let fechaRows = [];
+
+        // Ordena fechas descendente
+        Object.entries(fechasObj).sort((a, b) => b[0].localeCompare(a[0])).forEach(([fecha, registros]) => {
+            // Fila de encabezado de grupo fecha
+            const fechaRow = document.createElement("tr");
+            fechaRow.className = "group-header fecha-header";
+            fechaRow.innerHTML = `<td colspan="${headers.length}" style="background:white;font-weight:bold;cursor:pointer;">
+                Cargas del ${fecha} (${registros.length} registros) <span style="float:right;">[+]</span>
             </td>`;
-            tbody.appendChild(tipoRow);
+            fechaRow.style.display = "none";
+            tbody.appendChild(fechaRow);
 
-            // Para manejar la expansión/colapso de fechas dentro del tipo
-            let fechaRows = [];
-
-            // Ordena fechas descendente
-            Object.entries(fechasObj).sort((a, b) => b[0].localeCompare(a[0])).forEach(([fecha, registros]) => {
-                // Fila de encabezado de grupo fecha
-                const fechaRow = document.createElement("tr");
-                fechaRow.className = "group-header fecha-header";
-                fechaRow.innerHTML = `<td colspan="${headers.length}" style="background:white;font-weight:bold;cursor:pointer;">
-                    Cargas del ${fecha} (${registros.length} registros) <span style="float:right;">[+]</span>
-                </td>`;
-                fechaRow.style.display = "none";
-                tbody.appendChild(fechaRow);
-
-                // Crea las filas de registros (inicialmente ocultas)
-                const rows = [];
-                registros.forEach(registro => {
-                    const row = document.createElement("tr");
-                    row.className = "grouped-row";
-                    row.style.display = "none";
-                    row.innerHTML = `
-                        <td>${registro.tipo}</td>
-                        <td>${registro.LINEA}</td>
-                        <td>${registro.id}</td>
-                        <td>${registro.SAP}</td>
-                        <td>${registro.YEAR}</td>
-                        <td>${registro.MES}</td>
-                        <td>${registro.OCASION_DE_USO}</td>
-                        <td>${registro.NOMBRE}</td>
-                        <td>${registro.MODULO}</td>
-                        <td>${registro.TEMPORADA}</td>
-                        <td>${registro.CAPSULA}</td>
-                        <td>${registro.CLIMA}</td>
-                        <td>${registro.TIENDA}</td>
-                        <td>${registro.CLASIFICACION}</td>
-                        <td>${registro.CLUSTER}</td>
-                        <td>${registro.PROVEEDOR}</td>
-                        <td>${registro.CATEGORIAS}</td>
-                        <td>${registro.SUBCATEGORIAS}</td>
-                        <td>${registro.DISENO}</td>
-                        <td>${registro.DESCRIPCION}</td>
-                        <td>${registro.MANGA}</td>
-                        <td>${registro.TIPO_MANGA}</td>
-                        <td>${registro.PUNO}</td>
-                        <td>${registro.CAPOTA}</td>
-                        <td>${registro.ESCOTE}</td>
-                        <td>${registro.LARGO}</td>
-                        <td>${registro.CUELLO}</td>
-                        <td>${registro.TIRO}</td>
-                        <td>${registro.BOTA}</td>
-                        <td>${registro.CINTURA}</td>
-                        <td>${registro.SILUETA}</td>
-                        <td>${registro.CIERRE}</td>
-                        <td>${registro.GALGA}</td>
-                        <td>${registro.TIPO_GALGA}</td>
-                        <td>${registro.COLOR_FDS}</td>
-                        <td>${registro.NOM_COLOR}</td>
-                        <td>${registro.GAMA}</td>
-                        <td>${registro.PRINT}</td>
-                        <td>${registro.TALLAS}</td>
-                        <td>${registro.TIPO_TEJIDO}</td>
-                        <td>${registro.TIPO_DE_FIBRA}</td>
-                        <td>${registro.BASE_TEXTIL}</td>
-                        <td>${registro.DETALLES}</td>
-                        <td>${registro.SUB_DETALLES}</td>
-                        <td>${registro.GRUPO}</td>
-                        <td>${registro.INSTRUCCION_DE_LAVADO_1}</td>
-                        <td>${registro.INSTRUCCION_DE_LAVADO_2}</td>
-                        <td>${registro.INSTRUCCION_DE_LAVADO_3}</td>
-                        <td>${registro.INSTRUCCION_DE_LAVADO_4}</td>
-                        <td>${registro.INSTRUCCION_DE_LAVADO_5}</td>
-                        <td>${registro.INSTRUCCION_BLANQUEADO_1}</td>
-                        <td>${registro.INSTRUCCION_BLANQUEADO_2}</td>
-                        <td>${registro.INSTRUCCION_BLANQUEADO_3}</td>
-                        <td>${registro.INSTRUCCION_BLANQUEADO_4}</td>
-                        <td>${registro.INSTRUCCION_BLANQUEADO_5}</td>
-                        <td>${registro.INSTRUCCION_SECADO_1}</td>
-                        <td>${registro.INSTRUCCION_SECADO_2}</td>
-                        <td>${registro.INSTRUCCION_SECADO_3}</td>
-                        <td>${registro.INSTRUCCION_SECADO_4}</td>
-                        <td>${registro.INSTRUCCION_SECADO_5}</td>
-                        <td>${registro.INSTRUCCION_PLANCHADO_1}</td>
-                        <td>${registro.INSTRUCCION_PLANCHADO_2}</td>
-                        <td>${registro.INSTRUCCION_PLANCHADO_3}</td>
-                        <td>${registro.INSTRUCCION_PLANCHADO_4}</td>
-                        <td>${registro.INSTRUCCION_PLANCHADO_5}</td>
-                        <td>${registro.INSTRUCC_CUIDADO_TEXTIL_PROF_1}</td>
-                        <td>${registro.INSTRUCC_CUIDADO_TEXTIL_PROF_2}</td>
-                        <td>${registro.INSTRUCC_CUIDADO_TEXTIL_PROF_3}</td>
-                        <td>${registro.INSTRUCC_CUIDADO_TEXTIL_PROF_4}</td>
-                        <td>${registro.INSTRUCC_CUIDADO_TEXTIL_PROF_5}</td>
-                        <td>${registro.COMPOSICION_1}</td>
-                        <td>${registro["%_COMP_1"]}</td>
-                        <td>${registro.COMPOSICION_2}</td>
-                        <td>${registro["%_COMP_2"]}</td>
-                        <td>${registro.COMPOSICION_3}</td>
-                        <td>${registro["%_COMP_3"]}</td>
-                        <td>${registro.COMPOSICION_4}</td>
-                        <td>${registro["%_COMP_4"]}</td>
-                        <td>${registro.TOT_COMP}</td>
-                        <td>${registro.FORRO}</td>
-                        <td>${registro.COMP_FORRO_1}</td>
-                        <td>${registro["%_FORRO_1"]}</td>
-                        <td>${registro.COMP_FORRO_2}</td>
-                        <td>${registro["%_FORRO_2"]}</td>
-                        <td>${registro.TOT_FORRO}</td>
-                        <td>${registro.RELLENO}</td>
-                        <td>${registro.COMP_RELLENO_1}</td>
-                        <td>${registro["%_RELLENO_1"]}</td>
-                        <td>${registro.COMP_RELLENO_2}</td>
-                        <td>${registro["%_RELLENO_2"]}</td>
-                        <td>${registro.TOT_RELLENO}</td>
-                        <td>${registro.XX}</td>
-                        <td>${registro.usuario}</td>
-                        <td>${registro.fecha_creacion}</td>
-                        <td>${formatCurrency(registro.precio_compra)}</td>
-                        <td>${formatCurrency(registro.costo)}</td>
-                        <td>${formatCurrency(registro.precio_venta)}</td>
-                        <td>${registro.orden_compra}</td>
-                        <td>
-                            <button class="btn btn-asignar-precio" 
-                                data-id="${registro.id}" 
-                                data-nombre="${registro.NOMBRE}" 
-                                data-precio_compra="${registro.precio_compra || 0}" 
-                                data-costo="${registro.costo || 0}" 
-                                data-precio_venta="${registro.precio_venta || 0}"
-                                data-orden_compra="${registro.orden_compra || 0}"
-                                <i class="fas fa-dollar-sign"></i> Asignar Precio
-                            </button>
-                            <button class="btn btn-crear-variacion" 
-                                data-id="${registro.id}" 
-                                data-talla="${registro.TALLAS}" 
-                                data-color="${registro.COLOR_FDS}">
-                                <i class="fas fa-copy"></i> Crear Variación
-                            </button>
-                        </td>
-                    `;
-                    row.style.display = "none";
-                    rows.push(row);
-                });
-
-                // Evento para expandir/colapsar fecha
-                fechaRow.addEventListener("click", function () {
-                    const isCollapsed = fechaRow.getAttribute("data-collapsed") !== "false";
-                    fechaRow.setAttribute("data-collapsed", !isCollapsed);
-                    fechaRow.querySelector("span").textContent = isCollapsed ? "[-]" : "[+]";
-
-                    // Busca si ya existe el header dinámico
-                    let next = fechaRow.nextSibling;
-                    let headerRow = null;
-                    if (next && next.classList && next.classList.contains("dynamic-header")) {
-                        headerRow = next;
-                    }
-
-                    if (isCollapsed) {
-                        // Expandir: insertar header y mostrar filas
-                        if (!headerRow) {
-                            headerRow = createHeaderRow();
-                            tbody.insertBefore(headerRow, fechaRow.nextSibling);
-                        }
-                        rows.forEach((row, idx) => {
-                            row.style.display = "";
-                            // Inserta la fila si no está ya en el DOM
-                            if (row.parentNode !== tbody) {
-                                tbody.insertBefore(row, headerRow.nextSibling ? headerRow.nextSibling : headerRow.nextSibling);
-                            }
-                        });
-                    } else {
-                        // Colapsar: ocultar filas y quitar header
-                        rows.forEach(row => row.style.display = "none");
-                        if (headerRow) {
-                            tbody.removeChild(headerRow);
-                        }
-                    }
-                });
-
-                // Inserta las filas (pero ocultas)
-                rows.forEach(row => tbody.appendChild(row));
-                fechaRows.push(fechaRow);
+            // Crea las filas de registros (inicialmente ocultas)
+            const rows = [];
+            registros.forEach(registro => {
+                const row = document.createElement("tr");
+                row.className = "grouped-row";
+                row.style.display = "none";
+                row.innerHTML = `
+                    <td>${registro.tipo}</td>
+                    <td>${registro.LINEA}</td>
+                    <td>${registro.id}</td>
+                    <td>${registro.SAP}</td>
+                    <td>${registro.YEAR}</td>
+                    <td>${registro.MES}</td>
+                    <td>${registro.OCASION_DE_USO}</td>
+                    <td>${registro.NOMBRE}</td>
+                    <td>${registro.MODULO}</td>
+                    <td>${registro.TEMPORADA}</td>
+                    <td>${registro.CAPSULA}</td>
+                    <td>${registro.CLIMA}</td>
+                    <td>${registro.TIENDA}</td>
+                    <td>${registro.CLASIFICACION}</td>
+                    <td>${registro.CLUSTER}</td>
+                    <td>${registro.PROVEEDOR}</td>
+                    <td>${registro.CATEGORIAS}</td>
+                    <td>${registro.SUBCATEGORIAS}</td>
+                    <td>${registro.DISENO}</td>
+                    <td>${registro.DESCRIPCION}</td>
+                    <td>${registro.MANGA}</td>
+                    <td>${registro.TIPO_MANGA}</td>
+                    <td>${registro.PUNO}</td>
+                    <td>${registro.CAPOTA}</td>
+                    <td>${registro.ESCOTE}</td>
+                    <td>${registro.LARGO}</td>
+                    <td>${registro.CUELLO}</td>
+                    <td>${registro.TIRO}</td>
+                    <td>${registro.BOTA}</td>
+                    <td>${registro.CINTURA}</td>
+                    <td>${registro.SILUETA}</td>
+                    <td>${registro.CIERRE}</td>
+                    <td>${registro.GALGA}</td>
+                    <td>${registro.TIPO_GALGA}</td>
+                    <td>${registro.COLOR_FDS}</td>
+                    <td>${registro.NOM_COLOR}</td>
+                    <td>${registro.GAMA}</td>
+                    <td>${registro.PRINT}</td>
+                    <td>${registro.TALLAS}</td>
+                    <td>${registro.TIPO_TEJIDO}</td>
+                    <td>${registro.TIPO_DE_FIBRA}</td>
+                    <td>${registro.BASE_TEXTIL}</td>
+                    <td>${registro.DETALLES}</td>
+                    <td>${registro.SUB_DETALLES}</td>
+                    <td>${registro.GRUPO}</td>
+                    <td>${registro.INSTRUCCION_DE_LAVADO_1}</td>
+                    <td>${registro.INSTRUCCION_DE_LAVADO_2}</td>
+                    <td>${registro.INSTRUCCION_DE_LAVADO_3}</td>
+                    <td>${registro.INSTRUCCION_DE_LAVADO_4}</td>
+                    <td>${registro.INSTRUCCION_DE_LAVADO_5}</td>
+                    <td>${registro.INSTRUCCION_BLANQUEADO_1}</td>
+                    <td>${registro.INSTRUCCION_BLANQUEADO_2}</td>
+                    <td>${registro.INSTRUCCION_BLANQUEADO_3}</td>
+                    <td>${registro.INSTRUCCION_BLANQUEADO_4}</td>
+                    <td>${registro.INSTRUCCION_BLANQUEADO_5}</td>
+                    <td>${registro.INSTRUCCION_SECADO_1}</td>
+                    <td>${registro.INSTRUCCION_SECADO_2}</td>
+                    <td>${registro.INSTRUCCION_SECADO_3}</td>
+                    <td>${registro.INSTRUCCION_SECADO_4}</td>
+                    <td>${registro.INSTRUCCION_SECADO_5}</td>
+                    <td>${registro.INSTRUCCION_PLANCHADO_1}</td>
+                    <td>${registro.INSTRUCCION_PLANCHADO_2}</td>
+                    <td>${registro.INSTRUCCION_PLANCHADO_3}</td>
+                    <td>${registro.INSTRUCCION_PLANCHADO_4}</td>
+                    <td>${registro.INSTRUCCION_PLANCHADO_5}</td>
+                    <td>${registro.INSTRUCC_CUIDADO_TEXTIL_PROF_1}</td>
+                    <td>${registro.INSTRUCC_CUIDADO_TEXTIL_PROF_2}</td>
+                    <td>${registro.INSTRUCC_CUIDADO_TEXTIL_PROF_3}</td>
+                    <td>${registro.INSTRUCC_CUIDADO_TEXTIL_PROF_4}</td>
+                    <td>${registro.INSTRUCC_CUIDADO_TEXTIL_PROF_5}</td>
+                    <td>${registro.COMPOSICION_1}</td>
+                    <td>${registro["%_COMP_1"]}</td>
+                    <td>${registro.COMPOSICION_2}</td>
+                    <td>${registro["%_COMP_2"]}</td> 
+                    <td>${registro.COMPOSICION_3}</td>
+                    <td>${registro["%_COMP_3"]}</td> 
+                    <td>${registro.COMPOSICION_4}</td>
+                    <td>${registro["%_COMP_4"]}</td>
+                    <td>${registro.TOT_COMP}</td>
+                    <td>${registro.FORRO}</td>
+                    <td>${registro.COMP_FORRO_1}</td>
+                    <td>${registro["%_FORRO_1"]}</td>
+                    <td>${registro.COMP_FORRO_2}</td>
+                    <td>${registro["%_FORRO_2"]}</td>
+                    <td>${registro.TOT_FORRO}</td>
+                    <td>${registro.RELLENO}</td>
+                    <td>${registro.COMP_RELLENO_1}</td>
+                    <td>${registro["%_RELLENO_1"]}</td>
+                    <td>${registro.COMP_RELLENO_2}</td>
+                    <td>${registro["%_RELLENO_2"]}</td>
+                    <td>${registro.TOT_RELLENO}</td>
+                    <td>${registro.XX}</td>
+                    <td>${registro.usuario}</td>
+                    <td>${registro.fecha_creacion}</td>
+                    <td>${formatCurrency(registro.precio_compra)}</td>
+                    <td>${formatCurrency(registro.costo)}</td>
+                    <td>${formatCurrency(registro.precio_venta)}</td>
+                    <td>${registro.orden_compra}</td>
+                    <td>
+                        <button class="btn btn-asignar-precio" 
+                            data-id="${registro.id}" 
+                            data-nombre="${registro.NOMBRE}" 
+                            data-precio_compra="${registro.precio_compra || 0}" 
+                            data-costo="${registro.costo || 0}" 
+                            data-precio_venta="${registro.precio_venta || 0}"
+                            data-orden_compra="${registro.orden_compra || 0}"
+                            <i></i> Asignar Precio
+                        </button>
+                        <button class="btn btn-crear-variacion" 
+                            data-id="${registro.id}" 
+                            data-talla="${registro.TALLAS}" 
+                            data-color="${registro.COLOR_FDS}">
+                            <i></i> Crear Variación
+                        </button>
+                        <button class="btn btn-marcar-error" 
+                            data-id="${registro.id}"
+                            data-nombre="${registro.NOMBRE}">
+                            <i></i> Marcar como error
+                        </button>
+                    </td>
+                `;
+                row.style.display = "none";
+                rows.push(row);
             });
 
-            // Evento para expandir/colapsar tipo
-            tipoRow.addEventListener("click", function () {
-                const isCollapsed = tipoRow.getAttribute("data-collapsed") !== "false";
-                tipoRow.setAttribute("data-collapsed", !isCollapsed);
-                tipoRow.querySelector("span").textContent = isCollapsed ? "[-]" : "[+]";
-                fechaRows.forEach(fechaRow => {
-                    fechaRow.style.display = isCollapsed ? "" : "none";
-                    // Al colapsar tipo, también colapsa todos los subgrupos de fecha
-                    if (!isCollapsed) {
-                        fechaRow.setAttribute("data-collapsed", "true");
-                        fechaRow.querySelector("span").textContent = "[+]";
-                        // Oculta filas y header dinámico si están abiertos
-                        let next = fechaRow.nextSibling;
-                        if (next && next.classList && next.classList.contains("dynamic-header")) {
-                            tbody.removeChild(next);
-                        }
-                        // Oculta filas de registros
-                        let temp = fechaRow.nextSibling;
-                        while (temp && temp.classList && temp.classList.contains("grouped-row")) {
-                            temp.style.display = "none";
-                            temp = temp.nextSibling;
-                        }
+            // Evento para expandir/colapsar fecha
+            fechaRow.addEventListener("click", function () {
+                const isCollapsed = fechaRow.getAttribute("data-collapsed") !== "false";
+                fechaRow.setAttribute("data-collapsed", !isCollapsed);
+                fechaRow.querySelector("span").textContent = isCollapsed ? "[-]" : "[+]";
+
+                // Busca si ya existe el header dinámico
+                let next = fechaRow.nextSibling;
+                let headerRow = null;
+                if (next && next.classList && next.classList.contains("dynamic-header")) {
+                    headerRow = next;
+                }
+
+                if (isCollapsed) {
+                    // Expandir: insertar header y mostrar filas
+                    if (!headerRow) {
+                        headerRow = createHeaderRow();
+                        tbody.insertBefore(headerRow, fechaRow.nextSibling);
                     }
-                });
+                    rows.forEach((row, idx) => {
+                        row.style.display = "";
+                        // Inserta la fila si no está ya en el DOM
+                        if (row.parentNode !== tbody) {
+                            tbody.insertBefore(row, headerRow.nextSibling ? headerRow.nextSibling : headerRow.nextSibling);
+                        }
+                    });
+                } else {
+                    // Colapsar: ocultar filas y quitar header
+                    rows.forEach(row => row.style.display = "none");
+                    if (headerRow) {
+                        tbody.removeChild(headerRow);
+                    }
+                }
+            });
+
+            // Inserta las filas (pero ocultas)
+            rows.forEach(row => tbody.appendChild(row));
+            fechaRows.push(fechaRow);
+        });
+
+        // Evento para expandir/colapsar tipo
+        tipoRow.addEventListener("click", function () {
+            const isCollapsed = tipoRow.getAttribute("data-collapsed") !== "false";
+            tipoRow.setAttribute("data-collapsed", !isCollapsed);
+            tipoRow.querySelector("span").textContent = isCollapsed ? "[-]" : "[+]";
+            fechaRows.forEach(fechaRow => {
+                fechaRow.style.display = isCollapsed ? "" : "none";
+                // Al colapsar tipo, también colapsa todos los subgrupos de fecha
+                if (!isCollapsed) {
+                    fechaRow.setAttribute("data-collapsed", "true");
+                    fechaRow.querySelector("span").textContent = "[+]";
+                    // Oculta filas y header dinámico si están abiertos
+                    let next = fechaRow.nextSibling;
+                    if (next && next.classList && next.classList.contains("dynamic-header")) {
+                        tbody.removeChild(next);
+                    }
+                    // Oculta filas de registros
+                    let temp = fechaRow.nextSibling;
+                    while (temp && temp.classList && temp.classList.contains("grouped-row")) {
+                        temp.style.display = "none";
+                        temp = temp.nextSibling;
+                    }
+                }
             });
         });
+
+    });
+
+    // 3. Mostrar bloque de errores al final (expandible/colapsable)
+    if (errores.length > 0) {
+        // Encabezado de grupo de errores (expandible)
+        const errorHeader = document.createElement("tr");
+        errorHeader.className = "group-header error-header";
+        errorHeader.setAttribute("data-collapsed", "true");
+        errorHeader.innerHTML = `<td colspan="${headers.length}" style="background:#ffe5e5;font-weight:bold;color:#b71c1c;cursor:pointer;">
+            Errores (${errores.length} registros) <span style="float:right;">[+]</span>
+        </td>`;
+        tbody.appendChild(errorHeader);
+
+        // Header de columnas (solo visible si expandido)
+        const headerRow = createHeaderRow();
+        headerRow.style.background = "#fff0f0";
+        headerRow.style.display = "none";
+        tbody.appendChild(headerRow);
+
+        // Filas de error (sin botones de acción, solo visualización)
+        const errorRows = [];
+        errores.forEach(registro => {
+            const row = document.createElement("tr");
+            row.className = "error-row";
+            row.style.background = "#ffe5e5";
+            row.style.display = "none";
+            row.innerHTML = `
+                <td>${registro.tipo}</td>
+                <td>${registro.LINEA}</td>
+                <td>${registro.id}</td>
+                <td>${registro.SAP}</td>
+                <td>${registro.YEAR}</td>
+                <td>${registro.MES}</td>
+                <td>${registro.OCASION_DE_USO}</td>
+                <td>${registro.NOMBRE}</td>
+                <td>${registro.MODULO}</td>
+                <td>${registro.TEMPORADA}</td>
+                <td>${registro.CAPSULA}</td>
+                <td>${registro.CLIMA}</td>
+                <td>${registro.TIENDA}</td>
+                <td>${registro.CLASIFICACION}</td>
+                <td>${registro.CLUSTER}</td>
+                <td>${registro.PROVEEDOR}</td>
+                <td>${registro.CATEGORIAS}</td>
+                <td>${registro.SUBCATEGORIAS}</td>
+                <td>${registro.DISENO}</td>
+                <td>${registro.DESCRIPCION}</td>
+                <td>${registro.MANGA}</td>
+                <td>${registro.TIPO_MANGA}</td>
+                <td>${registro.PUNO}</td>
+                <td>${registro.CAPOTA}</td>
+                <td>${registro.ESCOTE}</td>
+                <td>${registro.LARGO}</td>
+                <td>${registro.CUELLO}</td>
+                <td>${registro.TIRO}</td>
+                <td>${registro.BOTA}</td>
+                <td>${registro.CINTURA}</td>
+                <td>${registro.SILUETA}</td>
+                <td>${registro.CIERRE}</td>
+                <td>${registro.GALGA}</td>
+                <td>${registro.TIPO_GALGA}</td>
+                <td>${registro.COLOR_FDS}</td>
+                <td>${registro.NOM_COLOR}</td>
+                <td>${registro.GAMA}</td>
+                <td>${registro.PRINT}</td>
+                <td>${registro.TALLAS}</td>
+                <td>${registro.TIPO_TEJIDO}</td>
+                <td>${registro.TIPO_DE_FIBRA}</td>
+                <td>${registro.BASE_TEXTIL}</td>
+                <td>${registro.DETALLES}</td>
+                <td>${registro.SUB_DETALLES}</td>
+                <td>${registro.GRUPO}</td>
+                <td>${registro.INSTRUCCION_DE_LAVADO_1}</td>
+                <td>${registro.INSTRUCCION_DE_LAVADO_2}</td>
+                <td>${registro.INSTRUCCION_DE_LAVADO_3}</td>
+                <td>${registro.INSTRUCCION_DE_LAVADO_4}</td>
+                <td>${registro.INSTRUCCION_DE_LAVADO_5}</td>
+                <td>${registro.INSTRUCCION_BLANQUEADO_1}</td>
+                <td>${registro.INSTRUCCION_BLANQUEADO_2}</td>
+                <td>${registro.INSTRUCCION_BLANQUEADO_3}</td>
+                <td>${registro.INSTRUCCION_BLANQUEADO_4}</td>
+                <td>${registro.INSTRUCCION_BLANQUEADO_5}</td>
+                <td>${registro.INSTRUCCION_SECADO_1}</td>
+                <td>${registro.INSTRUCCION_SECADO_2}</td>
+                <td>${registro.INSTRUCCION_SECADO_3}</td>
+                <td>${registro.INSTRUCCION_SECADO_4}</td>
+                <td>${registro.INSTRUCCION_SECADO_5}</td>
+                <td>${registro.INSTRUCCION_PLANCHADO_1}</td>
+                <td>${registro.INSTRUCCION_PLANCHADO_2}</td>
+                <td>${registro.INSTRUCCION_PLANCHADO_3}</td>
+                <td>${registro.INSTRUCCION_PLANCHADO_4}</td>
+                <td>${registro.INSTRUCCION_PLANCHADO_5}</td>
+                <td>${registro.INSTRUCC_CUIDADO_TEXTIL_PROF_1}</td>
+                <td>${registro.INSTRUCC_CUIDADO_TEXTIL_PROF_2}</td>
+                <td>${registro.INSTRUCC_CUIDADO_TEXTIL_PROF_3}</td>
+                <td>${registro.INSTRUCC_CUIDADO_TEXTIL_PROF_4}</td>
+                <td>${registro.INSTRUCC_CUIDADO_TEXTIL_PROF_5}</td>
+                <td>${registro.COMPOSICION_1}</td>
+                <td>${registro["%_COMP_1"]}</td>
+                <td>${registro.COMPOSICION_2}</td>
+                <td>${registro["%_COMP_2"]}</td>
+                <td>${registro.COMPOSICION_3}</td>
+                <td>${registro["%_COMP_3"]}</td>
+                <td>${registro.COMPOSICION_4}</td>
+                <td>${registro["%_COMP_4"]}</td>
+                <td>${registro.TOT_COMP}</td>
+                <td>${registro.FORRO}</td>
+                <td>${registro.COMP_FORRO_1}</td>
+                <td>${registro["%_FORRO_1"]}</td>
+                <td>${registro.COMP_FORRO_2}</td>
+                <td>${registro["%_FORRO_2"]}</td>
+                <td>${registro.TOT_FORRO}</td>
+                <td>${registro.RELLENO}</td>
+                <td>${registro.COMP_RELLENO_1}</td>
+                <td>${registro["%_RELLENO_1"]}</td>
+                <td>${registro.COMP_RELLENO_2}</td>
+                <td>${registro["%_RELLENO_2"]}</td>
+                <td>${registro.TOT_RELLENO}</td>
+                <td>${registro.XX}</td>
+                <td>${registro.usuario}</td>
+                <td>${registro.fecha_creacion}</td>
+                <td>${formatCurrency(registro.precio_compra)}</td>
+                <td>${formatCurrency(registro.costo)}</td>
+                <td>${formatCurrency(registro.precio_venta)}</td>
+                <td>${registro.orden_compra}</td>
+                <td>${registro.MOTIVO_ERROR}</td>
+            `;
+            row.style.display = "none";
+            errorRows.push(row);
+            tbody.appendChild(row);
+        });
+
+        // Evento para expandir/colapsar errores
+        errorHeader.addEventListener("click", function () {
+            const isCollapsed = errorHeader.getAttribute("data-collapsed") !== "false";
+            errorHeader.setAttribute("data-collapsed", !isCollapsed);
+            errorHeader.querySelector("span").textContent = isCollapsed ? "[-]" : "[+]";
+            headerRow.style.display = isCollapsed ? "" : "none";
+            errorRows.forEach(row => row.style.display = isCollapsed ? "" : "none");
+        });
     }
+}
 
     // EVENTOS para los filtros
     filterDateFrom.addEventListener("change", renderGroupedTable);
@@ -438,7 +603,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Exportar registros filtrados (sin ID, usuario, fecha_creacion ni Acciones)
     exportBtn.addEventListener("click", function () {
-        const filtered = filterData(allData);
+        // Filtra los datos como antes
+        let filtered = filterData(allData);
+        // EXCLUIR ERRORES: solo deja los que NO tienen ESTADO con 'X'
+        filtered = filtered.filter(registro => !(registro.ESTADO && registro.ESTADO.toString().toUpperCase().includes("X")));
+
         if (filtered.length === 0) {
             alert("No hay registros para exportar en el rango seleccionado.");
             return;
@@ -456,7 +625,7 @@ document.addEventListener("DOMContentLoaded", function () {
         thead.appendChild(headerRow);
         tempTable.appendChild(thead);
 
-            // Ordena de menor a mayor por TALLAS (numérico y texto)
+        // Ordena de menor a mayor por TALLAS (numérico y texto)
         const tallaOrden = ["XXS", "XS", "S", "M", "L", "XL", "XXL", "XXXL", "UN"];
         filtered.sort((a, b) => {
             let tallaA = a.TALLAS ? a.TALLAS.toString().trim().toUpperCase() : "";
@@ -520,6 +689,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Exporta con SheetJS
         var wb = XLSX.utils.table_to_book(tempTable, {sheet:"Historico Cargas"});
-        XLSX.writeFile(wb, "historico_cargas.xlsx");
+        XLSX.writeFile(wb, "materiales.xlsx");
     });
 });

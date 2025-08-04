@@ -12,6 +12,7 @@ require_login_and_role();
     <title>Visualizar Historico de Cargas</title>
     <script src="../js/visualizar_cargas_mejorado.js"></script>
     <script src="../js/asignar_precio_modal.js"></script>
+    <script src="../js/marcar_error_modal.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
     <style>
         /*Estilo para headers dinamicos*/
@@ -87,6 +88,8 @@ require_login_and_role();
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             --radius: 8px;
             --transition: all 0.3s ease;
+            --red-buttons: #FF2A00;
+            --red-buttons-hover: #C90000;
         }
 
         /* ==============================
@@ -403,6 +406,13 @@ require_login_and_role();
             background-color: #ec971f;
         }
 
+        .btn-marcar-error {
+            background-color: var(--red-buttons);
+        }
+
+        .btn-marcar-error:hover {
+            background-color: var(--red-buttons-hover);
+        }
     </style>
 </head>
 <body>
@@ -413,7 +423,6 @@ require_login_and_role();
                 <i class="fas fa-arrow-left"></i> Regresar
             </button>
         </a>
-        <script src="../js/creacion_consecutivos.js"></script>
     </div>
     <div style="background: #e6f7ff; border: 1px solid #91d5ff; border-radius: 8px; padding: 18px 24px; margin: 24px 24px 0 24px; text-align: left; color: #274c5e; font-size: 1.08em;">
         <strong>Antes de empezar:</strong>
@@ -462,12 +471,12 @@ require_login_and_role();
         </label>
         <label>
             Nombre
-            <input type="text" id="filterName" placeholder="Filtrar por Nombre" style="width:350px;" oninput="this.value=this.value.toUpperCase();">
+            <input type="text" id="filterName" placeholder="Filtrar por Nombre" style="width:18vw;" oninput="this.value=this.value.toUpperCase();">
         </label>
         
         <label>
             Usuario
-            <input type="text" id="filterUsuario" placeholder="Filtrar por usuario" style="width:350px;">
+            <input type="text" id="filterUsuario" placeholder="Filtrar por usuario" style="width:18vw;">
         </label>
     </div>
 
@@ -766,6 +775,27 @@ document.getElementById('formCrearVariacion').onsubmit = function(e) {
             </div>
         </form>
         <div id="resultadoAsignarPrecio" style="margin-top:12px; color:#274c5e;"></div>
+    </div>
+</div>
+<div id="modalError" style="display:none; position:fixed; top:0; left:0; width:100%; height:100vh; background:rgba(0,0,0,0.4); z-index:1000; align-items:center; justify-content:center;">
+    <div style="background:white; padding:32px; border-radius:12px; min-width:320px; max-width:95vw; box-shadow:0 8px 32px rgba(0,0,0,0.2);">
+        <h2>Reportar Error</h2>
+        <form id="formError">
+            <input type="hidden" id="idOriginal">
+            <input type="hidden" id="nombreOriginal">
+            <label>
+                Motivo del error: <br>
+                <textarea id="motivoError" rows="4" cols="50"></textarea>
+            </label>
+            <label style="margin-top:10px;">
+                <input type="checkbox" id="marcarTodos"> ¿Marcar todos los registros con el mismo nombre?
+            </label>
+            <div style="margin-top:18px; display:flex; gap:12px;">
+                <button type="submit" class="btn btn-modificar">Guardar</button>
+                <button type="button" class="btn" id="cerrarModalError" style="background:#a0a0a0;">Cancelar</button>
+            </div>
+        </form>
+        <div id="resultadoMarcarError" style="margin-top:12px; color:#274c5e;"></div>
     </div>
 </div>
 </body>
