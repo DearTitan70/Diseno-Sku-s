@@ -41,16 +41,16 @@ document.addEventListener("DOMContentLoaded", function () {
         "INSTRUCC_CUIDADO_TEXTIL_PROF_5", "COMPOSICION_1", "%_COMP_1", "COMPOSICION_2", "%_COMP_2", "COMPOSICION_3",
         "%_COMP_3", "COMPOSICION_4", "%_COMP_4", "TOT_COMP", "FORRO", "COMP_FORRO_1", "%_FORRO_1", "COMP_FORRO_2",
         "%_FORRO_2", "TOT_FORRO", "RELLENO", "COMP_RELLENO_1", "%_RELLENO_1", "COMP_RELLENO_2", "%_RELLENO_2",
-        "TOT_RELLENO", "XX", "USUARIO", "FECHA DE CREACION", "PRECIO DE COMPRA", "COSTO", "PRECIO DE VENTA","Acciones"
+        "TOT_RELLENO", "XX", "USUARIO", "FECHA DE CREACION", "PRECIO DE COMPRA", "COSTO", "PRECIO DE VENTA", "ORDEN DE COMPRA", "Acciones"
     ];
 
     // Indices de las columnas a excluir en la exportación
-    const excludeHeaders = ["ID", "usuario", "fecha_creacion", "Acciones", "TIPO", "PRECIO DE COMPRA", "COSTO", "PRECIO DE VENTA"];
+    const excludeHeaders = ["ID", "TIPO DE PRODUCTO", "LINEA DEL PRODUCTO", "USUARIO", "FECHA DE CREACION", "Acciones", "TIPO DE PRODUCTO"];
     const exportHeaders = headers.filter(h => !excludeHeaders.includes(h));
 
     // Mapeo de headers a campos de registro 
     const headerToField = {
-        "TIPO": "tipo",
+        "TIPO DE PRODUCTO": "TIPO DE PRODUCTO",
         "LINEA": "LINEA",
         "ID": "id",
         "SAP": "SAP",
@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "PRECIO DE COMPRA": "precio_compra",
         "COSTO": "costo",
         "PRECIO DE VENTA": "precio_venta",
-        // "usuario", "fecha_creacion", "Acciones" no se exportan
+        "ORDEN DE COMPRA": "orden_compra"
     };
 
     // Fetch y render inicial
@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
             allData = data;
             renderGroupedTable();
         })
-        .catch(error => console.error("Error cargando empleados:", error));
+        .catch(error => console.error("Error cargando catalogo:", error));
 
     // Agrupa por tipo y luego por fecha
     function groupByTypeAndDate(data) {
@@ -339,10 +339,23 @@ document.addEventListener("DOMContentLoaded", function () {
                         <td>${formatCurrency(registro.precio_compra)}</td>
                         <td>${formatCurrency(registro.costo)}</td>
                         <td>${formatCurrency(registro.precio_venta)}</td>
+                        <td>${registro.orden_compra}</td>
                         <td>
-                            <a href="modificar_carga.php?id=${registro.id}" class="btn btn-modificar" title="Modificar este registro">
-                                <i class="fas fa-edit"></i> Modificar
-                            </a>
+                            <button class="btn btn-asignar-precio" 
+                                data-id="${registro.id}" 
+                                data-nombre="${registro.NOMBRE}" 
+                                data-precio_compra="${registro.precio_compra || 0}" 
+                                data-costo="${registro.costo || 0}" 
+                                data-precio_venta="${registro.precio_venta || 0}"
+                                data-orden_compra="${registro.orden_compra || 0}"
+                                <i class="fas fa-dollar-sign"></i> Asignar Precio
+                            </button>
+                            <button class="btn btn-crear-variacion" 
+                                data-id="${registro.id}" 
+                                data-talla="${registro.TALLAS}" 
+                                data-color="${registro.COLOR_FDS}">
+                                <i class="fas fa-copy"></i> Crear Variación
+                            </button>
                         </td>
                     `;
                     row.style.display = "none";
@@ -442,6 +455,49 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         thead.appendChild(headerRow);
         tempTable.appendChild(thead);
+
+            // Ordena de menor a mayor por TALLAS (numérico y texto)
+        const tallaOrden = ["XXS", "XS", "S", "M", "L", "XL", "XXL", "XXXL", "UN"];
+        filtered.sort((a, b) => {
+            let tallaA = a.TALLAS ? a.TALLAS.toString().trim().toUpperCase() : "";
+            let tallaB = b.TALLAS ? b.TALLAS.toString().trim().toUpperCase() : "";
+
+            // Intenta convertir a número
+            let numA = parseInt(tallaA, 10);
+            let numB = parseInt(tallaB, 10);
+
+            let isNumA = !isNaN(numA);
+            let isNumB = !isNaN(numB);
+
+            let tallaCmp = 0;
+            if (isNumA && isNumB) {
+                tallaCmp = numA - numB;
+            } else if (isNumA) {
+                tallaCmp = -1;
+            } else if (isNumB) {
+                tallaCmp = 1;
+            } else {
+                let idxA = tallaOrden.indexOf(tallaA);
+                let idxB = tallaOrden.indexOf(tallaB);
+                if (idxA === -1 && idxB === -1) {
+                    tallaCmp = tallaA.localeCompare(tallaB);
+                } else if (idxA === -1) {
+                    tallaCmp = 1;
+                } else if (idxB === -1) {
+                    tallaCmp = -1;
+                } else {
+                    tallaCmp = idxA - idxB;
+                }
+            }
+
+            // Si las tallas son iguales, ordenar por NOM_COLOR
+            if (tallaCmp === 0) {
+                let colorA = a.NOM_COLOR ? a.NOM_COLOR.toString().trim().toUpperCase() : "";
+                let colorB = b.NOM_COLOR ? b.NOM_COLOR.toString().trim().toUpperCase() : "";
+                return colorA.localeCompare(colorB);
+            }
+            return tallaCmp;
+        });
 
         // Agrega las filas
         var tempTbody = document.createElement("tbody");

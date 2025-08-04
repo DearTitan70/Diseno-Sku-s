@@ -10,8 +10,8 @@ require_login_and_role();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visualizar Historico de Cargas</title>
-    <link rel="icon" type="image/x-icon" href="../img/FDS_Favicon.png">
     <script src="../js/visualizar_cargas_mejorado.js"></script>
+    <script src="../js/asignar_precio_modal.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
     <style>
         /*Estilo para headers dinamicos*/
@@ -133,7 +133,23 @@ require_login_and_role();
            BOTONES
         ============================== */
         .btn {
-            background-color: var(--color-secondary);
+            background-color: var(--color-primary);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: var(--radius);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            text-decoration: none;
+        }
+        
+        .btn_error {
+            background-color: #F54927;
             color: white;
             border: none;
             padding: 12px 20px;
@@ -151,6 +167,12 @@ require_login_and_role();
 
         .btn:hover {
             background-color: var(--color-secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn_error:hover {
+            background-color: #D92400;
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
@@ -391,10 +413,6 @@ require_login_and_role();
                 <i class="fas fa-arrow-left"></i> Regresar
             </button>
         </a>
-                <!-- Botón para abrir el modal de cambio masivo -->
-        <button class="btn" id="btnCambioMasivo">
-            <i class="fas fa-edit"></i> Cambio Masivo de color por Nombre
-        </button>
         <script src="../js/creacion_consecutivos.js"></script>
     </div>
     <div style="background: #e6f7ff; border: 1px solid #91d5ff; border-radius: 8px; padding: 18px 24px; margin: 24px 24px 0 24px; text-align: left; color: #274c5e; font-size: 1.08em;">
@@ -458,151 +476,177 @@ require_login_and_role();
             <tbody id="tabla-visualizar-cargas">
             </tbody>
     </div>
-
-<!-- Modal para cambio masivo -->
-<div id="modalCambioMasivo" style="display:none; position:fixed; top:0; left:0; width:100%; height:100vh; background:rgba(0,0,0,0.4); z-index:1000; align-items:center; justify-content:center;">
-    <div style="background:white; padding:32px; border-radius:12px; min-width:300px; max-width:20vh; box-shadow:0 8px 32px rgba(0,0,0,0.2);">
-        <h2>Cambio Masivo de color por Nombre</h2>
-        <form id="formCambioMasivo">
-            <label>
-                Nombre a modificar:
-                <input type="text" id="nombreCambioMasivo" required style="width:100%;" oninput="this.value=this.value.toUpperCase();">
+<div id="modalCrearVariacion" style="display:none; position:fixed; top:0; left:0; width:100%; height:100vh; background:rgba(0,0,0,0.4); z-index:1000; align-items:center; justify-content:center;">
+    <div style="background:white; padding:32px; border-radius:12px; min-width:300px; max-width:90vw; box-shadow:0 8px 32px rgba(0,0,0,0.2);">
+        <h2>Crear Variación</h2>
+        <form id="formCrearVariacion">
+            <input type="hidden" id="variacionIdOriginal">
+            <label style="margin-bottom: 12px; display: block;">
+                Nuevo Nombre (opcional):
+                <input type="text" id="variacionNombre" placeholder="Dejar en blanco para usar el nombre original" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
             </label>
             <label>
-                Nuevo color:
-                <select id="nuevoColorFDS" required style="width:100%;">
+                Talla(s) (Ctrl+Click para varias):
+                <select id="variacionTalla" multiple size="5" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
+                    <!-- <option value="igual">Dejar igual</option> -->
+                    <option value="XXS">XXS</option>
+                    <option value="XS">XS</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    <option value="UN">UN</option>
+                    <option value="T">T</option>
+                    <option value="EP">EP</option>
+                    <option value="P">P</option>
+                    <option value="G">G</option>
+                    <option value="EG">EG</option>
+                    <option value="2">2</option>
+                    <option value="4">4</option>
+                    <option value="6">6</option>
+                    <option value="8">8</option>
+                    <option value="10">10</option>
+                    <option value="12">12</option>
+                    <option value="14">14</option>
+                    <option value="16">16</option>
+                    <option value="28">28</option>
+                    <option value="30">30</option>
+                    <option value="32">32</option>
+                    <option value="34">34</option>
+                    <option value="36">36</option>
+                </select>
+            </label>
+            <label style="margin-top: 12px;">
+                Color(es) (Ctrl+Click para varios):
+                <select id="variacionColor" multiple size="5" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px;">
                     <!-- Opciones generadas por JS -->
                 </select>
             </label>
-            <label id="labelPrintMasivo" style="display:none;">
-                PRINT:
-                <select id="printMasivo" style="width:100%;">
-                    <option value="">Seleccione un PRINT</option>
-                    <option value="BLANCO">BLANCO</option>
-                    <option value="AMARILLO">AMARILLO</option>
-                    <option value="AZUL">AZUL</option>
-                    <option value="BEIGE">BEIGE</option>
-                    <option value="CAFE">CAFE</option>
-                    <option value="MAGENTA">MAGENTA</option>
-                    <option value="MORADO">MORADO</option>
-                    <option value="NARANJA">NARANJA</option>
-                    <option value="NEGRO">NEGRO</option>
-                    <option value="ROJO">ROJO</option>
-                    <option value="ROSADO">ROSADO</option>
-                    <option value="TURQUEZA">TURQUEZA</option>
-                    <option value="VERDE">VERDE</option>
-                </select>
-            </label>
-            <label>
-                Campo a modificar:
-                <select id="campoCambioMasivo" required style="width:100%;">
-                    <option value="COLOR_FDS">COLOR_FDS</option>
-                </select>
-            </label>
             <div style="margin-top:18px; display:flex; gap:12px;">
-                <button type="submit" class="btn btn-modificar">Aplicar Cambio Masivo</button>
-                <button type="button" class="btn" id="cerrarModalCambioMasivo" style="background:#a0a0a0;">Cancelar</button>
+                <button type="submit" class="btn btn-modificar">Crear Variación</button>
+                <button type="button" class="btn" id="cerrarModalCrearVariacion" style="background:#a0a0a0;">Cancelar</button>
             </div>
         </form>
-        <div id="resultadoCambioMasivo" style="margin-top:12px; color:#274c5e;"></div>
+        <div id="resultadoCrearVariacion" style="margin-top:12px; color:#274c5e;"></div>
     </div>
 </div>
 <script>
 const COLORES_FDS = [
-    { codigo: "100", nombre: "BLANCO", gama: "BLANCO" },
+  { codigo: "100", nombre: "BLANCO", gama: "BLANCO" },
   { codigo: "101", nombre: "OFFWHITE", gama: "BLANCO" },
   { codigo: "102", nombre: "IVORY", gama: "BLANCO" },
   { codigo: "103", nombre: "IVORY", gama: "BLANCO" },
-  { codigo: "106", nombre: "BLANCO", gama: "BLANCO" },
   { codigo: "109", nombre: "BEIGE", gama: "BEIGE" },
-  { codigo: "110", nombre: "BEIGE", gama: "BEIGE" },
   { codigo: "121", nombre: "ARENA", gama: "BEIGE" },
   { codigo: "123", nombre: "KAKI", gama: "BEIGE" },
   { codigo: "203", nombre: "AMARILLO CLARO", gama: "AMARILLO" },
+  { codigo: "204", nombre: "AMARILLO", gama: "AMARILLO" },
+  { codigo: "205", nombre: "AMARILLO MEDIO", gama: "AMARILLO" },
   { codigo: "207", nombre: "LIMA", gama: "AMARILLO" },
+  { codigo: "208", nombre: "DORADO", gama: "AMARILLO" },
   { codigo: "209", nombre: "AMARILLO QUEMADO", gama: "AMARILLO" },
-  { codigo: "219", nombre: "BRIGHT GOLD", gama: "AMARILLO" },
+  { codigo: "218", nombre: "AMARILLO QUEMADO", gama: "AMARILLO" },
   { codigo: "220", nombre: "TIERRA", gama: "AMARILLO" },
   { codigo: "224", nombre: "FLUORECENTE", gama: "AMARILLO" },
-  { codigo: "233", nombre: "CYBER LIME", gama: "AMARILLO" },
-  { codigo: "237", nombre: "AMARILLO", gama: "AMARILLO" },
   { codigo: "258", nombre: "NARANJA", gama: "NARANJA" },
   { codigo: "260", nombre: "NARANJA CLARO", gama: "NARANJA" },
   { codigo: "263", nombre: "CORAL", gama: "NARANJA" },
   { codigo: "264", nombre: "CORAL", gama: "NARANJA" },
   { codigo: "266", nombre: "NARANJA", gama: "NARANJA" },
-  { codigo: "277", nombre: "CORAL", gama: "NARANJA" },
+  { codigo: "270", nombre: "TERRACOTA", gama: "NARANJA" },
+  { codigo: "275", nombre: "TERRACOTA", gama: "NARANJA" },
+  { codigo: "276", nombre: "NARANJA PICANTE", gama: "NARANJA" },
+  { codigo: "277", nombre: "PEACH", gama: "NARANJA" },
   { codigo: "279", nombre: "TERRACOTA", gama: "NARANJA" },
-  { codigo: "281", nombre: "CORAL", gama: "NARANJA" },
+  { codigo: "281", nombre: "PEACH", gama: "NARANJA" },
   { codigo: "283", nombre: "TERRACOTA", gama: "NARANJA" },
-  { codigo: "284", nombre: "NARANJA", gama: "NARANJA" },
+  { codigo: "284", nombre: "MANDARINA", gama: "NARANJA" },
   { codigo: "300", nombre: "ROJO", gama: "ROJO" },
-  { codigo: "301", nombre: "ROJO", gama: "ROJO" },
+  { codigo: "312", nombre: "CEREZA", gama: "ROJO" },
   { codigo: "313", nombre: "ROJO", gama: "ROJO" },
   { codigo: "315", nombre: "ROJO", gama: "ROJO" },
+  { codigo: "318", nombre: "ROJO PIMIENTO", gama: "ROJO" },
   { codigo: "319", nombre: "ROJO", gama: "ROJO" },
   { codigo: "322", nombre: "VINO", gama: "ROJO" },
   { codigo: "328", nombre: "VINO", gama: "ROJO" },
+  { codigo: "330", nombre: "VINO", gama: "ROJO" },
   { codigo: "337", nombre: "BURGUNDY", gama: "ROJO" },
   { codigo: "350", nombre: "FUCCIA", gama: "ROSADO" },
+  { codigo: "353", nombre: "FRESA", gama: "ROSADO" },
   { codigo: "354", nombre: "ROSADO", gama: "ROSADO" },
   { codigo: "356", nombre: "ROSADO", gama: "ROSADO" },
   { codigo: "357", nombre: "ROSADO", gama: "ROSADO" },
+  { codigo: "358", nombre: "ROSADO CARAMELO", gama: "ROSADO" },
   { codigo: "361", nombre: "ROSA MARCHITA", gama: "ROSADO" },
   { codigo: "362", nombre: "ROSA MARCHITA", gama: "ROSADO" },
   { codigo: "363", nombre: "ROSA MARCHITA", gama: "ROSADO" },
+  { codigo: "365", nombre: "ROSA SANDIA", gama: "ROSADO" },
   { codigo: "366", nombre: "PALO DE ROSA", gama: "ROSADO" },
-  { codigo: "368", nombre: "BLUSH", gama: "ROSADO" },
   { codigo: "367", nombre: "ROSADO", gama: "ROSADO" },
-  { codigo: "370", nombre: "ROSADO", gama: "ROSADO" },
-  { codigo: "372", nombre: "ROSADO", gama: "ROSADO" },
-  { codigo: "375", nombre: "FUCSIA", gama: "MAGENTA" },
+  { codigo: "368", nombre: "BLUSH", gama: "ROSADO" },
   { codigo: "369", nombre: "ROSADO", gama: "ROSADO" },
+  { codigo: "370", nombre: "ROSADO", gama: "ROSADO" },
+  { codigo: "375", nombre: "FUCSIA", gama: "MAGENTA" },
+  { codigo: "377", nombre: "MORA", gama: "MAGENTA" },
   { codigo: "380", nombre: "MAGENTA", gama: "MAGENTA" },
-  { codigo: "393", nombre: "ROSADO", gama: "MAGENTA" },
-  { codigo: "394", nombre: "ROSADO", gama: "MAGENTA" },
-  { codigo: "395", nombre: "MAUVE", gama: "MAGENTA" },
+  { codigo: "393", nombre: "ROSA", gama: "ROSADO" },
+  { codigo: "399", nombre: "LAVANDA", gama: "MORADO" },
   { codigo: "401", nombre: "VIOLETA", gama: "MORADO" },
   { codigo: "407", nombre: "PURPURA", gama: "MORADO" },
   { codigo: "417", nombre: "LILA", gama: "MORADO" },
   { codigo: "418", nombre: "LILA CLARO", gama: "MORADO" },
+  { codigo: "424", nombre: "VIOLETA", gama: "MORADO" },
   { codigo: "431", nombre: "MORADO", gama: "MORADO" },
+  { codigo: "452", nombre: "AZUL", gama: "AZUL" },
+  { codigo: "453", nombre: "CLARO", gama: "AZUL" },
   { codigo: "454", nombre: "AZUL", gama: "AZUL" },
+  { codigo: "459", nombre: "AZUL", gama: "AZUL" },
+  { codigo: "460", nombre: "AZUL LAVANDA", gama: "AZUL" },
+  { codigo: "462", nombre: "AZUL", gama: "AZUL" },
   { codigo: "463", nombre: "AZUL CIELO", gama: "AZUL" },
-  { codigo: "473", nombre: "ROYAL", gama: "AZUL" },
-  { codigo: "480", nombre: "CLARO", gama: "AZUL" },
-  { codigo: "481", nombre: "MEDIO OSC", gama: "AZUL" },
-  { codigo: "460", nombre: "CLARO", gama: "AZUL" },
-  { codigo: "461", nombre: "CLARO", gama: "AZUL" },
   { codigo: "464", nombre: "MEDIO", gama: "AZUL" },
   { codigo: "467", nombre: "AZUL", gama: "AZUL" },
+  { codigo: "473", nombre: "ROYAL", gama: "AZUL" },
   { codigo: "475", nombre: "HIELO", gama: "AZUL" },
+  { codigo: "476", nombre: "AZUL HORTENSIA", gama: "AZUL" },
   { codigo: "479", nombre: "NAVY", gama: "AZUL" },
-  { codigo: "482", nombre: "AZUL", gama: "AZUL" },
+  { codigo: "480", nombre: "CLARO", gama: "AZUL" },
+  { codigo: "481", nombre: "AZUL", gama: "AZUL" },
+  { codigo: "482", nombre: "MEDIO OSC", gama: "AZUL" },
+  { codigo: "483", nombre: "MEDIO OSC", gama: "AZUL" },
   { codigo: "484", nombre: "TURQUEZA", gama: "TURQUEZA" },
-  { codigo: "494", nombre: "TURQUEZA", gama: "TURQUEZA" },
-  { codigo: "505", nombre: "TURQUEZA", gama: "TURQUEZA" },
+  { codigo: "490", nombre: "AZUL OSC", gama: "AZUL" },
+  { codigo: "491", nombre: "AZUL OSC", gama: "AZUL" },
+  { codigo: "503", nombre: "MINT GREEN", gama: "VERDE" },
   { codigo: "504", nombre: "TURQUEZA", gama: "TURQUEZA" },
-  { codigo: "510", nombre: "TURQUEZA", gama: "TURQUEZA" },
+  { codigo: "505", nombre: "TURQUEZA", gama: "TURQUEZA" },
+  { codigo: "510", nombre: "VERDE CALI", gama: "VERDE" },
   { codigo: "513", nombre: "PETROL", gama: "TURQUEZA" },
   { codigo: "515", nombre: "ALPINE GREEN", gama: "TURQUEZA" },
-  { codigo: "556", nombre: "VERDE", gama: "VERDE" },
+  { codigo: "556", nombre: "VERDE CLARO", gama: "VERDE" },
   { codigo: "565", nombre: "VERDE CLARO", gama: "VERDE" },
+  { codigo: "566", nombre: "VERDE LIMA", gama: "VERDE" },
   { codigo: "567", nombre: "VERDE", gama: "VERDE" },
   { codigo: "570", nombre: "VERDE", gama: "VERDE" },
+  { codigo: "572", nombre: "VERDE MILITAR", gama: "VERDE" },
   { codigo: "575", nombre: "GREEN TE", gama: "VERDE" },
+  { codigo: "576", nombre: "OLIVO", gama: "VERDE" },
   { codigo: "579", nombre: "VERDE OSCURO", gama: "VERDE" },
+  { codigo: "581", nombre: "VERDE OLIVA", gama: "VERDE" },
   { codigo: "583", nombre: "JADE", gama: "VERDE" },
+  { codigo: "587", nombre: "VERDE LIMON", gama: "VERDE" },
   { codigo: "588", nombre: "VERDE LIMON", gama: "VERDE" },
-  { codigo: "591", nombre: "VERDE OSCURO", gama: "VERDE" },
   { codigo: "592", nombre: "VERDE CHIVE", gama: "VERDE" },
   { codigo: "596", nombre: "OLIVO", gama: "VERDE" },
   { codigo: "597", nombre: "VERDE MILITAR", gama: "VERDE" },
+  { codigo: "605", nombre: "CAQUI", gama: "CAFE" },
   { codigo: "606", nombre: "CAQUI", gama: "CAFE" },
   { codigo: "608", nombre: "CAQUI", gama: "CAFE" },
-  { codigo: "611", nombre: "CAFÉ", gama: "CAFE" },
+  { codigo: "609", nombre: "MOCCA", gama: "CAFE" },
+  { codigo: "611", nombre: "CARAMELO", gama: "CAFE" },
   { codigo: "613", nombre: "CAFÉ", gama: "CAFE" },
-  { codigo: "622", nombre: "CAQUI", gama: "CAFE" },
+  { codigo: "614", nombre: "CAFÉ", gama: "CAFE" },
   { codigo: "623", nombre: "CAQUI", gama: "CAFE" },
   { codigo: "624", nombre: "CHOCOLATE", gama: "CAFE" },
   { codigo: "625", nombre: "CAQUI", gama: "CAFE" },
@@ -613,96 +657,116 @@ const COLORES_FDS = [
   { codigo: "803", nombre: "GRIS CLARO", gama: "NEGRO" },
   { codigo: "811", nombre: "GRIS MEDIO", gama: "NEGRO" },
   { codigo: "815", nombre: "GRIS MEDIO", gama: "NEGRO" },
-  { codigo: "817", nombre: "GRIS OSCURO", gama: "NEGRO" },
   { codigo: "819", nombre: "GRIS OSCURO", gama: "NEGRO" },
+  { codigo: "821", nombre: "GRIS OSCURO", gama: "NEGRO" },
   { codigo: "999", nombre: "MULTICOLOR", gama: "MULTICOLOR" }
 ];
 
-const selectColor = document.getElementById('nuevoColorFDS');
-const labelPrint = document.getElementById('labelPrintMasivo');
-const selectPrint = document.getElementById('printMasivo');
-selectColor.innerHTML = COLORES_FDS.map(c => 
-  `<option value="${c.codigo}">${c.codigo} - ${c.nombre} (${c.gama})</option>`
-).join('');
+// Asume que COLORES_FDS es un array global de colores disponibles
+function llenarOpcionesColorVariacion() {
+    const select = document.getElementById('variacionColor');
+    if (!select) return;
+    select.innerHTML = ''; // Limpiar opciones anteriores
+    if (typeof COLORES_FDS !== 'undefined' && Array.isArray(COLORES_FDS)) {
+        COLORES_FDS.forEach(c => {
+            select.innerHTML += `<option value="${c.codigo}">${c.codigo} - ${c.nombre} (${c.gama})</option>`;
+        });
+    }
+}
 
-// Mostrar/ocultar modal
-document.getElementById('btnCambioMasivo').onclick = function() {
-    document.getElementById('modalCambioMasivo').style.display = 'flex';
-};
-document.getElementById('cerrarModalCambioMasivo').onclick = function() {
-    document.getElementById('modalCambioMasivo').style.display = 'none';
-    document.getElementById('resultadoCambioMasivo').innerText = '';
-};
-
-// Enviar formulario de cambio masivo
-document.getElementById('formCambioMasivo').onsubmit = function(e) {
-    e.preventDefault();
-    const nombre = document.getElementById('nombreCambioMasivo').value.trim();
-    const nuevoCodigoColor = document.getElementById('nuevoColorFDS').value;
-
-    fetch('../backend/cambio_masivo.php', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ nombre, nuevoCodigoColor })
-    })
-    .then(res => res.json())
-    .then(data => {
-        if (data.success) {
-            document.getElementById('resultadoCambioMasivo').innerText = '¡Cambio masivo realizado con éxito!';
-            // Aquí podrías recargar la tabla si lo deseas
-        } else {
-            document.getElementById('resultadoCambioMasivo').innerText = 'Error: ' + (data.message || 'No se pudo realizar el cambio.');
-        }
-    })
-    .catch(err => {
-        document.getElementById('resultadoCambioMasivo').innerText = 'Error de red o servidor.';
-    });
-};
-
-// Mostrar/ocultar PRINT según color seleccionado
-selectColor.addEventListener('change', function() {
-    if (this.value === "999") {
-        labelPrint.style.display = '';
-        selectPrint.required = true;
-    } else {
-        labelPrint.style.display = 'none';
-        selectPrint.value = '';
-        selectPrint.required = false;
+// Evento para abrir el modal
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('btn-crear-variacion')) {
+        const id = e.target.getAttribute('data-id');
+        document.getElementById('variacionIdOriginal').value = id;
+        document.getElementById('variacionNombre').value = ''; // Limpiar campo de nombre
+        document.getElementById('variacionTalla').selectedIndex = -1; // Deseleccionar todo
+        document.getElementById('variacionColor').selectedIndex = -1; // Deseleccionar todo
+        llenarOpcionesColorVariacion();
+        document.getElementById('modalCrearVariacion').style.display = 'flex';
+        document.getElementById('resultadoCrearVariacion').innerText = '';
     }
 });
 
-// Enviar formulario de cambio masivo
-document.getElementById('formCambioMasivo').onsubmit = function(e) {
+// Cerrar modal
+document.getElementById('cerrarModalCrearVariacion').onclick = function() {
+    document.getElementById('modalCrearVariacion').style.display = 'none';
+    document.getElementById('resultadoCrearVariacion').innerText = '';
+};
+
+// Enviar formulario
+document.getElementById('formCrearVariacion').onsubmit = function(e) {
     e.preventDefault();
-    const nombre = document.getElementById('nombreCambioMasivo').value.trim();
-    const nuevoCodigoColor = document.getElementById('nuevoColorFDS').value;
-    let print = "";
-    if (nuevoCodigoColor === "999") {
-        print = selectPrint.value;
-        if (!print) {
-            document.getElementById('resultadoCambioMasivo').innerText = 'Debe seleccionar un valor para PRINT.';
-            return;
-        }
+    const idOriginal = document.getElementById('variacionIdOriginal').value;
+    const nuevoNombre = document.getElementById('variacionNombre').value.trim();
+    const nuevasTallas = Array.from(document.getElementById('variacionTalla').selectedOptions).map(opt => opt.value);
+    const nuevosColores = Array.from(document.getElementById('variacionColor').selectedOptions).map(opt => opt.value);
+
+    if (nuevasTallas.length === 0 && nuevosColores.length === 0) {
+        document.getElementById('resultadoCrearVariacion').innerText = 'Error: Debes seleccionar al menos una nueva talla o un nuevo color.';
+        return;
     }
 
-    fetch('../backend/cambio_masivo.php', {
+    fetch('../backend/crear_variacion.php', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ nombre, nuevoCodigoColor, print })
+        body: JSON.stringify({
+            id: idOriginal,
+            tallas: nuevasTallas.length > 0 ? nuevasTallas : 'igual',
+            colores: nuevosColores.length > 0 ? nuevosColores : 'igual',
+            nuevo_nombre: nuevoNombre
+        })
     })
     .then(res => res.json())
     .then(data => {
         if (data.success) {
-            document.getElementById('resultadoCambioMasivo').innerText = '¡Cambio masivo realizado con éxito!';
-            // Aquí podrías recargar la tabla si lo deseas
+            document.getElementById('resultadoCrearVariacion').innerText = `¡${data.creados || 1} variaciones creadas con éxito!`;
+            setTimeout(() => {
+                document.getElementById('modalCrearVariacion').style.display = 'none';
+                // location.reload(); // Recargar para ver los cambios
+            }, 1200);
         } else {
-            document.getElementById('resultadoCambioMasivo').innerText = 'Error: ' + (data.message || 'No se pudo realizar el cambio.');
+            document.getElementById('resultadoCrearVariacion').innerText = 'Error: ' + (data.message || 'No se pudo crear la variación.');
         }
     })
     .catch(err => {
-        document.getElementById('resultadoCambioMasivo').innerText = 'Error de red o servidor.';
+        document.getElementById('resultadoCrearVariacion').innerText = 'Error de red o servidor.';
     });
 };
 </script>
+<div id="modalAsignarPrecio" style="display:none; position:fixed; top:0; left:0; width:100%; height:100vh; background:rgba(0,0,0,0.4); z-index:1000; align-items:center; justify-content:center;">
+    <div style="background:white; padding:32px; border-radius:12px; min-width:320px; max-width:95vw; box-shadow:0 8px 32px rgba(0,0,0,0.2);">
+        <h2>Asignar Precio</h2>
+        <form id="formAsignarPrecio">
+            <input type="hidden" id="precioIdOriginal">
+            <input type="hidden" id="precioNombreOriginal">
+            <label>
+                Precio de compra:
+                <input type="number" id="precioCompra" min="0" step="0.01" required>
+            </label>
+            <label>
+                Costo:
+                <input type="number" id="precioCosto" min="0" step="0.01" required>
+            </label>
+            <label>
+                Precio de venta:
+                <input type="number" id="precioVenta" min="0" step="0.01" required>
+            </label>
+            <label>
+                Orden de compra asociada:
+                <input type="number" id="ordenCompra" required>
+            </label>
+            <label style="margin-top:10px;">
+                <input type="checkbox" id="aplicarATodos"> ¿Aplicar a todos los registros con el mismo nombre?
+            </label>
+            <div id="mensajePrecioExistente" style="color:#b36b00; margin:10px 0 0 0; font-size:0.98em;"></div>
+            <div style="margin-top:18px; display:flex; gap:12px;">
+                <button type="submit" class="btn btn-modificar">Guardar</button>
+                <button type="button" class="btn" id="cerrarModalAsignarPrecio" style="background:#a0a0a0;">Cancelar</button>
+            </div>
+        </form>
+        <div id="resultadoAsignarPrecio" style="margin-top:12px; color:#274c5e;"></div>
+    </div>
+</div>
 </body>
 </html>

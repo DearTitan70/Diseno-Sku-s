@@ -56,11 +56,11 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     // ===================================================
     if ($stmt->execute()) {
         // Si la eliminación fue exitosa, redirigir con mensaje de éxito
-        header("Location: ../sections/visualizar_reglas.html?status=success&message=Regla eliminada correctamente"); 
+        header("Location: ../sections/visualizar_reglas.php?status=success&message=Regla eliminada correctamente"); 
         exit(); 
     } else {
         // Si hubo un error al eliminar, redirigir con mensaje de error
-        header("Location: ../sections/visualizar_reglas.html?status=error&message=Error al eliminar la regla: " . $stmt->error); 
+        header("Location: ../sections/visualizar_reglas.php?status=error&message=Error al eliminar la regla: " . $stmt->error); 
         exit();
     }
 

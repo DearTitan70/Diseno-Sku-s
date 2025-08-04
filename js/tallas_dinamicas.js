@@ -7,9 +7,14 @@ const TALLAS_SUPERIOR = [
   { value: "S", text: "S" },
   { value: "M", text: "M" },
   { value: "L", text: "L" },
-  { value: "T", text: "T"},
   { value: "XL", text: "XL" },
   { value: "XXL", text: "XXL" },
+  { value: "UN", text: "UN" },
+  { value: "T", text: "T" },
+  { value: "EP", text: "EP" },
+  { value: "P", text: "P" },
+  { value: "G", text: "G" },
+  { value: "EG", text: "EG" },
 ];
 
 /**
@@ -29,6 +34,7 @@ const TALLAS_INFERIOR = [
   { value: "32", text: "32" },
   { value: "34", text: "34" },
   { value: "36", text: "36" },
+  { value: "UN", text: "UN" },
 ];
 
 /**

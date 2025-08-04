@@ -16,445 +16,21 @@ $fecha_actual = date("Y-m-d H:i:s");
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Inclusión de scripts JS para funcionalidades dinámicas -->
-    <script src="../js/tallas_dinamicas.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carga Manual</title>
-    <link rel="icon" type="image/x-icon" href="../img/FDS_Favicon.png">
-    <!-- jQuery para manipulación DOM y AJAX -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <style>
-        /* 
-        =========================
-        ESTILOS CSS PERSONALIZADOS
-        =========================
-        Definición de variables de color, estilos de tabla, botones, responsividad, etc.
-        */
-            :root {
-            --color-background: #F9F3E5; /* Fondo claro y elegante */
-            --color-text-dark: #000000; /* Texto oscuro principal */
-            --color-primary: #879683; /* Verde/Gris principal, para elementos interactivos */
-            --color-secondary: #5A6B58; /* Un tono más oscuro del primario, para hover/activos */
-            --color-highlight: #C5D4C1; /* Un tono más claro, para bordes o detalles */
-            --color-logout: #a0a0a0; /* Gris para el botón de cerrar sesión */
-            --color-logout-hover: #8a8a8a; /* Gris más oscuro para hover de cerrar sesión */
-            --color-error: #e74c3c;
-            --color-table-header: #879683; /* Cambiado a color primario */
-            --color-table-border: #C5D4C1; /* Cambiado a color highlight */
-            --color-row-even: #f2f2f2;
-            --color-delete-button: #c0392b;
-            --color-delete-button-hover: #e74c3c;
-            --color-white: #ffffff;
-            --color-shadow: rgba(0, 0, 0, 0.1);
-            --border-radius: 8px;
-            --transition-speed: 0.3s;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--color-white);
-            color: var(--color-text-dark);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-        }
-
-        .container {
-            background-color: var(--color-background);
-            padding: 40px;
-            border-radius: var(--border-radius);
-            box-shadow: 0 8px 24px var(--color-shadow);
-            max-width: 98%;
-            margin: 30px auto;
-            width: 95%;
-            text-align: center;
-            animation: fadeIn 0.8s ease-out;
-            border-top: 5px solid var(--color-primary);
-        }
-
-        .custom-scrollbar-container {
-            width: 99.5%;
-            height: 18px;
-            user-select: none;
-            background: transparent;
-            z-index: 20;
-            padding: 5px;
-        }
-
-        #top-scrollbar-container {
-            position: sticky;
-            top: 0;
-            z-index: 30;
-            background: var(--color-background);
-            margin-bottom: 0;
-        }
-
-        .custom-scrollbar-track {
-            width: 100%;
-            height: 8px;
-            background: #e7e7e7;
-            border-radius: 4px;
-            position: relative;
-            margin: 5px 0;
-        }
-        .custom-scrollbar-thumb {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
-            border-radius: 4px;
-            cursor: grab;
-            transition: background 0.2s;
-            min-width: 40px;
-            box-shadow: 0 2px 6px rgba(135,150,131,0.08);
-        }
-        .custom-scrollbar-thumb:active {
-            cursor: grabbing;
-            background: linear-gradient(90deg, var(--color-secondary), var(--color-primary));
-        }
-        .scrollbar-dragging {
-            cursor: grabbing !important;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .container h2 {
-            color: var(--color-primary);
-            margin-top: 0;
-            margin-bottom: 40px;
-            font-size: 2.4em;
-            font-weight: 600;
-            position: relative;
-            padding-bottom: 15px;
-            letter-spacing: 0.5px;
-        }
-
-        .container h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background-color: var(--color-highlight);
-            border-radius: 2px;
-        }
-
-        .table-container {
-            width: 99%;
-            max-width: 99%;
-            max-height: 700px;
-            overflow-x: hidden; 
-            border: 1px solid var(--color-table-border);
-            border-radius: var(--border-radius);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            position: relative;
-            background: white;
-            padding: 5px;
-            overflow-y: auto;
-        }
-
-        #skuTable {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-            min-width: 1200px;
-        }
-
-        #skuTable th,
-        #skuTable td {
-            border: 1px solid var(--color-table-border);
-            padding: 15px 12px;
-            text-align: center;
-            vertical-align: middle;
-            text-wrap: nowrap;
-            transition: background-color var(--transition-speed);
-        }
-
-        #skuTable th {
-            background-color: var(--color-table-header);
-            color: var(--color-white);
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.85em;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            padding: 18px 12px;
-            letter-spacing: 0.5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        #skuTable tbody tr {
-            transition: all var(--transition-speed) ease;
-            height: 60px;
-        }
-
-        #skuTable tbody tr:nth-child(even) {
-            background-color: rgba(197, 212, 193, 0.1); /* Subtle highlight color */
-        }
-
-        #skuTable tbody tr:hover {
-            background-color: rgba(197, 212, 193, 0.3);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        #skuTable input[type="text"],
-        #skuTable input[type="number"],
-        #skuTable select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid var(--color-table-border);
-            border-radius: 4px;
-            font-size: 0.95em;
-            box-sizing: border-box;
-            transition: all var(--transition-speed) ease;
-            background-color: var(--color-white);
-            min-width: 120px;
-        }
-
-        #skuTable input[type="text"]:focus,
-        #skuTable input[type="number"]:focus,
-        #skuTable select:focus {
-            border-color: var(--color-primary);
-            box-shadow: 0 0 0 3px rgba(135, 150, 131, 0.2);
-            outline: none;
-        }
-
-        #skuTable select {
-            appearance: none;
-            background-image: url('data:image/svg+xml;utf8,<svg fill="%23879683" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
-            background-repeat: no-repeat;
-            background-position: right 8px center;
-            background-size: 16px;
-            padding-right: 30px;
-            cursor: pointer;
-        }
-
-        .delete-row {
-            display: inline-block;
-            padding: 10px 18px;
-            font-size: 0.9em;
-            color: var(--color-white);
-            background-color: var(--color-delete-button);
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all var(--transition-speed) ease;
-            font-weight: 500;
-            margin: 5px;
-        }
-
-        .delete-row:hover {
-            background-color: var(--color-delete-button-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        .delete-row:active {
-            transform: translateY(0);
-            box-shadow: none;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        button {
-            display: inline-block;
-            padding: 14px 28px;
-            font-size: 1.1em;
-            color: var(--color-white);
-            background-color: var(--color-primary);
-            border: none;
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            transition: all var(--transition-speed) ease;
-            margin-bottom: 20px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        button:hover {
-            background-color: var(--color-secondary);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        button:active {
-            background-color: var(--color-secondary);
-            transform: translateY(-1px);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Botón de volver */
-        a button {
-            background-color: var(--color-primary);
-            color: var(--color-white);
-            margin: 0 15px 30px;
-            padding: 14px 30px;
-        }
-
-        a button:hover {
-            background-color: var(--color-secondary);
-            color: var(--color-white);
-        }
-
-        /* Mejoras para campos específicos */
-        .campo-formulario[data-campo-nombre="usuario"],
-        .campo-formulario[data-campo-nombre="fecha_creacion"],
-        .campo-formulario[data-campo-nombre="NOM_COLOR"],
-        .campo-formulario[data-campo-nombre="GAMA"],
-        .campo-formulario[data-campo-nombre="TEMPORADA"],
-        .campo-formulario[data-campo-nombre="TOT_COMP"],
-        .campo-formulario[data-campo-nombre="TOT_FORRO"],
-        .campo-formulario[data-campo-nombre="TOT_RELLENO"] {
-            font-weight: 500;
-            background-color: rgba(197, 212, 193, 0.2);
-            padding: 12px 8px;
-        }
-
-        /* Estilo para campos con error */
-        .campo-formulario[style*="background-color: rgb(255, 224, 224)"] {
-            border: 1px solid var(--color-error) !important;
-            box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2);
-        }
-
-        /* Animación para nuevas filas */
-        @keyframes highlightRow {
-            0% {
-                background-color: rgba(197, 212, 193, 0.5);
-            }
-            100% {
-                background-color: transparent;
-            }
-        }
-
-        .fila-carga.new-row {
-            animation: highlightRow 2s ease-out;
-        }
-
-        /* Mejoras de accesibilidad y responsividad */
-        @media (max-width: 1200px) {
-            .container {
-                padding: 30px;
-                margin: 15px auto;
-            }
-            
-            .container h2 {
-                font-size: 1.8em;
-            }
-        }
-
-        /* Estilo para instrucciones de lavado y cuidado */
-        [id^="instruccion_"] {
-            font-size: 0.9em;
-            color: #555;
-            padding: 10px 5px;
-        }
-
-        /* Mejora visual para los encabezados de columna */
-        #skuTable th,
-        #skuTable td {
-            min-width: 140px;
-            white-space: nowrap;
-        }
-
-        #skuTable th {
-            position: relative;
-            white-space: nowrap;
-            min-width: 140px;
-        }
-
-        #skuTable th::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: rgba(255, 255, 255, 0.3);
-        }
-
-        /* Mejoras para la visualización de la tabla */
-        .table-container::-webkit-scrollbar {
-            height: 12px;
-        }
-
-        .table-container::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 10px;
-        }
-
-        .table-container::-webkit-scrollbar-thumb {
-            background: var(--color-primary);
-            border-radius: 10px;
-        }
-
-        .table-container::-webkit-scrollbar-thumb:hover {
-            background: var(--color-secondary);
-        }
-
-        /* Indicador de desplazamiento horizontal */
-        .table-container::after {
-            content: '→ Desplazar para ver más →';
-            display: block;
-            text-align: center;
-            padding: 10px;
-            color: var(--color-primary);
-            font-size: 0.9em;
-            font-style: italic;
-            margin-top: 10px;
-        }
-
-        /* Mejora para la visualización de filas */
-        #skuTable tbody tr td {
-            min-width: 140px;
-            max-width: 300px;
-        }
-
-        #abrirReplicarModalBtn {
-            margin-left: 5px;
-        }
-
-        #guardarBtn {
-            margin-left: 5px;
-        }
-         
-        #abrirReplicarColorModalBtn {
-            margin-left: 5px;
-        }
-
-        .opciones {
-            align-items: center;
-            padding: 10px;
-        }
-    </style>
-    <!-- Scripts adicionales para funcionalidades específicas -->
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="../js/tallas_dinamicas.js"></script>
     <script src="../js/ocultar_columnas.js"></script>
     <script src="../js/filtrar_categorias.js"></script>
     <script src="../js/replicar_filas_color.js"></script>
     <script src="../js/table-horizontal-scroll-sync.js"></script>
     <script src="../js/borrador_carga_manual.js"></script>
     <script src="../js/borrador_carga_manual_ui.js"></script>
+    <script src="../js/function.js"></script>
+    <script src="../js/function_update_rows.js"></script>
+    <script src="../js/reproSelect.js"></script>
 </head>
 <body>
 <div class="container">
@@ -495,6 +71,7 @@ $fecha_actual = date("Y-m-d H:i:s");
     <div class = "opciones">
         <button id="abrirReplicarModalBtn" class="btn-replicar-modal">Replicar filas por tallas</button>
         <button id="abrirReplicarColorModalBtn" class="btn-replicar-color-modal">Replicar filas por color</button>
+        <button id="abrirReproModalBtn" class="btn-repro-modal">Creacion en base a otro material (Re-Pro)</button>
         <button id="guardarBtn" class="btn btn-success">Guardar cambios</button>
         <button id="limpiarTablaBtn" style="background-color: #e74c3c; margin-left: 5px;">Limpiar</button>
     </div>
@@ -512,7 +89,7 @@ $fecha_actual = date("Y-m-d H:i:s");
         -->
         <table id="skuTable">
             <thead>
-                <tr>
+                <tr class="table-header">
                     <!-- Encabezados de la tabla, cada uno con su data-campo-nombre para identificación -->
                     <th data-campo-nombre="tipo">TIPO DE PRODUCTO</th>
                     <th data-campo-nombre="LINEA">LINEA DEL PRODUCTO</th>
@@ -522,7 +99,7 @@ $fecha_actual = date("Y-m-d H:i:s");
                     <th data-campo-nombre="YEAR">AÑO</th>
                     <th data-campo-nombre="MES">MES</th>
                     <th data-campo-nombre="OCASION_DE_USO">OCASION DE USO</th>
-                    <th data-campo-nombre="NOMBRE">NOMBRE</th>
+                    <th data-campo-nombre="NOMBRE" id="NOMBRE-HEADER">NOMBRE</th>
                     <th data-campo-nombre="MODULO">MODULO</th>
                     <th data-campo-nombre="TEMPORADA">TEMPORADA</th>
                     <th data-campo-nombre="CAPSULA">CAPSULA</th>
@@ -534,7 +111,7 @@ $fecha_actual = date("Y-m-d H:i:s");
                     <th data-campo-nombre="CATEGORIAS">CATEGORIAS</th>
                     <th data-campo-nombre="SUBCATEGORIAS">SUB-CATEGORIAS</th>
                     <th data-campo-nombre="DISENO">DISEÑO</th>
-                    <th data-campo-nombre="DESCRIPCION">DESCRIPCION</th>
+                    <th data-campo-nombre="DESCRIPCION" id="DESCRIPCION-HEADER">DESCRIPCION</th>
                     <th data-campo-nombre="MANGA">MANGA</th>
                     <th data-campo-nombre="TIPO_MANGA">TIPO DE MANGA</th>
                     <th data-campo-nombre="PUNO">PUÑO</th>
@@ -559,7 +136,7 @@ $fecha_actual = date("Y-m-d H:i:s");
                     <th data-campo-nombre="BASE_TEXTIL">BASE TEXTIL</th>
                     <th data-campo-nombre="DETALLES">DETALLES</th>
                     <th data-campo-nombre="SUB_DETALLES">SUB-DETALLES</th>
-                    <th data-campo-nombre="GRUPO">GRUPO</th>
+                    <th data-campo-nombre="GRUPO"><button id="consultar_grupos">Mostrar / Ocultar</button>GRUPO</th>
                     <th data-campo-nombre="INSTRUCCION_DE_LAVADO_1">INSTRUCCIONES DE LAVADO 1</th>
                     <th data-campo-nombre="INSTRUCCION_DE_LAVADO_2">INSTRUCCIONES DE LAVADO 2</th>
                     <th data-campo-nombre="INSTRUCCION_DE_LAVADO_3">INSTRUCCIONES DE LAVADO 3</th>
@@ -652,7 +229,7 @@ $fecha_actual = date("Y-m-d H:i:s");
                         </select>
                     </td>
                     <td>
-                        <input type="text" class="campo-formulario" data-campo-nombre="NOMBRE" data-campo-type="static" oninput="this.value=this.value.toUpperCase();">
+                        <input type="text" class="campo-formulario" id="NOMBRE" data-campo-nombre="NOMBRE" data-campo-type="static" oninput="this.value=this.value.toUpperCase();">
                     </td>
                     <td>
                         <select id="mod" class="campo-formulario" data-campo-nombre="MODULO" data-campo-type="static" onchange="asignarvalortemporada(this)">
@@ -707,7 +284,7 @@ $fecha_actual = date("Y-m-d H:i:s");
                         </select>
                     </td>
                     <td>
-                        <input type="text" class="campo-formulario" data-campo-nombre="DESCRIPCION" data-campo-type="static" oninput="this.value=this.value.toUpperCase();">
+                        <input type="text" class="campo-formulario" id="DESCRIPCION" data-campo-nombre="DESCRIPCION" data-campo-type="static" oninput="this.value=this.value.toUpperCase();">
                     </td>
                     <td>
                         <select class="campo-formulario" data-campo-nombre="MANGA" data-campo-type="dependent">
@@ -959,7 +536,61 @@ $fecha_actual = date("Y-m-d H:i:s");
                 </tr>
             </tbody>
         </table>
-        <!-- Botón para guardar los cambios realizados en la tabla -->
+    </div>
+    <div id="modal_grupos" hidden>
+        <h3>Grupos de instrucciones</h3>
+        <table id="table_groups">
+            <thead>
+                <tr>
+                    <th>SAP</th>                       
+                    <th>INSTRUCCION_DE_LAVADO_1</th>       
+                    <th>INSTRUCCION_DE_LAVADO_2</th>       
+                    <th>INSTRUCCION_DE_LAVADO_3</th>       
+                    <th>INSTRUCCION_DE_LAVADO_4</th>       
+                    <th>INSTRUCCION_DE_LAVADO_5</th>       
+                    <th>INSTRUCCION_DE_BLANQUEADO_1</th>   
+                    <th>INSTRUCCION_DE_BLANQUEADO_2</th>   
+                    <th>INSTRUCCION_DE_BLANQUEADO_3</th>   
+                    <th>INSTRUCCION_DE_BLANQUEADO_4</th>   
+                    <th>INSTRUCCION_DE_BLANQUEADO_5</th>   
+                    <th>INSTRUCCION_DE_SECADO_1</th>       
+                    <th>INSTRUCCION_DE_SECADO_2</th>       
+                    <th>INSTRUCCION_DE_SECADO_3</th>       
+                    <th>INSTRUCCION_DE_SECADO_4</th>       
+                    <th>INSTRUCCION_DE_SECADO_5</th>       
+                    <th>INSTRUCCION_DE_PLANCHADO_1</th>    
+                    <th>INSTRUCCION_DE_PLANCHADO_2</th>    
+                    <th>INSTRUCCION_DE_PLANCHADO_3</th>    
+                    <th>INSTRUCCION_DE_PLANCHADO_4</th>    
+                    <th>INSTRUCCION_DE_PLANCHADO_5</th>    
+                    <th>INSTRUCC_CUIDADO_TEXTIL_PROF_1</th>
+                    <th>INSTRUCC_CUIDADO_TEXTIL_PROF_2</th>
+                    <th>INSTRUCC_CUIDADO_TEXTIL_PROF_3</th>
+                    <th>INSTRUCC_CUIDADO_TEXTIL_PROF_4</th>
+                    <th>INSTRUCC_CUIDADO_TEXTIL_PROF_5</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+        </table>
+    </div>
+    <div id="reproModal" class="modal" hidden>
+        <div class="modal-contenido">
+            <span class="close">X</span>
+            <div class="modal-header">
+                <h3>Creacion de Re-pros</h3>
+            </div>
+            <div class="modal-content">
+                <div class="modal-label">
+                    <label for="reproSelect">Material base:</label>
+                </div>
+                <select class="reproSelect" size="10">
+                </select>
+            </div>
+            <div class="aceptar">
+                <button type="button" id="aceptarReproBtn" class="btn">Aceptar</button>
+            </div>
+        </div>
     </div>
 <script>
 /*
@@ -971,11 +602,11 @@ Incluye validaciones, carga dinámica de opciones, lógica de dependencias, mane
 
 // Lista de campos obligatorios para validación antes de guardar
 const CAMPOS_OBLIGATORIOS_save = [
-    "tipo", "LINEA", "usuario", "fecha_creacion", "YEAR", "TOT_COMP", "TIPO_TEJIDO", "TIPO_DE_FIBRA", "TIENDA", "TEMPORADA", "TALLAS", "SUB_DETALLES", "SUBCATEGORIAS", "PROVEEDOR", "OCASION_DE_USO", "NOM_COLOR", "NOMBRE", "MODULO", "MES", "GRUPO", "GAMA", "DETALLES", "DESCRIPCION", "COLOR_FDS", "CLUSTER", "CLIMA", "CLASIFICACION", "CATEGORIAS", "CAPSULA", "BASE_TEXTIL", "%_COMP_1", "COMPOSICION_1", "precio_compra", "costo", "precio_venta"
+    "tipo", "LINEA", "usuario", "fecha_creacion", "YEAR", "TOT_COMP", "TIPO_TEJIDO", "TIPO_DE_FIBRA", "TIENDA", "TEMPORADA", "TALLAS", "SUBCATEGORIAS", "PROVEEDOR", "OCASION_DE_USO", "NOM_COLOR", "NOMBRE", "MODULO", "MES", "GRUPO", "GAMA", "DESCRIPCION", "COLOR_FDS", "CLUSTER", "CLIMA", "CLASIFICACION", "CATEGORIAS", "CAPSULA", "BASE_TEXTIL", "%_COMP_1", "COMPOSICION_1"
 ];
 
 /**
- * Valida que el campo principal de un grupo (%_COMP_1, %_FORRO_1, %_RELLENO_1) sea el mayor y mayor a 50
+ * Valida que el campo principal de un grupo (%_COMP_1, %_FORRO_1, %_RELLENO_1) sea el mayor o igual
  * @param {HTMLElement} rowElement - La fila a validar
  * @param {string} prefix - El prefijo del campo ("%_COMP_", "%_FORRO_", "%_RELLENO_")
  * @param {number} count - Cuántos campos hay en el grupo (4 para comp, 2 para forro/relleno)
@@ -996,12 +627,10 @@ function validarMayorPrincipal(rowElement, prefix, count, label) {
     let esValida = true;
     let mensaje = "";
 
-    if (valores[0] <= 50) {
+    // Ahora valida que el primero sea mayor o igual que los otros
+    if (!valores.slice(1).every(v => valores[0] >= v)) {
         esValida = false;
-        mensaje = `${label} 1 debe ser mayor a 50`;
-    } else if (!valores.slice(1).every(v => valores[0] > v)) {
-        esValida = false;
-        mensaje = `${label} 1 debe ser el mayor de los ${count} porcentajes`;
+        mensaje = `${label} 1 debe ser mayor o igual que los otros ${count - 1} porcentajes`;
     }
 
     if (!esValida) {
@@ -1317,18 +946,19 @@ function asignarvalorgrupo(grupoSelect){
         "31": "LAVAR A MANO",
         "32": "NO LAVAR",
         "33": "LAVAR A MANO",
-        "34": "LAVAR A MANO",
-        "35": "LAVAR A MANO", 
+        "35": "LAVAR A MANO",
         "36": "LAVAR A MANO",
         "37": "NO LAVAR",
         "38": "LAVAR A MANO",
         "39": "LAVAR A MANO",
         "40": "LAVAR A MANO",
         "41": "LAVAR A MANO",
-        "42": "LAVAR A MANO"
+        "42": "LAVAR A MANO",
+        "43": "LAVAR A MANO TEMPERATURA"
     }
 
     const valores_lavado_2 = {
+        "43": "MAXIMA 40°"
     }
 
     const valores_lavado_3 = {
@@ -1382,7 +1012,8 @@ function asignarvalorgrupo(grupoSelect){
         "39": "NO USAR BLANQUEADOR",
         "40": "NO USAR BLANQUEADOR",
         "41": "NO USAR BLANQUEADOR",
-        "42": "NO USAR BLANQUEADOR"
+        "42": "NO USAR BLANQUEADOR",
+        "43": "NO USAR BLANQUEADOR"
     }
 
     const valores_blanqueado_2 = {
@@ -1440,7 +1071,8 @@ function asignarvalorgrupo(grupoSelect){
         "39": "SECADO EXTENDIDO A LA SOMBRA",
         "40": "SECADO EXTENDIDO A LA SOMBRA",
         "41": "SECADO EXTENDIDO A LA SOMBRA",
-        "42": "SECADO EXTENDIDO A LA SOMBRA"
+        "42": "SECADO EXTENDIDO A LA SOMBRA",
+        "43": "SECADO EXTENDIDO A LA SOMBRA"
     }
 
     const valores_secado_2 = {
@@ -1497,26 +1129,38 @@ function asignarvalorgrupo(grupoSelect){
         "39": "NO PLANCHAR",
         "40": "PLANCHAR A UNA TEMPERATURA MAX",
         "41": "PLANCHAR A UNA TEMPERATURA MAX",
-        "42": "PLANCHAR A UNA TEMPERATURA MAX"
+        "42": "PLANCHAR A UNA TEMPERATURA MAX",
+        "43": "NO PLANCHAR"
     }
 
     const valores_planchado_2 = {
-        "2":"IMA DE LA BASE DE 110°C, SIN VAPOR",
+        "2":"IMA DE LA BASE DE 110°C, SIN",
         "5":"IMA DE LA BASE DE 150°C",
-        "13": "IMA DE LA BASE DE 110°C, SIN VAPOR",
+        "13": "IMA DE LA BASE DE 110°C, SIN",
         "14": "IMA DE LA BASE DE 150°C",
-        "16": "IMA DE LA BASE DE 110°C, SIN VAPOR",
-        "23": "IMA DE LA BASE DE 110°C, SIN VAPOR",
-        "26": "IMA DE LA BASE DE 110°C, SIN VAPOR",
-        "27": "IMA DE LA BASE DE 110°C, SIN VAPOR",
-        "29": "IMA DE LA BASE DE 110°C, SIN VAPOR",
-        "38": "IMA DE LA BASE DE 110°C, SIN VAPOR",
-        "40": "IMA DE LA BASE DE 110°C, SIN VAPOR",
-        "41": "IMA DE LA BASE DE 110°C, SIN VAPOR",
-        "42": "IMA DE LA BASE DE 110°C, SIN VAPOR"
+        "16": "IMA DE LA BASE DE 110°C, SIN",
+        "23": "IMA DE LA BASE DE 110°C, SIN",
+        "26": "IMA DE LA BASE DE 110°C, SIN",
+        "27": "IMA DE LA BASE DE 110°C, SIN",
+        "29": "IMA DE LA BASE DE 110°C, SIN",
+        "38": "IMA DE LA BASE DE 110°C, SIN",
+        "40": "IMA DE LA BASE DE 110°C, SIN",
+        "41": "IMA DE LA BASE DE 110°C, SIN",
+        "42": "IMA DE LA BASE DE 110°C, SIN"
     }
 
     const valores_planchado_3 = {
+        "2": "VAPOR",
+        "13": "VAPOR",
+        "16": "VAPOR",
+        "23": "VAPOR",
+        "26": "VAPOR",
+        "27": "VAPOR",
+        "29": "VAPOR",
+        "38": "VAPOR",
+        "40": "VAPOR",
+        "41": "VAPOR",
+        "42": "VAPOR",
     }
 
     const valores_planchado_4 = {  
@@ -1568,13 +1212,14 @@ function asignarvalorgrupo(grupoSelect){
         "40": "LIMPIEZA EN HUMEDO PROFESIONAL",
         "41": "LIMPIEZA EN HUMEDO PROFESIONAL",
         "42": "LIMPIEZA EN HUMEDO PROFESIONAL",
+        "43": "NO LIMPIEZA EN SECO",
     }
 
     const valores_cuidado_textil_2 = {
         "2": "_PROCESO MODERADO",
         "3": "_PROCESO MODERADO",
         "4": "_PROCESO MODERADO",
-        "5": "_PROCESO MODERADO",
+        "5": "_PROCESO NORMAL",
         "7": "_PROCESO NORMAL",
         "8": "_PROCESO MODERADO",
         "9": "_PROCESO MODERADO",
@@ -1680,7 +1325,8 @@ function getStaticOptions(fieldName) {
         case "LINEA":
             return [
                 { value: "Paquete Completo", text: "Paquete Completo" },
-                { value: "Colaboracion", text: "Colaboracion" }
+                { value: "Colaboracion", text: "Colaboracion" },
+                { value: "Muestras", text: "Muestras" }
             ];
         case "MES":
             return [
@@ -1704,11 +1350,12 @@ function getStaticOptions(fieldName) {
                 { value: "URBAN", text: "URBAN" },
                 { value: "FAVORITO URBAN", text: "FAVORITO URBAN" },
                 { value: "ESSENTIALS", text: "ESSENTIALS" },
-                { value: "GLAM", text: "GLAM" },
+                { value: "JW", text: "JW" },
                 { value: "WORK", text: "WORK" },
                 { value: "DOTACION", text: "DOTACION" },
                 { value: "ESPECIALES", text: "ESPECIALES" },
-                { value: "JW", text: "JW" }
+                { value: "OUTLET", text: "OUTLET" },
+                { value: "DENIM", text: "DENIM" }
             ];
         case "MODULO":
             return [
@@ -1783,119 +1430,133 @@ function getStaticOptions(fieldName) {
             ];
         case "COLOR_FDS":
             return [
-                {value: "100", text: "100"}, 
-                {value: "101", text: "101"},
-                {value: "102", text: "102"},
-                {value: "102", text: "102"},
-                {value: "103", text: "103"},
-                {value: "103", text: "103"},
-                {value: "106", text: "106"},
-                {value: "106", text: "106"},
-                {value: "109", text: "109"},
-                {value: "109", text: "109"},
-                {value: "110", text: "110"},
-                {value: "110", text: "110"},
-                {value: "121", text: "121"},
-                {value: "121", text: "121"},
-                {value: "123", text: "123"},
-                {value: "203", text: "203"},
-                {value: "207", text: "207"},
-                {value: "209", text: "209"},
-                {value: "219", text: "219"},
-                {value: "220", text: "220"},
-                {value: "224", text: "224"},
-                {value: "233", text: "233"},
-                {value: "237", text: "237"},
-                {value: "258", text: "258"},
-                {value: "260", text: "260"},
-                {value: "263", text: "263"},
-                {value: "264", text: "264"},
-                {value: "266", text: "266"},
-                {value: "277", text: "277"},
-                {value: "279", text: "279"},
-                {value: "281", text: "281"},
-                {value: "283", text: "283"},
-                {value: "284", text: "284"},
-                {value: "300", text: "300"},
-                {value: "301", text: "301"},
-                {value: "313", text: "313"},
-                {value: "315", text: "315"},
-                {value: "319", text: "319"},
-                {value: "322", text: "322"},
-                {value: "328", text: "328"},
-                {value: "337", text: "337"},
-                {value: "350", text: "350"},
-                {value: "354", text: "354"},
-                {value: "356", text: "356"},
-                {value: "357", text: "357"},
-                {value: "361", text: "361"},
-                {value: "362", text: "362"},
-                {value: "363", text: "363"},
-                {value: "366", text: "366"},
-                {value: "368", text: "368"},
-                {value: "367", text: "367"},
-                {value: "370", text: "370"},
-                {value: "372", text: "372"},
-                {value: "375", text: "375"},
-                {value: "369", text: "369"},
-                {value: "380", text: "380"},
-                {value: "393", text: "393"},
-                {value: "394", text: "394"},
-                {value: "395", text: "395"},
-                {value: "401", text: "401"},
-                {value: "407", text: "407"},
-                {value: "417", text: "417"},
-                {value: "418", text: "418"},
-                {value: "431", text: "431"},
-                {value: "454", text: "454"},
-                {value: "463", text: "463"},
-                {value: "473", text: "473"},
-                {value: "480", text: "480"},
-                {value: "481", text: "481"},
-                {value: "460", text: "460"},
-                {value: "461", text: "461"},
-                {value: "464", text: "464"},
-                {value: "467", text: "467"},
-                {value: "475", text: "475"},
-                {value: "479", text: "479"},
-                {value: "482", text: "482"},
-                {value: "484", text: "484"},
-                {value: "494", text: "494"},
-                {value: "505", text: "505"},
-                {value: "504", text: "504"},
-                {value: "510", text: "510"},
-                {value: "513", text: "513"},
-                {value: "515", text: "515"},
-                {value: "556", text: "556"},
-                {value: "565", text: "565"},
-                {value: "567", text: "567"},
-                {value: "570", text: "570"},
-                {value: "575", text: "575"},
-                {value: "579", text: "579"},
-                {value: "583", text: "583"},
-                {value: "588", text: "588"},
-                {value: "591", text: "591"},
-                {value: "592", text: "592"},
-                {value: "596", text: "596"},
-                {value: "597", text: "597"},
-                {value: "606", text: "606"},
-                {value: "608", text: "608"},
-                {value: "611", text: "611"},
-                {value: "613", text: "613"},
-                {value: "622", text: "622"},
-                {value: "623", text: "623"},
-                {value: "624", text: "624"},
-                {value: "625", text: "625"},
-                {value: "626", text: "626"},
-                {value: "627", text: "627"},
-                {value: "700", text: "700"},
-                {value: "701", text: "701"},
-                {value: "803", text: "803"},
-                {value: "811", text: "811"},
-                {value: "815", text: "815"},
-                {value: "817", text: "817"},
-                {value: "819", text: "819"},
-                {value: "999", text: "999"},
+                { value: "100", text: "100" },
+                { value: "101", text: "101" },
+                { value: "102", text: "102" },
+                { value: "103", text: "103" },
+                { value: "109", text: "109" },
+                { value: "121", text: "121" },
+                { value: "123", text: "123" },
+                { value: "203", text: "203" },
+                { value: "204", text: "204" },
+                { value: "205", text: "205" },
+                { value: "207", text: "207" },
+                { value: "208", text: "208" },
+                { value: "209", text: "209" },
+                { value: "218", text: "218" },
+                { value: "220", text: "220" },
+                { value: "224", text: "224" },
+                { value: "258", text: "258" },
+                { value: "260", text: "260" },
+                { value: "263", text: "263" },
+                { value: "264", text: "264" },
+                { value: "266", text: "266" },
+                { value: "270", text: "270" },
+                { value: "275", text: "275" },
+                { value: "276", text: "276" },
+                { value: "277", text: "277" },
+                { value: "279", text: "279" },
+                { value: "281", text: "281" },
+                { value: "283", text: "283" },
+                { value: "284", text: "284" },
+                { value: "300", text: "300" },
+                { value: "312", text: "312" },
+                { value: "313", text: "313" },
+                { value: "315", text: "315" },
+                { value: "318", text: "318" },
+                { value: "319", text: "319" },
+                { value: "322", text: "322" },
+                { value: "328", text: "328" },
+                { value: "330", text: "330" },
+                { value: "337", text: "337" },
+                { value: "350", text: "350" },
+                { value: "353", text: "353" },
+                { value: "354", text: "354" },
+                { value: "356", text: "356" },
+                { value: "357", text: "357" },
+                { value: "358", text: "358" },
+                { value: "361", text: "361" },
+                { value: "362", text: "362" },
+                { value: "363", text: "363" },
+                { value: "365", text: "365" },
+                { value: "366", text: "366" },
+                { value: "367", text: "367" },
+                { value: "368", text: "368" },
+                { value: "369", text: "369" },
+                { value: "370", text: "370" },
+                { value: "375", text: "375" },
+                { value: "377", text: "377" },
+                { value: "380", text: "380" },
+                { value: "393", text: "393" },
+                { value: "399", text: "399" },
+                { value: "401", text: "401" },
+                { value: "407", text: "407" },
+                { value: "417", text: "417" },
+                { value: "418", text: "418" },
+                { value: "424", text: "424" },
+                { value: "431", text: "431" },
+                { value: "452", text: "452" },
+                { value: "453", text: "453" },
+                { value: "454", text: "454" },
+                { value: "459", text: "459" },
+                { value: "460", text: "460" },
+                { value: "462", text: "462" },
+                { value: "463", text: "463" },
+                { value: "464", text: "464" },
+                { value: "467", text: "467" },
+                { value: "473", text: "473" },
+                { value: "475", text: "475" },
+                { value: "476", text: "476" },
+                { value: "479", text: "479" },
+                { value: "480", text: "480" },
+                { value: "481", text: "481" },
+                { value: "482", text: "482" },
+                { value: "483", text: "483" },
+                { value: "484", text: "484" },
+                { value: "490", text: "490" },
+                { value: "491", text: "491" },
+                { value: "503", text: "503" },
+                { value: "504", text: "504" },
+                { value: "505", text: "505" },
+                { value: "510", text: "510" },
+                { value: "513", text: "513" },
+                { value: "515", text: "515" },
+                { value: "556", text: "556" },
+                { value: "565", text: "565" },
+                { value: "566", text: "566" },
+                { value: "567", text: "567" },
+                { value: "570", text: "570" },
+                { value: "572", text: "572" },
+                { value: "575", text: "575" },
+                { value: "576", text: "576" },
+                { value: "579", text: "579" },
+                { value: "581", text: "581" },
+                { value: "583", text: "583" },
+                { value: "587", text: "587" },
+                { value: "588", text: "588" },
+                { value: "592", text: "592" },
+                { value: "596", text: "596" },
+                { value: "597", text: "597" },
+                { value: "605", text: "605" },
+                { value: "606", text: "606" },
+                { value: "608", text: "608" },
+                { value: "609", text: "609" },
+                { value: "611", text: "611" },
+                { value: "613", text: "613" },
+                { value: "614", text: "614" },
+                { value: "623", text: "623" },
+                { value: "624", text: "624" },
+                { value: "625", text: "625" },
+                { value: "626", text: "626" },
+                { value: "627", text: "627" },
+                { value: "700", text: "700" },
+                { value: "701", text: "701" },
+                { value: "803", text: "803" },
+                { value: "811", text: "811" },
+                { value: "815", text: "815" },
+                { value: "819", text: "819" },
+                { value: "821", text: "821" },
+                { value: "999", text: "999" }
             ];
         case "PRINT":
             return [
@@ -1913,31 +1574,6 @@ function getStaticOptions(fieldName) {
                 {value:"TURQUEZA", text:"TURQUEZA"},
                 {value:"VERDE", text:"VERDE"},
             ];
-        case "TALLAS":
-            return [
-                {value:"XXS", text:"XXS"},
-                {value:"XS", text:"XS"},
-                {value:"S", text:"S"},
-                {value:"M", text:"M"},
-                {value:"L", text:"L"},
-                {value:"T", text:"T"},
-                {value:"XL", text:"XL"},
-                {value:"XXL", text:"XXL"},
-                {value:"2", text:"2"},
-                {value:"4", text:"4"},
-                {value:"6", text:"6"},
-                {value:"8", text:"8"},
-                {value:"10", text:"10"},
-                {value:"12", text:"12"},
-                {value:"14", text:"14"},
-                {value:"16", text:"16"},
-                {value:"28", text:"28"},
-                {value:"30", text:"30"},
-                {value:"32", text:"32"},
-                {value:"34", text:"34"},
-                {value:"36", text:"36"},
-                {value:"UN", text:"UN"},
-            ];
         case "TIPO_DE_FIBRA":
             return [
                 {value:"NATURAL", text:"NATURAL"},
@@ -1952,7 +1588,7 @@ function getStaticOptions(fieldName) {
             return [
                 { value: "1", text: "GRUPO 1" },
                 { value: "2", text: "GRUPO 2" },
-                { value: "3", text: "GRUPO 2" },
+                { value: "3", text: "GRUPO 3" },
                 { value: "4", text: "GRUPO 4" },
                 { value: "5", text: "GRUPO 5" },
                 { value: "6", text: "GRUPO 6" },
@@ -1992,6 +1628,7 @@ function getStaticOptions(fieldName) {
                 { value: "40", text: "GRUPO 40" },
                 { value: "41", text: "GRUPO 41" },
                 { value: "42", text: "GRUPO 42" },
+                { value: "43", text: "GRUPO 43" }
 
             ];
         case "COMPOSICION_1":
@@ -1999,32 +1636,20 @@ function getStaticOptions(fieldName) {
                 {value: "ACRILICO", text: "ACRILICO"},
                 {value: "ALGODON", text: "ALGODON"},
                 {value: "ALGODON MEZCLAS", text: "ALGODON MEZCLAS"},
-                {value: "ALGODON TANGÜIS", text: "ALGODON TANGÜIS"},
-                {value: "ANGORA", text: "ANGORA"},
-                {value: "CUERO", text: "CUERO"},
                 {value: "ELASTANO", text: "ELASTANO"},
                 {value: "ELASTOMERO", text: "ELASTOMERO"},
-                {value: "GAMUZA", text: "GAMUZA"},
                 {value: "LANA", text: "LANA"},
                 {value: "LINO", text: "LINO"},
                 {value: "LUREX", text: "LUREX"},
                 {value: "LYCRA", text: "LYCRA"},
                 {value: "MODAL", text: "MODAL"},
-                {value: "NYLON", text: "NYLON"},
-                {value: "PLASTICO", text: "PLASTICO"},
                 {value: "POLIAMIDA", text: "POLIAMIDA"},
                 {value: "POLIPROPILENO", text: "POLIPROPILENO"},
                 {value: "POLIESTER", text: "POLIESTER"},
                 {value: "POLIESTER MEZCLAS", text: "POLIESTER MEZCLAS"},
-                {value: "POLIESTER MICROFIBRA", text: "POLIESTER MICROFIBRA"},
-                {value: "POLIESTER VISCOSA", text: "POLIESTER VISCOSA"},
-                {value: "POLIURETANO", text: "POLIURETANO"},
-                {value: "POLIVINYL", text: "POLIVINYL"},
+                {value: "PU", text: "PU"},
                 {value: "RAYON", text: "RAYON"},
                 {value: "RAYON VISCOSA", text: "RAYON VISCOSA"},
-                {value: "SEDA", text: "SEDA"},
-                {value: "SINTETICO", text: "SINTETICO"},
-                {value: "SPANDEX", text: "SPANDEX"},
                 {value: "TENCEL", text: "TENCEL"},
                 {value: "VISCOSA", text: "VISCOSA"},
             ];
@@ -2033,32 +1658,20 @@ function getStaticOptions(fieldName) {
                 {value: "ACRILICO", text: "ACRILICO"},
                 {value: "ALGODON", text: "ALGODON"},
                 {value: "ALGODON MEZCLAS", text: "ALGODON MEZCLAS"},
-                {value: "ALGODON TANGÜIS", text: "ALGODON TANGÜIS"},
-                {value: "ANGORA", text: "ANGORA"},
-                {value: "CUERO", text: "CUERO"},
                 {value: "ELASTANO", text: "ELASTANO"},
                 {value: "ELASTOMERO", text: "ELASTOMERO"},
-                {value: "GAMUZA", text: "GAMUZA"},
                 {value: "LANA", text: "LANA"},
                 {value: "LINO", text: "LINO"},
                 {value: "LUREX", text: "LUREX"},
                 {value: "LYCRA", text: "LYCRA"},
                 {value: "MODAL", text: "MODAL"},
-                {value: "NYLON", text: "NYLON"},
-                {value: "PLASTICO", text: "PLASTICO"},
                 {value: "POLIAMIDA", text: "POLIAMIDA"},
                 {value: "POLIPROPILENO", text: "POLIPROPILENO"},
                 {value: "POLIESTER", text: "POLIESTER"},
                 {value: "POLIESTER MEZCLAS", text: "POLIESTER MEZCLAS"},
-                {value: "POLIESTER MICROFIBRA", text: "POLIESTER MICROFIBRA"},
-                {value: "POLIESTER VISCOSA", text: "POLIESTER VISCOSA"},
-                {value: "POLIURETANO", text: "POLIURETANO"},
-                {value: "POLIVINYL", text: "POLIVINYL"},
+                {value: "PU", text: "PU"},
                 {value: "RAYON", text: "RAYON"},
                 {value: "RAYON VISCOSA", text: "RAYON VISCOSA"},
-                {value: "SEDA", text: "SEDA"},
-                {value: "SINTETICO", text: "SINTETICO"},
-                {value: "SPANDEX", text: "SPANDEX"},
                 {value: "TENCEL", text: "TENCEL"},
                 {value: "VISCOSA", text: "VISCOSA"},
             ];
@@ -2067,32 +1680,20 @@ function getStaticOptions(fieldName) {
                 {value: "ACRILICO", text: "ACRILICO"},
                 {value: "ALGODON", text: "ALGODON"},
                 {value: "ALGODON MEZCLAS", text: "ALGODON MEZCLAS"},
-                {value: "ALGODON TANGÜIS", text: "ALGODON TANGÜIS"},
-                {value: "ANGORA", text: "ANGORA"},
-                {value: "CUERO", text: "CUERO"},
                 {value: "ELASTANO", text: "ELASTANO"},
                 {value: "ELASTOMERO", text: "ELASTOMERO"},
-                {value: "GAMUZA", text: "GAMUZA"},
                 {value: "LANA", text: "LANA"},
                 {value: "LINO", text: "LINO"},
                 {value: "LUREX", text: "LUREX"},
                 {value: "LYCRA", text: "LYCRA"},
                 {value: "MODAL", text: "MODAL"},
-                {value: "NYLON", text: "NYLON"},
-                {value: "PLASTICO", text: "PLASTICO"},
                 {value: "POLIAMIDA", text: "POLIAMIDA"},
                 {value: "POLIPROPILENO", text: "POLIPROPILENO"},
                 {value: "POLIESTER", text: "POLIESTER"},
                 {value: "POLIESTER MEZCLAS", text: "POLIESTER MEZCLAS"},
-                {value: "POLIESTER MICROFIBRA", text: "POLIESTER MICROFIBRA"},
-                {value: "POLIESTER VISCOSA", text: "POLIESTER VISCOSA"},
-                {value: "POLIURETANO", text: "POLIURETANO"},
-                {value: "POLIVINYL", text: "POLIVINYL"},
+                {value: "PU", text: "PU"},
                 {value: "RAYON", text: "RAYON"},
                 {value: "RAYON VISCOSA", text: "RAYON VISCOSA"},
-                {value: "SEDA", text: "SEDA"},
-                {value: "SINTETICO", text: "SINTETICO"},
-                {value: "SPANDEX", text: "SPANDEX"},
                 {value: "TENCEL", text: "TENCEL"},
                 {value: "VISCOSA", text: "VISCOSA"},
             ];
@@ -2101,32 +1702,20 @@ function getStaticOptions(fieldName) {
                 {value: "ACRILICO", text: "ACRILICO"},
                 {value: "ALGODON", text: "ALGODON"},
                 {value: "ALGODON MEZCLAS", text: "ALGODON MEZCLAS"},
-                {value: "ALGODON TANGÜIS", text: "ALGODON TANGÜIS"},
-                {value: "ANGORA", text: "ANGORA"},
-                {value: "CUERO", text: "CUERO"},
                 {value: "ELASTANO", text: "ELASTANO"},
                 {value: "ELASTOMERO", text: "ELASTOMERO"},
-                {value: "GAMUZA", text: "GAMUZA"},
                 {value: "LANA", text: "LANA"},
                 {value: "LINO", text: "LINO"},
                 {value: "LUREX", text: "LUREX"},
                 {value: "LYCRA", text: "LYCRA"},
                 {value: "MODAL", text: "MODAL"},
-                {value: "NYLON", text: "NYLON"},
-                {value: "PLASTICO", text: "PLASTICO"},
                 {value: "POLIAMIDA", text: "POLIAMIDA"},
                 {value: "POLIPROPILENO", text: "POLIPROPILENO"},
                 {value: "POLIESTER", text: "POLIESTER"},
                 {value: "POLIESTER MEZCLAS", text: "POLIESTER MEZCLAS"},
-                {value: "POLIESTER MICROFIBRA", text: "POLIESTER MICROFIBRA"},
-                {value: "POLIESTER VISCOSA", text: "POLIESTER VISCOSA"},
-                {value: "POLIURETANO", text: "POLIURETANO"},
-                {value: "POLIVINYL", text: "POLIVINYL"},
+                {value: "PU", text: "PU"},
                 {value: "RAYON", text: "RAYON"},
                 {value: "RAYON VISCOSA", text: "RAYON VISCOSA"},
-                {value: "SEDA", text: "SEDA"},
-                {value: "SINTETICO", text: "SINTETICO"},
-                {value: "SPANDEX", text: "SPANDEX"},
                 {value: "TENCEL", text: "TENCEL"},
                 {value: "VISCOSA", text: "VISCOSA"},
             ];
@@ -2134,32 +1723,20 @@ function getStaticOptions(fieldName) {
                 {value: "ACRILICO", text: "ACRILICO"},
                 {value: "ALGODON", text: "ALGODON"},
                 {value: "ALGODON MEZCLAS", text: "ALGODON MEZCLAS"},
-                {value: "ALGODON TANGÜIS", text: "ALGODON TANGÜIS"},
-                {value: "ANGORA", text: "ANGORA"},
-                {value: "CUERO", text: "CUERO"},
                 {value: "ELASTANO", text: "ELASTANO"},
                 {value: "ELASTOMERO", text: "ELASTOMERO"},
-                {value: "GAMUZA", text: "GAMUZA"},
                 {value: "LANA", text: "LANA"},
                 {value: "LINO", text: "LINO"},
                 {value: "LUREX", text: "LUREX"},
                 {value: "LYCRA", text: "LYCRA"},
                 {value: "MODAL", text: "MODAL"},
-                {value: "NYLON", text: "NYLON"},
-                {value: "PLASTICO", text: "PLASTICO"},
                 {value: "POLIAMIDA", text: "POLIAMIDA"},
                 {value: "POLIPROPILENO", text: "POLIPROPILENO"},
                 {value: "POLIESTER", text: "POLIESTER"},
                 {value: "POLIESTER MEZCLAS", text: "POLIESTER MEZCLAS"},
-                {value: "POLIESTER MICROFIBRA", text: "POLIESTER MICROFIBRA"},
-                {value: "POLIESTER VISCOSA", text: "POLIESTER VISCOSA"},
-                {value: "POLIURETANO", text: "POLIURETANO"},
-                {value: "POLIVINYL", text: "POLIVINYL"},
+                {value: "PU", text: "PU"},
                 {value: "RAYON", text: "RAYON"},
                 {value: "RAYON VISCOSA", text: "RAYON VISCOSA"},
-                {value: "SEDA", text: "SEDA"},
-                {value: "SINTETICO", text: "SINTETICO"},
-                {value: "SPANDEX", text: "SPANDEX"},
                 {value: "TENCEL", text: "TENCEL"},
                 {value: "VISCOSA", text: "VISCOSA"},
             ];
@@ -2621,18 +2198,6 @@ function validarTotalesFila(rowElement) {
     return { esValida, errores };
 }
 
-function agregarListenerCategoriaTallas(rowElement) {
-    const categoriaSelect = rowElement.querySelector('select.campo-formulario[data-campo-nombre="CATEGORIAS"]');
-    const tallasSelect = rowElement.querySelector('select.campo-formulario[data-campo-nombre="TALLAS"]');
-    
-    if (categoriaSelect && tallasSelect) {
-        categoriaSelect.addEventListener('change', function() {
-            // Lógica para actualizar tallas según categoría si es necesario
-            console.log('Categoría cambiada:', this.value);
-        });
-    }
-}
-
 // Hook para recalcular y validar cada vez que cambian los campos de composición, forro o relleno o los selects de FORRO/RELLENO
 function agregarValidacionTotales(rowElement) {
     // Escucha cambios en los campos de composición, forro y relleno
@@ -2832,9 +2397,217 @@ function validarTodasLasFilasPrintMulticolor() {
             }
         });
     }
-    
     return !errorEncontrado;
 }
+
+document.getElementById("consultar_grupos").addEventListener("click", function () {
+    const modal = document.getElementById("modal_grupos");
+    const grupobody = document.getElementById("tableBody");
+
+    if (modal.hasAttribute("hidden")) {
+        modal.removeAttribute("hidden");
+    } else {
+        modal.setAttribute("hidden", "");
+        return; 
+    }
+
+    fetch("../backend/obtener_grupos.php")
+        .then(response => response.json())
+        .then(grupos => {
+            crearTabla(grupos);
+        })
+        .catch(error => console.error("Error cargando catálogo:", error));
+
+    function crearTabla(grupos) {
+        grupobody.innerHTML = ""; 
+
+        grupos.forEach((group) => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${group.SAP}</td>                       
+                <td>${group.INSTRUCCION_DE_LAVADO_1}</td>       
+                <td>${group.INSTRUCCION_DE_LAVADO_2}</td>       
+                <td>${group.INSTRUCCION_DE_LAVADO_3}</td>       
+                <td>${group.INSTRUCCION_DE_LAVADO_4}</td>       
+                <td>${group.INSTRUCCION_DE_LAVADO_5}</td>       
+                <td>${group.INSTRUCCION_DE_BLANQUEADO_1}</td>   
+                <td>${group.INSTRUCCION_DE_BLANQUEADO_2}</td>   
+                <td>${group.INSTRUCCION_DE_BLANQUEADO_3}</td>   
+                <td>${group.INSTRUCCION_DE_BLANQUEADO_4}</td>   
+                <td>${group.INSTRUCCION_DE_BLANQUEADO_5}</td>   
+                <td>${group.INSTRUCCION_DE_SECADO_1}</td>       
+                <td>${group.INSTRUCCION_DE_SECADO_2}</td>       
+                <td>${group.INSTRUCCION_DE_SECADO_3}</td>       
+                <td>${group.INSTRUCCION_DE_SECADO_4}</td>       
+                <td>${group.INSTRUCCION_DE_SECADO_5}</td>       
+                <td>${group.INSTRUCCION_DE_PLANCHADO_1}</td>    
+                <td>${group.INSTRUCCION_DE_PLANCHADO_2}</td>    
+                <td>${group.INSTRUCCION_DE_PLANCHADO_3}</td>    
+                <td>${group.INSTRUCCION_DE_PLANCHADO_4}</td>    
+                <td>${group.INSTRUCCION_DE_PLANCHADO_5}</td>    
+                <td>${group.INSTRUCC_CUIDADO_TEXTIL_PROF_1}</td>
+                <td>${group.INSTRUCC_CUIDADO_TEXTIL_PROF_2}</td>
+                <td>${group.INSTRUCC_CUIDADO_TEXTIL_PROF_3}</td>
+                <td>${group.INSTRUCC_CUIDADO_TEXTIL_PROF_4}</td>
+                <td>${group.INSTRUCC_CUIDADO_TEXTIL_PROF_5}</td>
+            `;
+            grupobody.appendChild(row);
+        });
+    }
+});
+
+const modal = document.querySelector(".modal");
+const botonAbrir = document.querySelector(".btn-repro-modal");
+const botonCerrar = document.querySelector(".close")
+const nav = document.getElementById("top-scrollbar-container");
+const tableRow = document.querySelector(".table-header");
+
+function abrirModalRepros() {
+    modal.classList.add('mostrar');
+    document.body.style.overflow = 'hidden';
+    nav.style.position = 'static';
+    tableRow.style.position = 'sticky';
+    cargarMaterialesEnSelect();
+}
+
+function cerrarModalRepros() {
+    modal.classList.remove('mostrar');
+    document.body.style.overflow = 'auto';
+    nav.style.position = 'sticky';
+    tableRow.style.position = '';
+}
+
+botonAbrir.addEventListener('click', abrirModalRepros);
+botonCerrar.addEventListener('click', cerrarModalRepros);
+
+/**
+ * Carga la lista de materiales existentes en el select del modal de Re-Pro.
+ */
+async function cargarMaterialesEnSelect() {
+    const reproSelect = document.querySelector('.reproSelect');
+    if (!reproSelect) return;
+
+    try {
+        const response = await fetch('../api/get_materiales_repro.php');
+        if (!response.ok) {
+            throw new Error('Error al cargar los materiales para Re-Pro.');
+        }
+        const materiales = await response.json();
+
+        reproSelect.innerHTML = '<option value="">Seleccione un material base</option>';
+        materiales.forEach(material => {
+            const option = document.createElement('option');
+            option.value = material.id;
+            option.textContent = `${material.SAP || 'SIN_SAP'} - ${material.NOMBRE}`;
+            reproSelect.appendChild(option);
+        });
+
+    } catch (error) {
+        console.error(error);
+        reproSelect.innerHTML = '<option value="">Error al cargar materiales</option>';
+    }
+}
+
+/**
+ * Rellena la primera fila de la tabla con los datos de un material base.
+ * @param {object} data - Los datos del material a replicar.
+ */
+async function populateFirstRowWithData(data) {
+    const firstRow = document.querySelector('#skuTable tbody .fila-carga');
+    if (!firstRow) {
+        console.error("No se encontró la primera fila para poblar.");
+        return;
+    }
+
+    // Almacena los valores de los campos dependientes para establecerlos más tarde
+    const dependentValues = {};
+    const changedElements = [];
+
+    // 1. PRIMER PASO: Establecer todos los campos NO dependientes y recolectar los valores de los dependientes.
+    for (const key in data) {
+        if (Object.hasOwnProperty.call(data, key)) {
+            const value = data[key];
+            const field = firstRow.querySelector(`.campo-formulario[data-campo-nombre="${key}"]`);
+
+            if (field) {
+                // Si es un select dependiente, solo guardamos su valor por ahora.
+                if (field.tagName === 'SELECT' && field.dataset.campoType === 'dependent') {
+                    dependentValues[key] = value;
+                } else {
+                    // Si no es dependiente, establecemos su valor inmediatamente.
+                    if (field.tagName === 'INPUT' || field.tagName === 'SELECT' || field.tagName === 'TEXTAREA') {
+                        field.value = value;
+                    } else if (field.tagName === 'TD') {
+                        field.textContent = value;
+                    }
+                    changedElements.push(field);
+                }
+            }
+        }
+    }
+
+    // 2. Resetear campos que deben ser únicos para el nuevo material.
+    const sapField = firstRow.querySelector('.campo-formulario[data-campo-nombre="SAP"]');
+    if (sapField) sapField.value = '';
+
+    const userField = firstRow.querySelector('.campo-formulario[data-campo-nombre="usuario"]');
+    if (userField) userField.textContent = CURRENT_USER;
+
+    const dateField = firstRow.querySelector('.campo-formulario[data-campo-nombre="fecha_creacion"]');
+    if (dateField) dateField.textContent = getCurrentDateTimeString();
+
+    // 3. Disparar eventos en los campos "padre" para que la lógica de dependencia se inicie.
+    changedElements.forEach(element => {
+        element.dispatchEvent(new Event('change', { bubbles: true }));
+        element.dispatchEvent(new Event('input', { bubbles: true }));
+    });
+
+    // 4. ESPERAR a que los selects dependientes se llenen con sus nuevas opciones.
+    await fetchDependentOptionsAndUpdateRow(firstRow);
+
+    // 5. SEGUNDO PASO: Ahora que los selects dependientes están poblados, establecer sus valores.
+    for (const key in dependentValues) {
+        const value = dependentValues[key];
+        const field = firstRow.querySelector(`.campo-formulario[data-campo-nombre="${key}"]`);
+        if (field && [...field.options].some(opt => opt.value === value)) {
+            field.value = value;
+            field.dispatchEvent(new Event('change', { bubbles: true })); // Disparar por si este es padre de otro
+        }
+    }
+
+    // 6. Finalmente, actualizar todos los totales calculados.
+    actualizarTotalComposicion(firstRow);
+    actualizarTotalForro(firstRow);
+    actualizarTotalRelleno(firstRow);
+
+    alert('Fila poblada con la información del material base. Por favor, realice los ajustes necesarios.');
+}
+
+document.getElementById('aceptarReproBtn').addEventListener('click', async () => {
+    const reproSelect = document.querySelector('.reproSelect');
+    const selectedId = reproSelect.value;
+
+    if (!selectedId) {
+        alert('Por favor, seleccione un material base.');
+        return;
+    }
+
+    try {
+        const response = await fetch(`../api/get_carga_by_id.php?id=${selectedId}`);
+        if (!response.ok) throw new Error('No se pudo obtener la información del material.');
+        
+        const result = await response.json();
+        if (result.success && result.carga) {
+            await populateFirstRowWithData(result.carga); // Añadimos await aquí
+            cerrarModalRepros();
+        } else {
+            throw new Error(result.message || 'La respuesta del servidor no fue exitosa.');
+        }
+    } catch (error) {
+        console.error('Error al procesar el Re-Pro:', error);
+        alert(error.message);
+    }
+});
 </script>
 </body>
 </html>

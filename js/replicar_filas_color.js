@@ -1,8 +1,8 @@
-const CAMPOS_OBLIGATORIOS = [ 
+const CAMPOS_OBLIGATORIOS = [ "tipo", "LINEA", "usuario", "fecha_creacion", "YEAR", "TOT_COMP", "TIPO_TEJIDO", "TIPO_DE_FIBRA", "TIENDA", "TEMPORADA", "TALLAS", "SUBCATEGORIAS", "PROVEEDOR", "OCASION_DE_USO", "NOM_COLOR", "NOMBRE", "MODULO", "MES", "GRUPO", "GAMA", "DESCRIPCION", "COLOR_FDS", "CLUSTER", "CLIMA", "CLASIFICACION", "CATEGORIAS", "CAPSULA", "BASE_TEXTIL", "%_COMP_1", "COMPOSICION_1"
 ];
 
-const TALLAS_SUP = ["XXS", "XS", "S", "M", "L", "T", "XL", "XXL"];
-const TALLAS_INF = ["2", "4", "6", "8", "10", "12", "14", "16", "28", "30", "32", "34", "36"];
+const TALLAS_SUP = ["XXS", "XS", "S", "M", "L", "XL", "XXL", "UN", "T", "EP", "P", "G", "EG"];
+const TALLAS_INF = ["2", "4", "6", "8", "10", "12", "14", "16", "28", "30", "32", "34", "36", "UN"];
 const TALLAS_UN = ["UN"];
 
 const CATEGORIAS_SUP = [
@@ -22,96 +22,116 @@ const COLORES_FDS = [
   { codigo: "101", nombre: "OFFWHITE", gama: "BLANCO" },
   { codigo: "102", nombre: "IVORY", gama: "BLANCO" },
   { codigo: "103", nombre: "IVORY", gama: "BLANCO" },
-  { codigo: "106", nombre: "BLANCO", gama: "BLANCO" },
   { codigo: "109", nombre: "BEIGE", gama: "BEIGE" },
-  { codigo: "110", nombre: "BEIGE", gama: "BEIGE" },
   { codigo: "121", nombre: "ARENA", gama: "BEIGE" },
   { codigo: "123", nombre: "KAKI", gama: "BEIGE" },
   { codigo: "203", nombre: "AMARILLO CLARO", gama: "AMARILLO" },
+  { codigo: "204", nombre: "AMARILLO", gama: "AMARILLO" },
+  { codigo: "205", nombre: "AMARILLO MEDIO", gama: "AMARILLO" },
   { codigo: "207", nombre: "LIMA", gama: "AMARILLO" },
+  { codigo: "208", nombre: "DORADO", gama: "AMARILLO" },
   { codigo: "209", nombre: "AMARILLO QUEMADO", gama: "AMARILLO" },
-  { codigo: "219", nombre: "BRIGHT GOLD", gama: "AMARILLO" },
+  { codigo: "218", nombre: "AMARILLO QUEMADO", gama: "AMARILLO" },
   { codigo: "220", nombre: "TIERRA", gama: "AMARILLO" },
   { codigo: "224", nombre: "FLUORECENTE", gama: "AMARILLO" },
-  { codigo: "233", nombre: "CYBER LIME", gama: "AMARILLO" },
-  { codigo: "237", nombre: "AMARILLO", gama: "AMARILLO" },
   { codigo: "258", nombre: "NARANJA", gama: "NARANJA" },
   { codigo: "260", nombre: "NARANJA CLARO", gama: "NARANJA" },
   { codigo: "263", nombre: "CORAL", gama: "NARANJA" },
   { codigo: "264", nombre: "CORAL", gama: "NARANJA" },
   { codigo: "266", nombre: "NARANJA", gama: "NARANJA" },
-  { codigo: "277", nombre: "CORAL", gama: "NARANJA" },
+  { codigo: "270", nombre: "TERRACOTA", gama: "NARANJA" },
+  { codigo: "275", nombre: "TERRACOTA", gama: "NARANJA" },
+  { codigo: "276", nombre: "NARANJA PICANTE", gama: "NARANJA" },
+  { codigo: "277", nombre: "PEACH", gama: "NARANJA" },
   { codigo: "279", nombre: "TERRACOTA", gama: "NARANJA" },
-  { codigo: "281", nombre: "CORAL", gama: "NARANJA" },
+  { codigo: "281", nombre: "PEACH", gama: "NARANJA" },
   { codigo: "283", nombre: "TERRACOTA", gama: "NARANJA" },
-  { codigo: "284", nombre: "NARANJA", gama: "NARANJA" },
+  { codigo: "284", nombre: "MANDARINA", gama: "NARANJA" },
   { codigo: "300", nombre: "ROJO", gama: "ROJO" },
-  { codigo: "301", nombre: "ROJO", gama: "ROJO" },
+  { codigo: "312", nombre: "CEREZA", gama: "ROJO" },
   { codigo: "313", nombre: "ROJO", gama: "ROJO" },
   { codigo: "315", nombre: "ROJO", gama: "ROJO" },
+  { codigo: "318", nombre: "ROJO PIMIENTO", gama: "ROJO" },
   { codigo: "319", nombre: "ROJO", gama: "ROJO" },
   { codigo: "322", nombre: "VINO", gama: "ROJO" },
   { codigo: "328", nombre: "VINO", gama: "ROJO" },
+  { codigo: "330", nombre: "VINO", gama: "ROJO" },
   { codigo: "337", nombre: "BURGUNDY", gama: "ROJO" },
   { codigo: "350", nombre: "FUCCIA", gama: "ROSADO" },
+  { codigo: "353", nombre: "FRESA", gama: "ROSADO" },
   { codigo: "354", nombre: "ROSADO", gama: "ROSADO" },
   { codigo: "356", nombre: "ROSADO", gama: "ROSADO" },
   { codigo: "357", nombre: "ROSADO", gama: "ROSADO" },
+  { codigo: "358", nombre: "ROSADO CARAMELO", gama: "ROSADO" },
   { codigo: "361", nombre: "ROSA MARCHITA", gama: "ROSADO" },
   { codigo: "362", nombre: "ROSA MARCHITA", gama: "ROSADO" },
   { codigo: "363", nombre: "ROSA MARCHITA", gama: "ROSADO" },
+  { codigo: "365", nombre: "ROSA SANDIA", gama: "ROSADO" },
   { codigo: "366", nombre: "PALO DE ROSA", gama: "ROSADO" },
-  { codigo: "368", nombre: "BLUSH", gama: "ROSADO" },
   { codigo: "367", nombre: "ROSADO", gama: "ROSADO" },
-  { codigo: "370", nombre: "ROSADO", gama: "ROSADO" },
-  { codigo: "372", nombre: "ROSADO", gama: "ROSADO" },
-  { codigo: "375", nombre: "FUCSIA", gama: "MAGENTA" },
+  { codigo: "368", nombre: "BLUSH", gama: "ROSADO" },
   { codigo: "369", nombre: "ROSADO", gama: "ROSADO" },
+  { codigo: "370", nombre: "ROSADO", gama: "ROSADO" },
+  { codigo: "375", nombre: "FUCSIA", gama: "MAGENTA" },
+  { codigo: "377", nombre: "MORA", gama: "MAGENTA" },
   { codigo: "380", nombre: "MAGENTA", gama: "MAGENTA" },
-  { codigo: "393", nombre: "ROSADO", gama: "MAGENTA" },
-  { codigo: "394", nombre: "ROSADO", gama: "MAGENTA" },
-  { codigo: "395", nombre: "MAUVE", gama: "MAGENTA" },
+  { codigo: "393", nombre: "ROSA", gama: "ROSADO" },
+  { codigo: "399", nombre: "LAVANDA", gama: "MORADO" },
   { codigo: "401", nombre: "VIOLETA", gama: "MORADO" },
   { codigo: "407", nombre: "PURPURA", gama: "MORADO" },
   { codigo: "417", nombre: "LILA", gama: "MORADO" },
   { codigo: "418", nombre: "LILA CLARO", gama: "MORADO" },
+  { codigo: "424", nombre: "VIOLETA", gama: "MORADO" },
   { codigo: "431", nombre: "MORADO", gama: "MORADO" },
+  { codigo: "452", nombre: "AZUL", gama: "AZUL" },
+  { codigo: "453", nombre: "CLARO", gama: "AZUL" },
   { codigo: "454", nombre: "AZUL", gama: "AZUL" },
+  { codigo: "459", nombre: "AZUL", gama: "AZUL" },
+  { codigo: "460", nombre: "AZUL LAVANDA", gama: "AZUL" },
+  { codigo: "462", nombre: "AZUL", gama: "AZUL" },
   { codigo: "463", nombre: "AZUL CIELO", gama: "AZUL" },
-  { codigo: "473", nombre: "ROYAL", gama: "AZUL" },
-  { codigo: "480", nombre: "CLARO", gama: "AZUL" },
-  { codigo: "481", nombre: "MEDIO OSC", gama: "AZUL" },
-  { codigo: "460", nombre: "CLARO", gama: "AZUL" },
-  { codigo: "461", nombre: "CLARO", gama: "AZUL" },
   { codigo: "464", nombre: "MEDIO", gama: "AZUL" },
   { codigo: "467", nombre: "AZUL", gama: "AZUL" },
+  { codigo: "473", nombre: "ROYAL", gama: "AZUL" },
   { codigo: "475", nombre: "HIELO", gama: "AZUL" },
+  { codigo: "476", nombre: "AZUL HORTENSIA", gama: "AZUL" },
   { codigo: "479", nombre: "NAVY", gama: "AZUL" },
-  { codigo: "482", nombre: "AZUL", gama: "AZUL" },
+  { codigo: "480", nombre: "CLARO", gama: "AZUL" },
+  { codigo: "481", nombre: "AZUL", gama: "AZUL" },
+  { codigo: "482", nombre: "MEDIO OSC", gama: "AZUL" },
+  { codigo: "483", nombre: "MEDIO OSC", gama: "AZUL" },
   { codigo: "484", nombre: "TURQUEZA", gama: "TURQUEZA" },
-  { codigo: "494", nombre: "TURQUEZA", gama: "TURQUEZA" },
-  { codigo: "505", nombre: "TURQUEZA", gama: "TURQUEZA" },
+  { codigo: "490", nombre: "AZUL OSC", gama: "AZUL" },
+  { codigo: "491", nombre: "AZUL OSC", gama: "AZUL" },
+  { codigo: "503", nombre: "MINT GREEN", gama: "VERDE" },
   { codigo: "504", nombre: "TURQUEZA", gama: "TURQUEZA" },
-  { codigo: "510", nombre: "TURQUEZA", gama: "TURQUEZA" },
+  { codigo: "505", nombre: "TURQUEZA", gama: "TURQUEZA" },
+  { codigo: "510", nombre: "VERDE CALI", gama: "VERDE" },
   { codigo: "513", nombre: "PETROL", gama: "TURQUEZA" },
   { codigo: "515", nombre: "ALPINE GREEN", gama: "TURQUEZA" },
-  { codigo: "556", nombre: "VERDE", gama: "VERDE" },
+  { codigo: "556", nombre: "VERDE CLARO", gama: "VERDE" },
   { codigo: "565", nombre: "VERDE CLARO", gama: "VERDE" },
+  { codigo: "566", nombre: "VERDE LIMA", gama: "VERDE" },
   { codigo: "567", nombre: "VERDE", gama: "VERDE" },
   { codigo: "570", nombre: "VERDE", gama: "VERDE" },
+  { codigo: "572", nombre: "VERDE MILITAR", gama: "VERDE" },
   { codigo: "575", nombre: "GREEN TE", gama: "VERDE" },
+  { codigo: "576", nombre: "OLIVO", gama: "VERDE" },
   { codigo: "579", nombre: "VERDE OSCURO", gama: "VERDE" },
+  { codigo: "581", nombre: "VERDE OLIVA", gama: "VERDE" },
   { codigo: "583", nombre: "JADE", gama: "VERDE" },
+  { codigo: "587", nombre: "VERDE LIMON", gama: "VERDE" },
   { codigo: "588", nombre: "VERDE LIMON", gama: "VERDE" },
-  { codigo: "591", nombre: "VERDE OSCURO", gama: "VERDE" },
   { codigo: "592", nombre: "VERDE CHIVE", gama: "VERDE" },
   { codigo: "596", nombre: "OLIVO", gama: "VERDE" },
   { codigo: "597", nombre: "VERDE MILITAR", gama: "VERDE" },
+  { codigo: "605", nombre: "CAQUI", gama: "CAFE" },
   { codigo: "606", nombre: "CAQUI", gama: "CAFE" },
   { codigo: "608", nombre: "CAQUI", gama: "CAFE" },
-  { codigo: "611", nombre: "CAFÉ", gama: "CAFE" },
+  { codigo: "609", nombre: "MOCCA", gama: "CAFE" },
+  { codigo: "611", nombre: "CARAMELO", gama: "CAFE" },
   { codigo: "613", nombre: "CAFÉ", gama: "CAFE" },
-  { codigo: "622", nombre: "CAQUI", gama: "CAFE" },
+  { codigo: "614", nombre: "CAFÉ", gama: "CAFE" },
   { codigo: "623", nombre: "CAQUI", gama: "CAFE" },
   { codigo: "624", nombre: "CHOCOLATE", gama: "CAFE" },
   { codigo: "625", nombre: "CAQUI", gama: "CAFE" },
@@ -122,10 +142,11 @@ const COLORES_FDS = [
   { codigo: "803", nombre: "GRIS CLARO", gama: "NEGRO" },
   { codigo: "811", nombre: "GRIS MEDIO", gama: "NEGRO" },
   { codigo: "815", nombre: "GRIS MEDIO", gama: "NEGRO" },
-  { codigo: "817", nombre: "GRIS OSCURO", gama: "NEGRO" },
   { codigo: "819", nombre: "GRIS OSCURO", gama: "NEGRO" },
+  { codigo: "821", nombre: "GRIS OSCURO", gama: "NEGRO" },
   { codigo: "999", nombre: "MULTICOLOR", gama: "MULTICOLOR" }
 ];
+
 
 // --- MAPAS PARA ACCESO RÁPIDO ---
 const MAPA_NOMBRE_COLOR = {};
@@ -323,6 +344,13 @@ function mostrarMensaje(texto, tipo = "success") {
 }
 
 // --- NUEVA FUNCIÓN GENERALIZADA PARA REPLICAR POR CAMPO (TALLAS O COLOR) ---
+/**
+ * Modificación en la función replicarFilasPorCampo para asegurar que el select de tallas
+ * tenga las opciones correctas antes de asignar el valor de talla en la fila clonada.
+ */
+/**
+ * ...dentro de la función replicarFilasPorCampo, justo después de llamar a initializeRowFields...
+ */
 async function replicarFilasPorCampo({
   filasBase,
   campoReplicar,
@@ -383,11 +411,35 @@ async function replicarFilasPorCampo({
         }
       }
 
-      // Inicializar campos dependientes si es necesario
+      // Inicializar campos dependientes y listeners
       if (typeof initializeRowFields === "function") {
         initializeRowFields(nuevaFila);
-        if (campoDestino) campoDestino.value = valor;
       }
+
+      // --- FIX: Asegurar que el select de tallas tenga las opciones correctas y el valor esperado ---
+      const selectTallas = nuevaFila.querySelector('.campo-formulario[data-campo-nombre="TALLAS"]');
+      if (selectTallas) {
+        let opcionesTalla = [];
+        if (CATEGORIAS_SUP.includes(categoria)) {
+          opcionesTalla = TALLAS_SUP;
+        } else if (CATEGORIAS_INF.includes(categoria)) {
+          opcionesTalla = TALLAS_INF;
+        } else {
+          opcionesTalla = TALLAS_UN;
+        }
+        // Limpiar y rellenar opciones
+        const prevValue = talla;
+        selectTallas.innerHTML = '<option value="">Seleccione</option>';
+        opcionesTalla.forEach(opt => {
+          const option = document.createElement('option');
+          option.value = opt;
+          option.textContent = opt;
+          selectTallas.appendChild(option);
+        });
+        // Asignar el valor de talla (ya sea el original o el replicado)
+        selectTallas.value = prevValue;
+      }
+
       if (callbackPostFila) callbackPostFila(nuevaFila, valor);
 
       insertAfter.parentNode.insertBefore(nuevaFila, insertAfter.nextSibling);
@@ -474,6 +526,7 @@ document.addEventListener("DOMContentLoaded", function () {
       display: flex;
       flex-direction: column;
       align-items: center;
+      height: 350px;
       width: 500px;
       padding: 25px;
       border-radius: var(--border-radius);
@@ -509,6 +562,7 @@ document.addEventListener("DOMContentLoaded", function () {
       justify-content: center;
       align-items: flex-start;
       width: 500px;
+      height: 80%;
       padding: 15px;
       background-color: rgba(255, 255, 255, 0.5);
       border-radius: var(--border-radius);
@@ -528,6 +582,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     #multiTallas, #multiColores {
       min-width: 180px;
+      height: 70%;
       padding: 10px;
       border-radius: var(--border-radius);
       border: 1px solid var(--color-highlight);
@@ -535,6 +590,7 @@ document.addEventListener("DOMContentLoaded", function () {
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
       transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
       font-size: 14px;
+      max-height: 220px;
     }
     #multiTallas:focus, #multiColores:focus {
       border-color: var(--color-primary);
@@ -558,8 +614,8 @@ document.addEventListener("DOMContentLoaded", function () {
       font-weight: 600;
       transition: background-color var(--transition-speed), transform var(--transition-speed);
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      align-self: flex-end;
-      margin-top: 20px;
+      align-self: flex-center;
+      margin-top: 100px;
       display: flex;
       align-items: center;
       justify-content: center;

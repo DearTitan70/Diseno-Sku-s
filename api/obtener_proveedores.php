@@ -1,7 +1,6 @@
 <?php
 include '../conexion.php';
 
-// First query to get users
 $sql = "SELECT id, nombre, estado, created_at
         FROM proveedor";
 
