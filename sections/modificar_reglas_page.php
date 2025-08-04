@@ -11,7 +11,6 @@ require_login_and_role(1);
 <head>
     <meta charset="UTF-8">
     <title>Modificar Reglas de Dependencia</title>
-    <link rel="icon" type="image/x-icon" href="../img/FDS_Favicon.png">
     <style>
         /* ===========================
            VARIABLES CSS Y ESTILOS BASE
