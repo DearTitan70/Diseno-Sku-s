@@ -126,7 +126,7 @@ $fecha_actual = date("Y-m-d H:i:s");
                     <th data-campo-nombre="CIERRE">CIERRE</th>
                     <th data-campo-nombre="GALGA">GALGA</th>
                     <th data-campo-nombre="TIPO_GALGA">TIPO DE GALGA</th>
-                    <th data-campo-nombre="COLOR_FDS">COLOR FDS</th>
+                    <th data-campo-nombre="COLOR_FDS"><button id="consultarColores" class="btn btn-abrir-colores">Ver colores</button><br>COLOR FDS</th>
                     <th data-campo-nombre="NOM_COLOR">NOMBRE COLOR</th>
                     <th data-campo-nombre="GAMA">GAMA</th>
                     <th data-campo-nombre="PRINT">PRINT</th>
@@ -592,6 +592,27 @@ $fecha_actual = date("Y-m-d H:i:s");
             </div>
         </div>
     </div>
+    <div id="coloresModal" class="modal-colores" hidden>
+        <div class="modal-colores-contenido">
+            <span class="close-colores">X</span>
+            <div class="modal-colores-header">
+                <h3>Tabla de colores</h3>
+            </div>
+            <div class="tabla-colores">
+                <table>
+                <thead>
+                    <tr>
+                        <th>Codigo de color</th>
+                        <th>Nombre de color</th>
+                        <th>Gama de color</th>
+                    <tr>
+                </thead>
+                <tbody id="tableBodyColores"></tbody>
+            </table>
+            </div>       
+        </div>
+    </div>
+</div>
 <script>
 /*
 ==========================================
@@ -2608,6 +2629,51 @@ document.getElementById('aceptarReproBtn').addEventListener('click', async () =>
         alert(error.message);
     }
 });
+
+const modalColores = document.querySelector(".modal-colores");
+const botonAbrirColores = document.querySelector(".btn-abrir-colores");
+const botonCerrarColores = document.querySelector(".close-colores");
+
+function abrirModalColores() {
+    modalColores.classList.add('mostrar');
+    document.body.style.overflow = 'hidden';
+    nav.style.position = 'static';
+    tableRow.style.position = 'sticky';
+    llenarTableBodyColores();
+}
+
+function cerrarModalColores() {
+    modalColores.classList.remove('mostrar');
+    document.body.style.overflow = 'auto';
+    nav.style.position = 'sticky';
+    tableRow.style.position = '';
+}
+
+botonAbrirColores.addEventListener('click', abrirModalColores);
+botonCerrarColores.addEventListener('click', cerrarModalColores);
+
+function llenarTableBodyColores() {
+    const tbody = document.getElementById('tableBodyColores');
+    if (!tbody) return;
+
+    tbody.innerHTML = ''; 
+
+    if (!Array.isArray(COLORES_FDS) || COLORES_FDS.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="3">No hay colores disponibles.</td></tr>';
+        return;
+    }
+
+    COLORES_FDS.forEach(color => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>${color.codigo}</td>
+            <td>${color.nombre}</td>
+            <td>${color.gama}</td>
+        `;
+        tbody.appendChild(tr);
+    });
+};
+
 </script>
 </body>
 </html>
