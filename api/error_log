@@ -383,8 +383,3 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /home/services/public_html/diseno/api/obtener_materiales.php on line 18
-[04-Aug-2025 22:02:52 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'MOTIVO_ERROR' in 'SELECT' in /home/services/public_html/diseno/api/obtener_historico.php:13
-Stack trace:
-#0 /home/services/public_html/diseno/api/obtener_historico.php(13): mysqli->query()
-#1 {main}
-  thrown in /home/services/public_html/diseno/api/obtener_historico.php on line 13

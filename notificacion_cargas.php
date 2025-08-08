@@ -4,7 +4,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 $db = new mysqli('localhost', 'services_cargamasiva', 'S1ST3NFDS-', 'services_cargamasiva');
 if ($db->connect_error) {
-    die("Error de conexi¨®n: " . $db->connect_error);
+    die("Error de conexiÃ³n: " . $db->connect_error);
 }
 
 $sql = "SELECT * FROM catalogo_disenos WHERE (NOTIFICADO = 0 OR NOTIFICADO IS NULL) AND ESTADO IS NULL";
@@ -70,7 +70,7 @@ try {
     $mail->Body = $mensaje;
 
     $mail->send();
-    echo "Notificaci¨®n enviada correctamente.\n";
+    echo "NotificaciÃ³n enviada correctamente.\n";
 } catch (Exception $e) {
     echo "Error al enviar el correo: {$mail->ErrorInfo}\n";
     exit(1);

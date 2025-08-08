@@ -18,7 +18,6 @@ $campos_origen_posibles = [
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administración de Reglas</title>
-    <link rel="icon" type="image/x-icon" href="../img/FDS_Favicon.png">
     <style>
 
         :root {

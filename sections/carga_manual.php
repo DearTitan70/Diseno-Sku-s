@@ -2673,6 +2673,7 @@ function llenarTableBodyColores() {
         tbody.appendChild(tr);
     });
 };
+
 </script>
 </body>
 </html>

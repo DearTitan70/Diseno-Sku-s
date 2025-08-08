@@ -85,20 +85,3 @@ X-Powered-By: PHP/8.2.29
 Content-type: text/html; charset=UTF-8
 
 No hay cargas pendientes de notificar.
-X-Powered-By: PHP/8.2.29
-Content-type: text/html; charset=UTF-8
-
-No hay cargas pendientes de notificar.
-X-Powered-By: PHP/8.2.29
-Content-type: text/html; charset=UTF-8
-
-No hay cargas pendientes de notificar.
-X-Powered-By: PHP/8.2.29
-Content-type: text/html; charset=UTF-8
-
-Notificaci¨®n enviada correctamente.
-Cargas marcadas como notificadas.
-X-Powered-By: PHP/8.2.29
-Content-type: text/html; charset=UTF-8
-
-No hay cargas pendientes de notificar.
