@@ -76,6 +76,8 @@ function iniciarAutoGuardadoBorrador() {
         clearTimeout(timeout);
         timeout = setTimeout(guardar, 1000);
     });
+
+    interval = setInterval(guardar, 5000);
 }
 
 /**

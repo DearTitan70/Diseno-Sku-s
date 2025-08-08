@@ -289,3 +289,102 @@ Stack trace:
 #0 /home/services/public_html/diseno/api/obtener_usuarios.php(12): mysqli->query()
 #1 {main}
   thrown in /home/services/public_html/diseno/api/obtener_usuarios.php on line 12
+[19-Jun-2025 21:42:22 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'services_cargamasiva.proveedor' doesn't exist in /home/services/public_html/diseno/api/obtener_proveedores.php:8
+Stack trace:
+#0 /home/services/public_html/diseno/api/obtener_proveedores.php(8): mysqli->query()
+#1 {main}
+  thrown in /home/services/public_html/diseno/api/obtener_proveedores.php on line 8
+[22-Jul-2025 20:00:47 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: No such file or directory in /home/services/public_html/diseno/conexion.php:8
+Stack trace:
+#0 /home/services/public_html/diseno/conexion.php(8): mysqli_connect()
+#1 /home/services/public_html/diseno/api/obtener_historico.php(3): include('/home/services/...')
+#2 {main}
+  thrown in /home/services/public_html/diseno/conexion.php on line 8
+[22-Jul-2025 20:00:54 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: No such file or directory in /home/services/public_html/diseno/conexion.php:8
+Stack trace:
+#0 /home/services/public_html/diseno/conexion.php(8): mysqli_connect()
+#1 /home/services/public_html/diseno/api/obtener_historico.php(3): include('/home/services/...')
+#2 {main}
+  thrown in /home/services/public_html/diseno/conexion.php on line 8
+[22-Jul-2025 20:00:56 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: No such file or directory in /home/services/public_html/diseno/conexion.php:8
+Stack trace:
+#0 /home/services/public_html/diseno/conexion.php(8): mysqli_connect()
+#1 /home/services/public_html/diseno/api/obtener_historico.php(3): include('/home/services/...')
+#2 {main}
+  thrown in /home/services/public_html/diseno/conexion.php on line 8
+[22-Jul-2025 20:00:57 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: No such file or directory in /home/services/public_html/diseno/conexion.php:8
+Stack trace:
+#0 /home/services/public_html/diseno/conexion.php(8): mysqli_connect()
+#1 /home/services/public_html/diseno/api/obtener_historico.php(3): include('/home/services/...')
+#2 {main}
+  thrown in /home/services/public_html/diseno/conexion.php on line 8
+[22-Jul-2025 20:00:57 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: No such file or directory in /home/services/public_html/diseno/conexion.php:8
+Stack trace:
+#0 /home/services/public_html/diseno/conexion.php(8): mysqli_connect()
+#1 /home/services/public_html/diseno/api/obtener_historico.php(3): include('/home/services/...')
+#2 {main}
+  thrown in /home/services/public_html/diseno/conexion.php on line 8
+[22-Jul-2025 20:00:58 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: No such file or directory in /home/services/public_html/diseno/conexion.php:8
+Stack trace:
+#0 /home/services/public_html/diseno/conexion.php(8): mysqli_connect()
+#1 /home/services/public_html/diseno/api/obtener_historico.php(3): include('/home/services/...')
+#2 {main}
+  thrown in /home/services/public_html/diseno/conexion.php on line 8
+[22-Jul-2025 20:00:58 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: No such file or directory in /home/services/public_html/diseno/conexion.php:8
+Stack trace:
+#0 /home/services/public_html/diseno/conexion.php(8): mysqli_connect()
+#1 /home/services/public_html/diseno/api/obtener_historico.php(3): include('/home/services/...')
+#2 {main}
+  thrown in /home/services/public_html/diseno/conexion.php on line 8
+[22-Jul-2025 20:00:58 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: No such file or directory in /home/services/public_html/diseno/conexion.php:8
+Stack trace:
+#0 /home/services/public_html/diseno/conexion.php(8): mysqli_connect()
+#1 /home/services/public_html/diseno/api/obtener_historico.php(3): include('/home/services/...')
+#2 {main}
+  thrown in /home/services/public_html/diseno/conexion.php on line 8
+[31-Jul-2025 19:46:32 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: MySQL server has gone away in /home/services/public_html/diseno/api/obtener_historico.php:13
+Stack trace:
+#0 /home/services/public_html/diseno/api/obtener_historico.php(13): mysqli->query()
+#1 {main}
+  thrown in /home/services/public_html/diseno/api/obtener_historico.php on line 13
+[31-Jul-2025 19:46:49 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: MySQL server has gone away in /home/services/public_html/diseno/api/obtener_historico.php:13
+Stack trace:
+#0 /home/services/public_html/diseno/api/obtener_historico.php(13): mysqli->query()
+#1 {main}
+  thrown in /home/services/public_html/diseno/api/obtener_historico.php on line 13
+[31-Jul-2025 19:47:38 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: MySQL server has gone away in /home/services/public_html/diseno/api/obtener_historico.php:13
+Stack trace:
+#0 /home/services/public_html/diseno/api/obtener_historico.php(13): mysqli->query()
+#1 {main}
+  thrown in /home/services/public_html/diseno/api/obtener_historico.php on line 13
+[31-Jul-2025 19:48:11 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: MySQL server has gone away in /home/services/public_html/diseno/api/obtener_historico.php:13
+Stack trace:
+#0 /home/services/public_html/diseno/api/obtener_historico.php(13): mysqli->query()
+#1 {main}
+  thrown in /home/services/public_html/diseno/api/obtener_historico.php on line 13
+[31-Jul-2025 19:48:59 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: MySQL server has gone away in /home/services/public_html/diseno/api/obtener_historico.php:13
+Stack trace:
+#0 /home/services/public_html/diseno/api/obtener_historico.php(13): mysqli->query()
+#1 {main}
+  thrown in /home/services/public_html/diseno/api/obtener_historico.php on line 13
+[31-Jul-2025 19:50:29 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Too many connections in /home/services/public_html/diseno/conexion.php:8
+Stack trace:
+#0 /home/services/public_html/diseno/conexion.php(8): mysqli_connect()
+#1 /home/services/public_html/diseno/api/obtener_historico.php(3): include('/home/services/...')
+#2 {main}
+  thrown in /home/services/public_html/diseno/conexion.php on line 8
+[31-Jul-2025 19:50:46 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Too many connections in /home/services/public_html/diseno/conexion.php:8
+Stack trace:
+#0 /home/services/public_html/diseno/conexion.php(8): mysqli_connect()
+#1 /home/services/public_html/diseno/api/obtener_historico.php(3): include('/home/services/...')
+#2 {main}
+  thrown in /home/services/public_html/diseno/conexion.php on line 8
+[01-Aug-2025 16:04:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function echo_json_encode() in /home/services/public_html/diseno/api/obtener_materiales.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/services/public_html/diseno/api/obtener_materiales.php on line 18
+[04-Aug-2025 22:02:52 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'MOTIVO_ERROR' in 'SELECT' in /home/services/public_html/diseno/api/obtener_historico.php:13
+Stack trace:
+#0 /home/services/public_html/diseno/api/obtener_historico.php(13): mysqli->query()
+#1 {main}
+  thrown in /home/services/public_html/diseno/api/obtener_historico.php on line 13

@@ -1592,3 +1592,1939 @@ Stack trace:
 #1 /home/services/public_html/diseno/backend/update_manual.php(157): obtenerDestinatarios()
 #2 {main}
   thrown in /home/services/public_html/diseno/backend/update_manual.php on line 37
+[20-Jun-2025 14:28:32 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'services_cargamasiva.borradores_carga_manual' doesn't exist in /home/services/public_html/diseno/backend/cargar_borrador_carga_manual.php:17
+Stack trace:
+#0 /home/services/public_html/diseno/backend/cargar_borrador_carga_manual.php(17): mysqli->prepare()
+#1 {main}
+  thrown in /home/services/public_html/diseno/backend/cargar_borrador_carga_manual.php on line 17
+[10-Jul-2025 13:57:06 America/Bogota] SERVER -> CLIENT: 220-cpanel6-co.conexcol.net ESMTP Exim 4.98.2 #2 Thu, 10 Jul 2025 13:57:06 -0500 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER: EHLO fds.com.co
+
+[10-Jul-2025 13:57:06 America/Bogota] SERVER -> CLIENT: 250-cpanel6-co.conexcol.net Hello fds.com.co [190.90.160.172]
+250-SIZE 209715200
+250-LIMITS MAILMAX=1000 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER: AUTH LOGIN
+
+[10-Jul-2025 13:57:06 America/Bogota] SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[10-Jul-2025 13:57:06 America/Bogota] SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[10-Jul-2025 13:57:06 America/Bogota] SERVER -> CLIENT: 235 Authentication succeeded
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER: MAIL FROM:<notificaciones@fds.com.co>
+
+[10-Jul-2025 13:57:06 America/Bogota] SERVER -> CLIENT: 250 OK
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER: RCPT TO:<fdstecnologia@fueradeserie.com.co>
+
+[10-Jul-2025 13:57:06 America/Bogota] SERVER -> CLIENT: 250 Accepted
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER: RCPT TO:<asistentediseno@fds.com.co>
+
+[10-Jul-2025 13:57:06 America/Bogota] SERVER -> CLIENT: 250 Accepted
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER: RCPT TO:<asistentediseno2@fds.com.co>
+
+[10-Jul-2025 13:57:06 America/Bogota] SERVER -> CLIENT: 250 Accepted
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER: RCPT TO:<datosmaestros@fueradeserie.com.co>
+
+[10-Jul-2025 13:57:06 America/Bogota] SERVER -> CLIENT: 250 Accepted
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER: RCPT TO:<directorsupplychain@fueradeserie.com.co>
+
+[10-Jul-2025 13:57:06 America/Bogota] SERVER -> CLIENT: 250 Accepted
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER: RCPT TO:<directorcomercioexterior@fueradeserie.com.co>
+
+[10-Jul-2025 13:57:06 America/Bogota] SERVER -> CLIENT: 250 Accepted
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER: DATA
+
+[10-Jul-2025 13:57:06 America/Bogota] SERVER -> CLIENT: 354 Enter message, ending with "." on a line by itself
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER: Date: Thu, 10 Jul 2025 13:57:06 -0500
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER: To: fdstecnologia@fueradeserie.com.co, asistentediseno@fds.com.co, asistentediseno2@fds.com.co, datosmaestros@fueradeserie.com.co, directorsupplychain@fueradeserie.com.co, directorcomercioexterior@fueradeserie.com.co
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER: From: Sistema de Cargas <notificaciones@fds.com.co>
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER: Subject: =?UTF-8?Q?Modificaci=C3=B3n_de_carga_Nombre_PANTALON_DE_PRUEBA_en_el_sistema_de_creacion_de_SKU's?=
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER: Message-ID: <Tj0AgxsVZijCRnyzG6oSlzV5v2kINWiLwrFj3xZkyY@fds.com.co>
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER: MIME-Version: 1.0
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER: 
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER: 
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER:         <p>Se ha realizado una modificación en la carga ID. 26.</p>
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER:         <ul>
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER:             <li><b>Usuario:</b> CAMILO VERA PINERES</li>
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER:             <li><b>Fecha:</b> 2025-07-10 13:57:06</li>
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER:         </ul>
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER:         <p><b>Resumen de cambios:</b></p>
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER:         <table border='1' cellpadding='4' cellspacing='0'><tr><th>Campo</th><th>Antes</th><th>Después</th></tr><tr><td>precio_compra</td><td>1.00</td><td></td></tr><tr><td>costo</td><td>2.00</td><td></td></tr></table>
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER:         <p>Este es un mensaje automático. Por favor no responder.</p>
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER:     
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER: 
+
+[10-Jul-2025 13:57:06 America/Bogota] CLIENT -> SERVER: .
+
+[10-Jul-2025 13:57:08 America/Bogota] SERVER -> CLIENT: 250 OK id=1uZwSA-00000008VjO-0pkU
+
+[10-Jul-2025 13:57:08 America/Bogota] CLIENT -> SERVER: QUIT
+
+[10-Jul-2025 13:57:08 America/Bogota] SERVER -> CLIENT: 221 cpanel6-co.conexcol.net closing connection
+
+[10-Jul-2025 13:57:22 America/Bogota] SERVER -> CLIENT: 220-cpanel6-co.conexcol.net ESMTP Exim 4.98.2 #2 Thu, 10 Jul 2025 13:57:22 -0500 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER: EHLO fds.com.co
+
+[10-Jul-2025 13:57:22 America/Bogota] SERVER -> CLIENT: 250-cpanel6-co.conexcol.net Hello fds.com.co [190.90.160.172]
+250-SIZE 209715200
+250-LIMITS MAILMAX=1000 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER: AUTH LOGIN
+
+[10-Jul-2025 13:57:22 America/Bogota] SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[10-Jul-2025 13:57:22 America/Bogota] SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[10-Jul-2025 13:57:22 America/Bogota] SERVER -> CLIENT: 235 Authentication succeeded
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER: MAIL FROM:<notificaciones@fds.com.co>
+
+[10-Jul-2025 13:57:22 America/Bogota] SERVER -> CLIENT: 250 OK
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER: RCPT TO:<fdstecnologia@fueradeserie.com.co>
+
+[10-Jul-2025 13:57:22 America/Bogota] SERVER -> CLIENT: 250 Accepted
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER: RCPT TO:<asistentediseno@fds.com.co>
+
+[10-Jul-2025 13:57:22 America/Bogota] SERVER -> CLIENT: 250 Accepted
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER: RCPT TO:<asistentediseno2@fds.com.co>
+
+[10-Jul-2025 13:57:22 America/Bogota] SERVER -> CLIENT: 250 Accepted
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER: RCPT TO:<datosmaestros@fueradeserie.com.co>
+
+[10-Jul-2025 13:57:22 America/Bogota] SERVER -> CLIENT: 250 Accepted
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER: RCPT TO:<directorsupplychain@fueradeserie.com.co>
+
+[10-Jul-2025 13:57:22 America/Bogota] SERVER -> CLIENT: 250 Accepted
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER: RCPT TO:<directorcomercioexterior@fueradeserie.com.co>
+
+[10-Jul-2025 13:57:22 America/Bogota] SERVER -> CLIENT: 250 Accepted
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER: DATA
+
+[10-Jul-2025 13:57:22 America/Bogota] SERVER -> CLIENT: 354 Enter message, ending with "." on a line by itself
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER: Date: Thu, 10 Jul 2025 13:57:22 -0500
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER: To: fdstecnologia@fueradeserie.com.co, asistentediseno@fds.com.co, asistentediseno2@fds.com.co, datosmaestros@fueradeserie.com.co, directorsupplychain@fueradeserie.com.co, directorcomercioexterior@fueradeserie.com.co
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER: From: Sistema de Cargas <notificaciones@fds.com.co>
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER: Subject: =?UTF-8?Q?Modificaci=C3=B3n_de_carga_Nombre_PANTALON_DE_PRUEBA_en_el_sistema_de_creacion_de_SKU's?=
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER: Message-ID: <IZQli2pXapVFdq1lemqBtbCut7dLC8SMKNjDk6Ork@fds.com.co>
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER: MIME-Version: 1.0
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER: 
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER: 
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER:         <p>Se ha realizado una modificación en la carga ID. 26.</p>
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER:         <ul>
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER:             <li><b>Usuario:</b> CAMILO VERA PINERES</li>
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER:             <li><b>Fecha:</b> 2025-07-10 13:57:22</li>
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER:         </ul>
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER:         <p><b>Resumen de cambios:</b></p>
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER:         <table border='1' cellpadding='4' cellspacing='0'><tr><th>Campo</th><th>Antes</th><th>Después</th></tr><tr><td>precio_compra</td><td>0.00</td><td></td></tr><tr><td>costo</td><td>0.00</td><td></td></tr></table>
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER:         <p>Este es un mensaje automático. Por favor no responder.</p>
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER:     
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER: 
+
+[10-Jul-2025 13:57:22 America/Bogota] CLIENT -> SERVER: .
+
+[10-Jul-2025 13:57:24 America/Bogota] SERVER -> CLIENT: 250 OK id=1uZwSQ-00000008Vs2-3UmZ
+
+[10-Jul-2025 13:57:24 America/Bogota] CLIENT -> SERVER: QUIT
+
+[10-Jul-2025 13:57:24 America/Bogota] SERVER -> CLIENT: 221 cpanel6-co.conexcol.net closing connection
+
+[10-Jul-2025 21:36:44 UTC] PHP Warning:  Undefined variable $pdo in /home/services/public_html/diseno/backend/crear_variacion.php on line 21
+[10-Jul-2025 21:36:44 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/services/public_html/diseno/backend/crear_variacion.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/services/public_html/diseno/backend/crear_variacion.php on line 21
+[10-Jul-2025 21:37:23 UTC] PHP Warning:  Undefined variable $pdo in /home/services/public_html/diseno/backend/crear_variacion.php on line 21
+[10-Jul-2025 21:37:23 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/services/public_html/diseno/backend/crear_variacion.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/services/public_html/diseno/backend/crear_variacion.php on line 21
+[11-Jul-2025 16:54:12 UTC] Input recibido: Array
+(
+    [rule_id] => 
+    [nombre_regla] => GALGA POR CATEGORIA
+    [campo_destino] => GALGA
+    [es_activa] => 1
+    [condiciones] => Array
+        (
+            [type] => branched_conditions
+            [branches] => Array
+                (
+                    [0] => Array
+                        (
+                            [if] => Array
+                                (
+                                    [operator] => AND
+                                    [conditions] => Array
+                                        (
+                                            [0] => Array
+                                                (
+                                                    [operator] => condition
+                                                    [field] => tipo
+                                                    [value] => IMPORTADO
+                                                )
+
+                                            [1] => Array
+                                                (
+                                                    [operator] => condition
+                                                    [field] => CATEGORIAS
+                                                    [value] => PUNTO
+                                                )
+
+                                        )
+
+                                )
+
+                            [then_allow] => Array
+                                (
+                                    [0] => 5
+                                    [1] => 7
+                                    [2] => 10
+                                    [3] => 12
+                                )
+
+                        )
+
+                )
+
+            [default_allow] => Array
+                (
+                )
+
+        )
+
+    [valores_permitidos] => Array
+        (
+        )
+
+)
+
+[11-Jul-2025 16:54:12 UTC] Condiciones recibidas: Array
+(
+    [type] => branched_conditions
+    [branches] => Array
+        (
+            [0] => Array
+                (
+                    [if] => Array
+                        (
+                            [operator] => AND
+                            [conditions] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [operator] => condition
+                                            [field] => tipo
+                                            [value] => IMPORTADO
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [operator] => condition
+                                            [field] => CATEGORIAS
+                                            [value] => PUNTO
+                                        )
+
+                                )
+
+                        )
+
+                    [then_allow] => Array
+                        (
+                            [0] => 5
+                            [1] => 7
+                            [2] => 10
+                            [3] => 12
+                        )
+
+                )
+
+        )
+
+    [default_allow] => Array
+        (
+        )
+
+)
+
+[11-Jul-2025 16:54:55 UTC] Input recibido: Array
+(
+    [rule_id] => 
+    [nombre_regla] => GALGA POR CATEGORIA
+    [campo_destino] => GALGA
+    [es_activa] => 1
+    [condiciones] => Array
+        (
+            [type] => branched_conditions
+            [branches] => Array
+                (
+                    [0] => Array
+                        (
+                            [if] => Array
+                                (
+                                    [operator] => AND
+                                    [conditions] => Array
+                                        (
+                                            [0] => Array
+                                                (
+                                                    [operator] => condition
+                                                    [field] => tipo
+                                                    [value] => IMPORTADO
+                                                )
+
+                                            [1] => Array
+                                                (
+                                                    [operator] => condition
+                                                    [field] => CATEGORIAS
+                                                    [value] => PUNTO
+                                                )
+
+                                        )
+
+                                )
+
+                            [then_allow] => Array
+                                (
+                                    [0] => 5
+                                    [1] => 7
+                                    [2] => 10
+                                    [3] => 12
+                                )
+
+                        )
+
+                )
+
+            [default_allow] => Array
+                (
+                )
+
+        )
+
+    [valores_permitidos] => Array
+        (
+        )
+
+)
+
+[11-Jul-2025 16:54:55 UTC] Condiciones recibidas: Array
+(
+    [type] => branched_conditions
+    [branches] => Array
+        (
+            [0] => Array
+                (
+                    [if] => Array
+                        (
+                            [operator] => AND
+                            [conditions] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [operator] => condition
+                                            [field] => tipo
+                                            [value] => IMPORTADO
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [operator] => condition
+                                            [field] => CATEGORIAS
+                                            [value] => PUNTO
+                                        )
+
+                                )
+
+                        )
+
+                    [then_allow] => Array
+                        (
+                            [0] => 5
+                            [1] => 7
+                            [2] => 10
+                            [3] => 12
+                        )
+
+                )
+
+        )
+
+    [default_allow] => Array
+        (
+        )
+
+)
+
+[11-Jul-2025 16:58:33 UTC] Input recibido: Array
+(
+    [rule_id] => 
+    [nombre_regla] => TIPO DE GALGA POR GALGA
+    [campo_destino] => TIPO_GALGA
+    [es_activa] => 1
+    [condiciones] => Array
+        (
+            [type] => branched_conditions
+            [branches] => Array
+                (
+                    [0] => Array
+                        (
+                            [if] => Array
+                                (
+                                    [operator] => AND
+                                    [conditions] => Array
+                                        (
+                                            [0] => Array
+                                                (
+                                                    [operator] => condition
+                                                    [field] => GALGA
+                                                    [value] => 5
+                                                )
+
+                                        )
+
+                                )
+
+                            [then_allow] => Array
+                                (
+                                    [0] => CANALE
+                                    [1] => PONTELLE
+                                    [2] => CROCHET
+                                    [3] => JERSEY
+                                    [4] => JAQUARD
+                                )
+
+                        )
+
+                )
+
+            [default_allow] => Array
+                (
+                )
+
+        )
+
+    [valores_permitidos] => Array
+        (
+        )
+
+)
+
+[11-Jul-2025 16:58:33 UTC] Condiciones recibidas: Array
+(
+    [type] => branched_conditions
+    [branches] => Array
+        (
+            [0] => Array
+                (
+                    [if] => Array
+                        (
+                            [operator] => AND
+                            [conditions] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [operator] => condition
+                                            [field] => GALGA
+                                            [value] => 5
+                                        )
+
+                                )
+
+                        )
+
+                    [then_allow] => Array
+                        (
+                            [0] => CANALE
+                            [1] => PONTELLE
+                            [2] => CROCHET
+                            [3] => JERSEY
+                            [4] => JAQUARD
+                        )
+
+                )
+
+        )
+
+    [default_allow] => Array
+        (
+        )
+
+)
+
+[11-Jul-2025 17:01:53 UTC] Input recibido: Array
+(
+    [rule_id] => 
+    [nombre_regla] => TIPO DE GALGA POR GALGA
+    [campo_destino] => TIPO_GALGA
+    [es_activa] => 1
+    [condiciones] => Array
+        (
+            [type] => branched_conditions
+            [branches] => Array
+                (
+                    [0] => Array
+                        (
+                            [if] => Array
+                                (
+                                    [operator] => AND
+                                    [conditions] => Array
+                                        (
+                                            [0] => Array
+                                                (
+                                                    [operator] => condition
+                                                    [field] => GALGA
+                                                    [value] => 5
+                                                )
+
+                                        )
+
+                                )
+
+                            [then_allow] => Array
+                                (
+                                    [0] => CANALE
+                                    [1] => PONTELLE
+                                    [2] => CROCHET
+                                    [3] => JERSEY
+                                    [4] => JAQUARD
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [if] => Array
+                                (
+                                    [operator] => AND
+                                    [conditions] => Array
+                                        (
+                                            [0] => Array
+                                                (
+                                                    [operator] => condition
+                                                    [field] => GALGA
+                                                    [value] => 7
+                                                )
+
+                                        )
+
+                                )
+
+                            [then_allow] => Array
+                                (
+                                    [0] => CANALE
+                                    [1] => PONTELLE
+                                    [2] => CROCHET
+                                    [3] => JERSEY
+                                    [4] => JAQUARD
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [if] => Array
+                                (
+                                    [operator] => AND
+                                    [conditions] => Array
+                                        (
+                                            [0] => Array
+                                                (
+                                                    [operator] => condition
+                                                    [field] => GALGA
+                                                    [value] => 10
+                                                )
+
+                                        )
+
+                                )
+
+                            [then_allow] => Array
+                                (
+                                    [0] => CANALE
+                                    [1] => PONTELLE
+                                    [2] => CROCHET
+                                    [3] => JERSEY
+                                    [4] => JAQUARD
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [if] => Array
+                                (
+                                    [operator] => AND
+                                    [conditions] => Array
+                                        (
+                                            [0] => Array
+                                                (
+                                                    [operator] => condition
+                                                    [field] => GALGA
+                                                    [value] => 12
+                                                )
+
+                                        )
+
+                                )
+
+                            [then_allow] => Array
+                                (
+                                    [0] => CANALE
+                                    [1] => PONTELLE
+                                    [2] => CROCHET
+                                    [3] => JERSEY
+                                    [4] => JAQUARD
+                                )
+
+                        )
+
+                )
+
+            [default_allow] => Array
+                (
+                )
+
+        )
+
+    [valores_permitidos] => Array
+        (
+        )
+
+)
+
+[11-Jul-2025 17:01:53 UTC] Condiciones recibidas: Array
+(
+    [type] => branched_conditions
+    [branches] => Array
+        (
+            [0] => Array
+                (
+                    [if] => Array
+                        (
+                            [operator] => AND
+                            [conditions] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [operator] => condition
+                                            [field] => GALGA
+                                            [value] => 5
+                                        )
+
+                                )
+
+                        )
+
+                    [then_allow] => Array
+                        (
+                            [0] => CANALE
+                            [1] => PONTELLE
+                            [2] => CROCHET
+                            [3] => JERSEY
+                            [4] => JAQUARD
+                        )
+
+                )
+
+            [1] => Array
+                (
+                    [if] => Array
+                        (
+                            [operator] => AND
+                            [conditions] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [operator] => condition
+                                            [field] => GALGA
+                                            [value] => 7
+                                        )
+
+                                )
+
+                        )
+
+                    [then_allow] => Array
+                        (
+                            [0] => CANALE
+                            [1] => PONTELLE
+                            [2] => CROCHET
+                            [3] => JERSEY
+                            [4] => JAQUARD
+                        )
+
+                )
+
+            [2] => Array
+                (
+                    [if] => Array
+                        (
+                            [operator] => AND
+                            [conditions] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [operator] => condition
+                                            [field] => GALGA
+                                            [value] => 10
+                                        )
+
+                                )
+
+                        )
+
+                    [then_allow] => Array
+                        (
+                            [0] => CANALE
+                            [1] => PONTELLE
+                            [2] => CROCHET
+                            [3] => JERSEY
+                            [4] => JAQUARD
+                        )
+
+                )
+
+            [3] => Array
+                (
+                    [if] => Array
+                        (
+                            [operator] => AND
+                            [conditions] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [operator] => condition
+                                            [field] => GALGA
+                                            [value] => 12
+                                        )
+
+                                )
+
+                        )
+
+                    [then_allow] => Array
+                        (
+                            [0] => CANALE
+                            [1] => PONTELLE
+                            [2] => CROCHET
+                            [3] => JERSEY
+                            [4] => JAQUARD
+                        )
+
+                )
+
+        )
+
+    [default_allow] => Array
+        (
+        )
+
+)
+
+[14-Jul-2025 13:02:33 UTC] PHP Warning:  require_once(/home/services/public_html/diseno/backend../conexion.php): Failed to open stream: No such file or directory in /home/services/public_html/diseno/backend/asignar_precio.php on line 21
+[14-Jul-2025 13:02:33 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/services/public_html/diseno/backend../conexion.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/services/public_html/diseno/backend/asignar_precio.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/services/public_html/diseno/backend/asignar_precio.php on line 21
+[14-Jul-2025 13:02:57 UTC] PHP Warning:  require_once(/home/services/public_html/diseno/backend../conexion.php): Failed to open stream: No such file or directory in /home/services/public_html/diseno/backend/asignar_precio.php on line 21
+[14-Jul-2025 13:02:57 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/services/public_html/diseno/backend../conexion.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/services/public_html/diseno/backend/asignar_precio.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/services/public_html/diseno/backend/asignar_precio.php on line 21
+[22-Jul-2025 20:00:40 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: No such file or directory in /home/services/public_html/diseno/conexion.php:8
+Stack trace:
+#0 /home/services/public_html/diseno/conexion.php(8): mysqli_connect()
+#1 /home/services/public_html/diseno/backend/crear_variacion.php(2): require_once('/home/services/...')
+#2 {main}
+  thrown in /home/services/public_html/diseno/conexion.php on line 8
+[25-Jul-2025 19:24:36 UTC] PHP Warning:  Undefined variable $destinatarios in /home/services/public_html/diseno/backend/asignar_precio.php on line 55
+[25-Jul-2025 19:24:36 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /home/services/public_html/diseno/backend/enviar_correo_asignacion_precio.php on line 49
+[25-Jul-2025 19:24:36 UTC] Error enviando correo: You must provide at least one recipient email address.
+[25-Jul-2025 19:30:37 UTC] SERVER -> CLIENT: 220-cpanel6-co.conexcol.net ESMTP Exim 4.98.2 #2 Fri, 25 Jul 2025 14:30:37 -0500 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+[25-Jul-2025 19:30:37 UTC] CLIENT -> SERVER: EHLO fds.com.co
+
+[25-Jul-2025 19:30:37 UTC] SERVER -> CLIENT: 250-cpanel6-co.conexcol.net Hello fds.com.co [190.90.160.172]
+250-SIZE 209715200
+250-LIMITS MAILMAX=1000 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+[25-Jul-2025 19:30:37 UTC] CLIENT -> SERVER: AUTH LOGIN
+
+[25-Jul-2025 19:30:37 UTC] SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[25-Jul-2025 19:30:37 UTC] CLIENT -> SERVER: [credentials hidden]
+[25-Jul-2025 19:30:37 UTC] SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[25-Jul-2025 19:30:37 UTC] CLIENT -> SERVER: [credentials hidden]
+[25-Jul-2025 19:30:37 UTC] SERVER -> CLIENT: 235 Authentication succeeded
+
+[25-Jul-2025 19:30:37 UTC] CLIENT -> SERVER: MAIL FROM:<notificaciones@fds.com.co>
+
+[25-Jul-2025 19:30:37 UTC] SERVER -> CLIENT: 250 OK
+
+[25-Jul-2025 19:30:37 UTC] CLIENT -> SERVER: RCPT TO:<fdstecnologia@fueradeserie.com.co>
+
+[25-Jul-2025 19:30:37 UTC] SERVER -> CLIENT: 250 Accepted
+
+[25-Jul-2025 19:30:37 UTC] CLIENT -> SERVER: DATA
+
+[25-Jul-2025 19:30:37 UTC] SERVER -> CLIENT: 354 Enter message, ending with "." on a line by itself
+
+[25-Jul-2025 19:30:37 UTC] CLIENT -> SERVER: Date: Fri, 25 Jul 2025 19:30:37 +0000
+
+[25-Jul-2025 19:30:37 UTC] CLIENT -> SERVER: To: fdstecnologia@fueradeserie.com.co
+
+[25-Jul-2025 19:30:37 UTC] CLIENT -> SERVER: From: Sistema de Gestion de Materiales <notificaciones@fds.com.co>
+
+[25-Jul-2025 19:30:37 UTC] CLIENT -> SERVER: Subject: Asignacion de precio al material CHAQUETA JKOI25U1029
+
+[25-Jul-2025 19:30:37 UTC] CLIENT -> SERVER: Message-ID: <WofCqkqVN2wHFHOq7crLanjtp40hna1qV0m6F7s5A@fds.com.co>
+
+[25-Jul-2025 19:30:37 UTC] CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+[25-Jul-2025 19:30:37 UTC] CLIENT -> SERVER: MIME-Version: 1.0
+
+[25-Jul-2025 19:30:37 UTC] CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+
+[25-Jul-2025 19:30:37 UTC] CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+[25-Jul-2025 19:30:37 UTC] CLIENT -> SERVER: 
+
+[25-Jul-2025 19:30:37 UTC] CLIENT -> SERVER: 
+
+[25-Jul-2025 19:30:37 UTC] CLIENT -> SERVER:         <p>Se ha realizado una asignacion de precio al material CHAQUETA JKOI25U1029</p>
+
+[25-Jul-2025 19:30:37 UTC] CLIENT -> SERVER:         <ul>
+
+[25-Jul-2025 19:30:37 UTC] CLIENT -> SERVER:             <li><b>Precio de Venta:</b> 200000</li>
+
+[25-Jul-2025 19:30:37 UTC] CLIENT -> SERVER:             <li><b>Predio de Compra:</b> 40000</li>
+
+[25-Jul-2025 19:30:37 UTC] CLIENT -> SERVER:             <li><b>Costo:</b> 50000</li>
+
+[25-Jul-2025 19:30:37 UTC] CLIENT -> SERVER:             <li><b>Usuario que asigno el precio:</b> OLGA JANNETH</li>
+
+[25-Jul-2025 19:30:37 UTC] CLIENT -> SERVER:             <li><b>Fecha de asignacion:</b> 1753471837</li>
+
+[25-Jul-2025 19:30:37 UTC] CLIENT -> SERVER:         </ul>
+
+[25-Jul-2025 19:30:37 UTC] CLIENT -> SERVER:         <p>Este es un mensaje automático. Por favor no responder.</p>
+
+[25-Jul-2025 19:30:37 UTC] CLIENT -> SERVER:     
+
+[25-Jul-2025 19:30:37 UTC] CLIENT -> SERVER: 
+
+[25-Jul-2025 19:30:37 UTC] CLIENT -> SERVER: .
+
+[25-Jul-2025 19:30:38 UTC] SERVER -> CLIENT: 250 OK id=1ufO7t-0000000AVZJ-0fWB
+
+[25-Jul-2025 19:30:38 UTC] CLIENT -> SERVER: QUIT
+
+[25-Jul-2025 19:30:38 UTC] SERVER -> CLIENT: 221 cpanel6-co.conexcol.net closing connection
+
+[25-Jul-2025 14:36:43 America/Bogota] SERVER -> CLIENT: 220-cpanel6-co.conexcol.net ESMTP Exim 4.98.2 #2 Fri, 25 Jul 2025 14:36:43 -0500 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+[25-Jul-2025 14:36:43 America/Bogota] CLIENT -> SERVER: EHLO fds.com.co
+
+[25-Jul-2025 14:36:43 America/Bogota] SERVER -> CLIENT: 250-cpanel6-co.conexcol.net Hello fds.com.co [190.90.160.172]
+250-SIZE 209715200
+250-LIMITS MAILMAX=1000 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+[25-Jul-2025 14:36:43 America/Bogota] CLIENT -> SERVER: AUTH LOGIN
+
+[25-Jul-2025 14:36:43 America/Bogota] SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[25-Jul-2025 14:36:43 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[25-Jul-2025 14:36:43 America/Bogota] SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[25-Jul-2025 14:36:43 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[25-Jul-2025 14:36:43 America/Bogota] SERVER -> CLIENT: 235 Authentication succeeded
+
+[25-Jul-2025 14:36:43 America/Bogota] CLIENT -> SERVER: MAIL FROM:<notificaciones@fds.com.co>
+
+[25-Jul-2025 14:36:43 America/Bogota] SERVER -> CLIENT: 250 OK
+
+[25-Jul-2025 14:36:43 America/Bogota] CLIENT -> SERVER: RCPT TO:<fdstecnologia@fueradeserie.com.co>
+
+[25-Jul-2025 14:36:43 America/Bogota] SERVER -> CLIENT: 250 Accepted
+
+[25-Jul-2025 14:36:43 America/Bogota] CLIENT -> SERVER: DATA
+
+[25-Jul-2025 14:36:43 America/Bogota] SERVER -> CLIENT: 354 Enter message, ending with "." on a line by itself
+
+[25-Jul-2025 14:36:43 America/Bogota] CLIENT -> SERVER: Date: Fri, 25 Jul 2025 14:36:43 -0500
+
+[25-Jul-2025 14:36:43 America/Bogota] CLIENT -> SERVER: To: fdstecnologia@fueradeserie.com.co
+
+[25-Jul-2025 14:36:43 America/Bogota] CLIENT -> SERVER: From: Sistema de Gestion de Materiales <notificaciones@fds.com.co>
+
+[25-Jul-2025 14:36:43 America/Bogota] CLIENT -> SERVER: Subject: Asignacion de precio al material CHAQUETA JKOI25U1029
+
+[25-Jul-2025 14:36:43 America/Bogota] CLIENT -> SERVER: Message-ID: <k9KK8ceJE3ESXZqL4LLagMn3jDuqRjlK9mnXvimAs@fds.com.co>
+
+[25-Jul-2025 14:36:43 America/Bogota] CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+[25-Jul-2025 14:36:43 America/Bogota] CLIENT -> SERVER: MIME-Version: 1.0
+
+[25-Jul-2025 14:36:43 America/Bogota] CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+
+[25-Jul-2025 14:36:43 America/Bogota] CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+[25-Jul-2025 14:36:43 America/Bogota] CLIENT -> SERVER: 
+
+[25-Jul-2025 14:36:43 America/Bogota] CLIENT -> SERVER: 
+
+[25-Jul-2025 14:36:43 America/Bogota] CLIENT -> SERVER:         <p>Se ha realizado una asignacion de precio al material CHAQUETA JKOI25U1029</p>
+
+[25-Jul-2025 14:36:43 America/Bogota] CLIENT -> SERVER:         <ul>
+
+[25-Jul-2025 14:36:43 America/Bogota] CLIENT -> SERVER:             <li><b>Precio de Venta:</b> 200000</li>
+
+[25-Jul-2025 14:36:43 America/Bogota] CLIENT -> SERVER:             <li><b>Predio de Compra:</b> 40000</li>
+
+[25-Jul-2025 14:36:43 America/Bogota] CLIENT -> SERVER:             <li><b>Costo:</b> 50000</li>
+
+[25-Jul-2025 14:36:43 America/Bogota] CLIENT -> SERVER:             <li><b>Usuario que asigno el precio:</b> OLGA JANNETH</li>
+
+[25-Jul-2025 14:36:43 America/Bogota] CLIENT -> SERVER:             <li><b>Fecha de asignacion:</b> 2025-07-25 14:36:43</li>
+
+[25-Jul-2025 14:36:43 America/Bogota] CLIENT -> SERVER:         </ul>
+
+[25-Jul-2025 14:36:43 America/Bogota] CLIENT -> SERVER:         <p>Este es un mensaje automático. Por favor no responder.</p>
+
+[25-Jul-2025 14:36:43 America/Bogota] CLIENT -> SERVER:     
+
+[25-Jul-2025 14:36:43 America/Bogota] CLIENT -> SERVER: 
+
+[25-Jul-2025 14:36:43 America/Bogota] CLIENT -> SERVER: .
+
+[25-Jul-2025 14:36:43 America/Bogota] SERVER -> CLIENT: 250 OK id=1ufODm-0000000AZ17-1ujr
+
+[25-Jul-2025 14:36:43 America/Bogota] CLIENT -> SERVER: QUIT
+
+[25-Jul-2025 14:36:43 America/Bogota] SERVER -> CLIENT: 221 cpanel6-co.conexcol.net closing connection
+
+[25-Jul-2025 14:37:21 America/Bogota] SERVER -> CLIENT: 220-cpanel6-co.conexcol.net ESMTP Exim 4.98.2 #2 Fri, 25 Jul 2025 14:37:21 -0500 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+[25-Jul-2025 14:37:21 America/Bogota] CLIENT -> SERVER: EHLO fds.com.co
+
+[25-Jul-2025 14:37:21 America/Bogota] SERVER -> CLIENT: 250-cpanel6-co.conexcol.net Hello fds.com.co [190.90.160.172]
+250-SIZE 209715200
+250-LIMITS MAILMAX=1000 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+[25-Jul-2025 14:37:21 America/Bogota] CLIENT -> SERVER: AUTH LOGIN
+
+[25-Jul-2025 14:37:21 America/Bogota] SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[25-Jul-2025 14:37:21 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[25-Jul-2025 14:37:21 America/Bogota] SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[25-Jul-2025 14:37:21 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[25-Jul-2025 14:37:21 America/Bogota] SERVER -> CLIENT: 235 Authentication succeeded
+
+[25-Jul-2025 14:37:21 America/Bogota] CLIENT -> SERVER: MAIL FROM:<notificaciones@fds.com.co>
+
+[25-Jul-2025 14:37:21 America/Bogota] SERVER -> CLIENT: 250 OK
+
+[25-Jul-2025 14:37:21 America/Bogota] CLIENT -> SERVER: RCPT TO:<fdstecnologia@fueradeserie.com.co>
+
+[25-Jul-2025 14:37:21 America/Bogota] SERVER -> CLIENT: 250 Accepted
+
+[25-Jul-2025 14:37:21 America/Bogota] CLIENT -> SERVER: DATA
+
+[25-Jul-2025 14:37:21 America/Bogota] SERVER -> CLIENT: 354 Enter message, ending with "." on a line by itself
+
+[25-Jul-2025 14:37:21 America/Bogota] CLIENT -> SERVER: Date: Fri, 25 Jul 2025 14:37:21 -0500
+
+[25-Jul-2025 14:37:21 America/Bogota] CLIENT -> SERVER: To: fdstecnologia@fueradeserie.com.co
+
+[25-Jul-2025 14:37:21 America/Bogota] CLIENT -> SERVER: From: Sistema de Gestion de Materiales <notificaciones@fds.com.co>
+
+[25-Jul-2025 14:37:21 America/Bogota] CLIENT -> SERVER: Subject: Asignacion de precio al material CHAQUETA JKOI25U1029
+
+[25-Jul-2025 14:37:21 America/Bogota] CLIENT -> SERVER: Message-ID: <CyR4aQk7DfDacur3kUO9hocotkzqB5QmfC48zB1MdtA@fds.com.co>
+
+[25-Jul-2025 14:37:21 America/Bogota] CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+[25-Jul-2025 14:37:21 America/Bogota] CLIENT -> SERVER: MIME-Version: 1.0
+
+[25-Jul-2025 14:37:21 America/Bogota] CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+
+[25-Jul-2025 14:37:21 America/Bogota] CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+[25-Jul-2025 14:37:21 America/Bogota] CLIENT -> SERVER: 
+
+[25-Jul-2025 14:37:21 America/Bogota] CLIENT -> SERVER: 
+
+[25-Jul-2025 14:37:21 America/Bogota] CLIENT -> SERVER:         <p>Se ha realizado una asignacion de precio al material CHAQUETA JKOI25U1029</p>
+
+[25-Jul-2025 14:37:21 America/Bogota] CLIENT -> SERVER:         <ul>
+
+[25-Jul-2025 14:37:21 America/Bogota] CLIENT -> SERVER:             <li><b>Precio de Venta:</b> 200000</li>
+
+[25-Jul-2025 14:37:21 America/Bogota] CLIENT -> SERVER:             <li><b>Predio de Compra:</b> 40000</li>
+
+[25-Jul-2025 14:37:21 America/Bogota] CLIENT -> SERVER:             <li><b>Costo:</b> 50000</li>
+
+[25-Jul-2025 14:37:21 America/Bogota] CLIENT -> SERVER:             <li><b>Usuario que asigno el precio:</b> OLGA JANNETH</li>
+
+[25-Jul-2025 14:37:21 America/Bogota] CLIENT -> SERVER:             <li><b>Fecha de asignacion:</b> 2025-07-25 14:37:21</li>
+
+[25-Jul-2025 14:37:21 America/Bogota] CLIENT -> SERVER:         </ul>
+
+[25-Jul-2025 14:37:21 America/Bogota] CLIENT -> SERVER:         <p>Este es un mensaje automático. Por favor no responder.</p>
+
+[25-Jul-2025 14:37:21 America/Bogota] CLIENT -> SERVER:     
+
+[25-Jul-2025 14:37:21 America/Bogota] CLIENT -> SERVER: 
+
+[25-Jul-2025 14:37:21 America/Bogota] CLIENT -> SERVER: .
+
+[25-Jul-2025 14:37:25 America/Bogota] SERVER -> CLIENT: 250 OK id=1ufOEP-0000000AZLD-03uZ
+
+[25-Jul-2025 14:37:25 America/Bogota] CLIENT -> SERVER: QUIT
+
+[25-Jul-2025 14:37:25 America/Bogota] SERVER -> CLIENT: 221 cpanel6-co.conexcol.net closing connection
+
+[25-Jul-2025 14:41:04 America/Bogota] SERVER -> CLIENT: 220-cpanel6-co.conexcol.net ESMTP Exim 4.98.2 #2 Fri, 25 Jul 2025 14:41:04 -0500 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+[25-Jul-2025 14:41:04 America/Bogota] CLIENT -> SERVER: EHLO fds.com.co
+
+[25-Jul-2025 14:41:04 America/Bogota] SERVER -> CLIENT: 250-cpanel6-co.conexcol.net Hello fds.com.co [190.90.160.172]
+250-SIZE 209715200
+250-LIMITS MAILMAX=1000 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+[25-Jul-2025 14:41:04 America/Bogota] CLIENT -> SERVER: AUTH LOGIN
+
+[25-Jul-2025 14:41:04 America/Bogota] SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[25-Jul-2025 14:41:04 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[25-Jul-2025 14:41:04 America/Bogota] SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[25-Jul-2025 14:41:04 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[25-Jul-2025 14:41:04 America/Bogota] SERVER -> CLIENT: 235 Authentication succeeded
+
+[25-Jul-2025 14:41:04 America/Bogota] CLIENT -> SERVER: MAIL FROM:<notificaciones@fds.com.co>
+
+[25-Jul-2025 14:41:04 America/Bogota] SERVER -> CLIENT: 250 OK
+
+[25-Jul-2025 14:41:04 America/Bogota] CLIENT -> SERVER: RCPT TO:<fdstecnologia@fueradeserie.com.co>
+
+[25-Jul-2025 14:41:04 America/Bogota] SERVER -> CLIENT: 250 Accepted
+
+[25-Jul-2025 14:41:04 America/Bogota] CLIENT -> SERVER: DATA
+
+[25-Jul-2025 14:41:04 America/Bogota] SERVER -> CLIENT: 354 Enter message, ending with "." on a line by itself
+
+[25-Jul-2025 14:41:04 America/Bogota] CLIENT -> SERVER: Date: Fri, 25 Jul 2025 14:41:04 -0500
+
+[25-Jul-2025 14:41:04 America/Bogota] CLIENT -> SERVER: To: fdstecnologia@fueradeserie.com.co
+
+[25-Jul-2025 14:41:04 America/Bogota] CLIENT -> SERVER: From: Sistema de Gestion de Materiales <notificaciones@fds.com.co>
+
+[25-Jul-2025 14:41:04 America/Bogota] CLIENT -> SERVER: Subject: Asignacion de precio al material CHAQUETA JKOI25U1029
+
+[25-Jul-2025 14:41:04 America/Bogota] CLIENT -> SERVER: Message-ID: <DqOzGMFwPVYRyxhAPY2AkFU3QHvGepJ7X0dauqWdQ@fds.com.co>
+
+[25-Jul-2025 14:41:04 America/Bogota] CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+[25-Jul-2025 14:41:04 America/Bogota] CLIENT -> SERVER: MIME-Version: 1.0
+
+[25-Jul-2025 14:41:04 America/Bogota] CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+
+[25-Jul-2025 14:41:04 America/Bogota] CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+[25-Jul-2025 14:41:04 America/Bogota] CLIENT -> SERVER: 
+
+[25-Jul-2025 14:41:04 America/Bogota] CLIENT -> SERVER: 
+
+[25-Jul-2025 14:41:04 America/Bogota] CLIENT -> SERVER:         <p>Se ha realizado una asignacion de precio al material CHAQUETA JKOI25U1029</p>
+
+[25-Jul-2025 14:41:04 America/Bogota] CLIENT -> SERVER:         <ul>
+
+[25-Jul-2025 14:41:04 America/Bogota] CLIENT -> SERVER:             <li><b>Precio de Venta:</b> 200000</li>
+
+[25-Jul-2025 14:41:04 America/Bogota] CLIENT -> SERVER:             <li><b>Predio de Compra:</b> 40000</li>
+
+[25-Jul-2025 14:41:04 America/Bogota] CLIENT -> SERVER:             <li><b>Costo:</b> 50000</li>
+
+[25-Jul-2025 14:41:04 America/Bogota] CLIENT -> SERVER:             <li><b>Usuario que asigno el precio:</b> OLGA JANNETH</li>
+
+[25-Jul-2025 14:41:04 America/Bogota] CLIENT -> SERVER:             <li><b>Fecha de asignacion:</b> 2025-07-25 14:41:04</li>
+
+[25-Jul-2025 14:41:04 America/Bogota] CLIENT -> SERVER:         </ul>
+
+[25-Jul-2025 14:41:04 America/Bogota] CLIENT -> SERVER:         <p>Esta asignacion fue aplicada a todos los registros con el mismo nombre</p>
+
+[25-Jul-2025 14:41:04 America/Bogota] CLIENT -> SERVER:         <p>Este es un mensaje automático. Por favor no responder.</p>
+
+[25-Jul-2025 14:41:04 America/Bogota] CLIENT -> SERVER:     
+
+[25-Jul-2025 14:41:04 America/Bogota] CLIENT -> SERVER: 
+
+[25-Jul-2025 14:41:04 America/Bogota] CLIENT -> SERVER: .
+
+[25-Jul-2025 14:41:05 America/Bogota] SERVER -> CLIENT: 250 OK id=1ufOHz-0000000AcA4-4Bzl
+
+[25-Jul-2025 14:41:05 America/Bogota] CLIENT -> SERVER: QUIT
+
+[25-Jul-2025 14:41:05 America/Bogota] SERVER -> CLIENT: 221 cpanel6-co.conexcol.net closing connection
+
+[25-Jul-2025 14:41:36 America/Bogota] SERVER -> CLIENT: 220-cpanel6-co.conexcol.net ESMTP Exim 4.98.2 #2 Fri, 25 Jul 2025 14:41:36 -0500 
+220-We do not authorize the use of this system to transport unsolicited, 
+220 and/or bulk e-mail.
+
+[25-Jul-2025 14:41:36 America/Bogota] CLIENT -> SERVER: EHLO fds.com.co
+
+[25-Jul-2025 14:41:36 America/Bogota] SERVER -> CLIENT: 250-cpanel6-co.conexcol.net Hello fds.com.co [190.90.160.172]
+250-SIZE 209715200
+250-LIMITS MAILMAX=1000 RCPTMAX=50000
+250-8BITMIME
+250-PIPELINING
+250-PIPECONNECT
+250-AUTH PLAIN LOGIN
+250 HELP
+
+[25-Jul-2025 14:41:36 America/Bogota] CLIENT -> SERVER: AUTH LOGIN
+
+[25-Jul-2025 14:41:36 America/Bogota] SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[25-Jul-2025 14:41:36 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[25-Jul-2025 14:41:36 America/Bogota] SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[25-Jul-2025 14:41:36 America/Bogota] CLIENT -> SERVER: [credentials hidden]
+[25-Jul-2025 14:41:36 America/Bogota] SERVER -> CLIENT: 235 Authentication succeeded
+
+[25-Jul-2025 14:41:36 America/Bogota] CLIENT -> SERVER: MAIL FROM:<notificaciones@fds.com.co>
+
+[25-Jul-2025 14:41:36 America/Bogota] SERVER -> CLIENT: 250 OK
+
+[25-Jul-2025 14:41:36 America/Bogota] CLIENT -> SERVER: RCPT TO:<fdstecnologia@fueradeserie.com.co>
+
+[25-Jul-2025 14:41:36 America/Bogota] SERVER -> CLIENT: 250 Accepted
+
+[25-Jul-2025 14:41:36 America/Bogota] CLIENT -> SERVER: DATA
+
+[25-Jul-2025 14:41:36 America/Bogota] SERVER -> CLIENT: 354 Enter message, ending with "." on a line by itself
+
+[25-Jul-2025 14:41:36 America/Bogota] CLIENT -> SERVER: Date: Fri, 25 Jul 2025 14:41:36 -0500
+
+[25-Jul-2025 14:41:36 America/Bogota] CLIENT -> SERVER: To: fdstecnologia@fueradeserie.com.co
+
+[25-Jul-2025 14:41:36 America/Bogota] CLIENT -> SERVER: From: Sistema de Gestion de Materiales <notificaciones@fds.com.co>
+
+[25-Jul-2025 14:41:36 America/Bogota] CLIENT -> SERVER: Subject: Asignacion de precio al material CHAQUETA JKOI25U1029
+
+[25-Jul-2025 14:41:36 America/Bogota] CLIENT -> SERVER: Message-ID: <yoVYjY3qlOcQ0XEdYFjBaHF62QrFBLM8y9QGpY@fds.com.co>
+
+[25-Jul-2025 14:41:36 America/Bogota] CLIENT -> SERVER: X-Mailer: PHPMailer 6.10.0 (https://github.com/PHPMailer/PHPMailer)
+
+[25-Jul-2025 14:41:36 America/Bogota] CLIENT -> SERVER: MIME-Version: 1.0
+
+[25-Jul-2025 14:41:36 America/Bogota] CLIENT -> SERVER: Content-Type: text/html; charset=UTF-8
+
+[25-Jul-2025 14:41:36 America/Bogota] CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+[25-Jul-2025 14:41:36 America/Bogota] CLIENT -> SERVER: 
+
+[25-Jul-2025 14:41:36 America/Bogota] CLIENT -> SERVER: 
+
+[25-Jul-2025 14:41:36 America/Bogota] CLIENT -> SERVER:         <p>Se ha realizado una asignacion de precio al material CHAQUETA JKOI25U1029</p>
+
+[25-Jul-2025 14:41:36 America/Bogota] CLIENT -> SERVER:         <ul>
+
+[25-Jul-2025 14:41:36 America/Bogota] CLIENT -> SERVER:             <li><b>Precio de Venta:</b> 200000</li>
+
+[25-Jul-2025 14:41:36 America/Bogota] CLIENT -> SERVER:             <li><b>Predio de Compra:</b> 40000</li>
+
+[25-Jul-2025 14:41:36 America/Bogota] CLIENT -> SERVER:             <li><b>Costo:</b> 50000</li>
+
+[25-Jul-2025 14:41:36 America/Bogota] CLIENT -> SERVER:             <li><b>Usuario que asigno el precio:</b> OLGA JANNETH</li>
+
+[25-Jul-2025 14:41:36 America/Bogota] CLIENT -> SERVER:             <li><b>Fecha de asignacion:</b> 2025-07-25 14:41:36</li>
+
+[25-Jul-2025 14:41:36 America/Bogota] CLIENT -> SERVER:         </ul>
+
+[25-Jul-2025 14:41:36 America/Bogota] CLIENT -> SERVER:         <p></p>
+
+[25-Jul-2025 14:41:36 America/Bogota] CLIENT -> SERVER:         <p>Este es un mensaje automático. Por favor no responder.</p>
+
+[25-Jul-2025 14:41:36 America/Bogota] CLIENT -> SERVER:     
+
+[25-Jul-2025 14:41:36 America/Bogota] CLIENT -> SERVER: 
+
+[25-Jul-2025 14:41:36 America/Bogota] CLIENT -> SERVER: .
+
+[25-Jul-2025 14:41:37 America/Bogota] SERVER -> CLIENT: 250 OK id=1ufOIV-0000000AcOJ-3LV7
+
+[25-Jul-2025 14:41:37 America/Bogota] CLIENT -> SERVER: QUIT
+
+[25-Jul-2025 14:41:37 America/Bogota] SERVER -> CLIENT: 221 cpanel6-co.conexcol.net closing connection
+
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 20
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 21
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 22
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 23
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_BLANQUEADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 24
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 25
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 26
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 27
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 28
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_SECADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 29
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_1" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 30
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_2" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 31
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_3" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 32
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_4" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 33
+[31-Jul-2025 16:15:23 UTC] PHP Warning:  Undefined array key "INSTRUCCION_PLANCHADO_5" in /home/services/public_html/diseno/backend/obtener_grupos.php on line 34
+[01-Aug-2025 14:16:40 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: No such file or directory in /home/services/public_html/diseno/conexion.php:8
+Stack trace:
+#0 /home/services/public_html/diseno/conexion.php(8): mysqli_connect()
+#1 /home/services/public_html/diseno/backend/guardar_borrador_carga_manual.php(17): require_once('/home/services/...')
+#2 {main}
+  thrown in /home/services/public_html/diseno/conexion.php on line 8
+[01-Aug-2025 14:51:53 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: No such file or directory in /home/services/public_html/diseno/conexion.php:8
+Stack trace:
+#0 /home/services/public_html/diseno/conexion.php(8): mysqli_connect()
+#1 /home/services/public_html/diseno/backend/guardar_borrador_carga_manual.php(17): require_once('/home/services/...')
+#2 {main}
+  thrown in /home/services/public_html/diseno/conexion.php on line 8

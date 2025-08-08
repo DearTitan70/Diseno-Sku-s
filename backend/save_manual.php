@@ -77,11 +77,6 @@ try {
     $errors[] = "Error obteniendo destinatarios: " . $e->getMessage();
 }
 
-// Enviar correo solo si hubo inserciones y hay destinatarios
-if ($inserted > 0 && !empty($nombresInsertados) && !empty($destinatarios)) {
-    enviarCorreoNuevaCarga($nombresInsertados, $usuarioBitacora, $fechaBitacora, $destinatarios);
-}
-
 if ($inserted > 0) {
     echo json_encode(['success' => true, 'inserted' => $inserted, 'errors' => $errors]);
 } else {
